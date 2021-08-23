@@ -25,13 +25,13 @@ export interface ElasticacheTag {
      * @type {string}
      * @memberof ElasticacheTag
      */
-    key?: string;
+    Key?: string;
     /**
      * The tag\'s value. May be null.
      * @type {string}
      * @memberof ElasticacheTag
      */
-    value?: string;
+    Value?: string;
 }
 
 

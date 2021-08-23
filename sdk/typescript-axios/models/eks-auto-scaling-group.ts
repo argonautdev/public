@@ -25,7 +25,7 @@ export interface EksAutoScalingGroup {
      * @type {string}
      * @memberof EksAutoScalingGroup
      */
-    name?: string;
+    Name?: string;
 }
 
 

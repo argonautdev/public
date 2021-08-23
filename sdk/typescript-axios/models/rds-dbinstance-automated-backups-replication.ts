@@ -25,7 +25,7 @@ export interface RdsDBInstanceAutomatedBackupsReplication {
      * @type {string}
      * @memberof RdsDBInstanceAutomatedBackupsReplication
      */
-    dbinstanceAutomatedBackupsArn?: string;
+    DBInstanceAutomatedBackupsArn?: string;
 }
 
 

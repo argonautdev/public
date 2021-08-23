@@ -26,37 +26,37 @@ export interface ElasticachePendingModifiedValues {
      * @type {string}
      * @memberof ElasticachePendingModifiedValues
      */
-    authTokenStatus?: string;
+    AuthTokenStatus?: string;
     /**
      * A list of cache node IDs that are being removed (or will be removed) from the cluster. A node ID is a 4-digit numeric identifier (0001, 0002, etc.).
      * @type {Array<string>}
      * @memberof ElasticachePendingModifiedValues
      */
-    cacheNodeIdsToRemove?: Array<string>;
+    CacheNodeIdsToRemove?: Array<string>;
     /**
      * The cache node type that this cluster or replication group is scaled to.
      * @type {string}
      * @memberof ElasticachePendingModifiedValues
      */
-    cacheNodeType?: string;
+    CacheNodeType?: string;
     /**
      * The new cache engine version that the cluster runs.
      * @type {string}
      * @memberof ElasticachePendingModifiedValues
      */
-    engineVersion?: string;
+    EngineVersion?: string;
     /**
      * The log delivery configurations being modified
      * @type {Array<ElasticachePendingLogDeliveryConfiguration>}
      * @memberof ElasticachePendingModifiedValues
      */
-    logDeliveryConfigurations?: Array<ElasticachePendingLogDeliveryConfiguration>;
+    LogDeliveryConfigurations?: Array<ElasticachePendingLogDeliveryConfiguration>;
     /**
      * The new number of cache nodes for the cluster.  For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.
      * @type {number}
      * @memberof ElasticachePendingModifiedValues
      */
-    numCacheNodes?: number;
+    NumCacheNodes?: number;
 }
 
 

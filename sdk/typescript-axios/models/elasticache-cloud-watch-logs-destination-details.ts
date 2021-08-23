@@ -25,7 +25,7 @@ export interface ElasticacheCloudWatchLogsDestinationDetails {
      * @type {string}
      * @memberof ElasticacheCloudWatchLogsDestinationDetails
      */
-    logGroup?: string;
+    LogGroup?: string;
 }
 
 

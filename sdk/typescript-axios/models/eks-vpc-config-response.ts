@@ -25,43 +25,43 @@ export interface EksVpcConfigResponse {
      * @type {string}
      * @memberof EksVpcConfigResponse
      */
-    clusterSecurityGroupId?: string;
+    ClusterSecurityGroupId?: string;
     /**
      * This parameter indicates whether the Amazon EKS private API server endpoint is enabled. If the Amazon EKS private API server endpoint is enabled, Kubernetes API requests that originate from within your cluster\'s VPC use the private VPC endpoint instead of traversing the internet. If this value is disabled and you have nodes or AWS Fargate pods in the cluster, then ensure that publicAccessCidrs includes the necessary CIDR blocks for communication with the nodes or Fargate pods. For more information, see Amazon EKS Cluster Endpoint Access Control (https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html) in the Amazon EKS User Guide .
      * @type {boolean}
      * @memberof EksVpcConfigResponse
      */
-    endpointPrivateAccess?: boolean;
+    EndpointPrivateAccess?: boolean;
     /**
      * This parameter indicates whether the Amazon EKS public API server endpoint is enabled. If the Amazon EKS public API server endpoint is disabled, your cluster\'s Kubernetes API server can only receive requests that originate from within the cluster VPC.
      * @type {boolean}
      * @memberof EksVpcConfigResponse
      */
-    endpointPublicAccess?: boolean;
+    EndpointPublicAccess?: boolean;
     /**
      * The CIDR blocks that are allowed access to your cluster\'s public Kubernetes API server endpoint. Communication to the endpoint from addresses outside of the listed CIDR blocks is denied. The default value is 0.0.0.0/0. If you\'ve disabled private endpoint access and you have nodes or AWS Fargate pods in the cluster, then ensure that the necessary CIDR blocks are listed. For more information, see Amazon EKS Cluster Endpoint Access Control (https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html) in the Amazon EKS User Guide .
      * @type {Array<string>}
      * @memberof EksVpcConfigResponse
      */
-    publicAccessCidrs?: Array<string>;
+    PublicAccessCidrs?: Array<string>;
     /**
      * The security groups associated with the cross-account elastic network interfaces that are used to allow communication between your nodes and the Kubernetes control plane.
      * @type {Array<string>}
      * @memberof EksVpcConfigResponse
      */
-    securityGroupIds?: Array<string>;
+    SecurityGroupIds?: Array<string>;
     /**
      * The subnets associated with your cluster.
      * @type {Array<string>}
      * @memberof EksVpcConfigResponse
      */
-    subnetIds?: Array<string>;
+    SubnetIds?: Array<string>;
     /**
      * The VPC associated with your cluster.
      * @type {string}
      * @memberof EksVpcConfigResponse
      */
-    vpcId?: string;
+    VpcId?: string;
 }
 
 

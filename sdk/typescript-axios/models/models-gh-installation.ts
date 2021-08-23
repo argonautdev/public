@@ -23,6 +23,30 @@ import { GormDeletedAt } from './gorm-deleted-at';
 export interface ModelsGhInstallation {
     /**
      * 
+     * @type {string}
+     * @memberof ModelsGhInstallation
+     */
+    CreatedAt?: string;
+    /**
+     * 
+     * @type {GormDeletedAt}
+     * @memberof ModelsGhInstallation
+     */
+    DeletedAt?: GormDeletedAt;
+    /**
+     * 
+     * @type {number}
+     * @memberof ModelsGhInstallation
+     */
+    ID?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ModelsGhInstallation
+     */
+    UpdatedAt?: string;
+    /**
+     * 
      * @type {number}
      * @memberof ModelsGhInstallation
      */
@@ -33,24 +57,6 @@ export interface ModelsGhInstallation {
      * @memberof ModelsGhInstallation
      */
     accountOwner?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof ModelsGhInstallation
-     */
-    createdAt?: string;
-    /**
-     * 
-     * @type {GormDeletedAt}
-     * @memberof ModelsGhInstallation
-     */
-    deletedAt?: GormDeletedAt;
-    /**
-     * 
-     * @type {number}
-     * @memberof ModelsGhInstallation
-     */
-    id?: number;
     /**
      * The organization that this integration belongs to
      * @type {number}
@@ -63,12 +69,6 @@ export interface ModelsGhInstallation {
      * @memberof ModelsGhInstallation
      */
     targetType?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof ModelsGhInstallation
-     */
-    updatedAt?: string;
 }
 
 

@@ -26,13 +26,13 @@ export interface EksEncryptionConfig {
      * @type {EksProvider}
      * @memberof EksEncryptionConfig
      */
-    provider?: EksProvider;
+    Provider?: EksProvider;
     /**
      * Specifies the resources to be encrypted. The only supported value is \"secrets\".
      * @type {Array<string>}
      * @memberof EksEncryptionConfig
      */
-    resources?: Array<string>;
+    Resources?: Array<string>;
 }
 
 

@@ -25,19 +25,19 @@ export interface RdsDBInstanceRole {
      * @type {string}
      * @memberof RdsDBInstanceRole
      */
-    featureName?: string;
+    FeatureName?: string;
     /**
      * The Amazon Resource Name (ARN) of the IAM role that is associated with the DB instance.
      * @type {string}
      * @memberof RdsDBInstanceRole
      */
-    roleArn?: string;
+    RoleArn?: string;
     /**
      * Describes the state of association between the IAM role and the DB instance. The Status property returns one of the following values:     * ACTIVE - the IAM role ARN is associated with the DB instance and can    be used to access other AWS services on your behalf.     * PENDING - the IAM role ARN is being associated with the DB instance.     * INVALID - the IAM role ARN is associated with the DB instance, but the    DB instance is unable to assume the IAM role in order to access other    AWS services on your behalf.
      * @type {string}
      * @memberof RdsDBInstanceRole
      */
-    status?: string;
+    Status?: string;
 }
 
 

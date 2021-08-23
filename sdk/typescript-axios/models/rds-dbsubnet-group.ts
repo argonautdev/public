@@ -26,37 +26,37 @@ export interface RdsDBSubnetGroup {
      * @type {string}
      * @memberof RdsDBSubnetGroup
      */
-    dbsubnetGroupArn?: string;
+    DBSubnetGroupArn?: string;
     /**
      * Provides the description of the DB subnet group.
      * @type {string}
      * @memberof RdsDBSubnetGroup
      */
-    dbsubnetGroupDescription?: string;
+    DBSubnetGroupDescription?: string;
     /**
      * The name of the DB subnet group.
      * @type {string}
      * @memberof RdsDBSubnetGroup
      */
-    dbsubnetGroupName?: string;
+    DBSubnetGroupName?: string;
     /**
      * Provides the status of the DB subnet group.
      * @type {string}
      * @memberof RdsDBSubnetGroup
      */
-    subnetGroupStatus?: string;
+    SubnetGroupStatus?: string;
     /**
      * Contains a list of Subnet elements.
      * @type {Array<RdsSubnet>}
      * @memberof RdsDBSubnetGroup
      */
-    subnets?: Array<RdsSubnet>;
+    Subnets?: Array<RdsSubnet>;
     /**
      * Provides the VpcId of the DB subnet group.
      * @type {string}
      * @memberof RdsDBSubnetGroup
      */
-    vpcId?: string;
+    VpcId?: string;
 }
 
 

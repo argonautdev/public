@@ -25,7 +25,7 @@ export interface EksOIDC {
      * @type {string}
      * @memberof EksOIDC
      */
-    issuer?: string;
+    Issuer?: string;
 }
 
 

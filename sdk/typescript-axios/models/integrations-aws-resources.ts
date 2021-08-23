@@ -47,7 +47,7 @@ export interface IntegrationsAwsResources {
      * @type {Array<IntegrationsBucketsInRegion>}
      * @memberof IntegrationsAwsResources
      */
-    s3Buckets?: Array<IntegrationsBucketsInRegion>;
+    s3_buckets?: Array<IntegrationsBucketsInRegion>;
 }
 
 

@@ -25,13 +25,13 @@ export interface S3Bucket {
      * @type {string}
      * @memberof S3Bucket
      */
-    creationDate?: string;
+    CreationDate?: string;
     /**
      * The name of the bucket.
      * @type {string}
      * @memberof S3Bucket
      */
-    name?: string;
+    Name?: string;
 }
 
 

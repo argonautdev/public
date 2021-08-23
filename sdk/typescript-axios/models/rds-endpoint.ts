@@ -25,19 +25,19 @@ export interface RdsEndpoint {
      * @type {string}
      * @memberof RdsEndpoint
      */
-    address?: string;
+    Address?: string;
     /**
      * Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.
      * @type {string}
      * @memberof RdsEndpoint
      */
-    hostedZoneId?: string;
+    HostedZoneId?: string;
     /**
      * Specifies the port that the database engine is listening on.
      * @type {number}
      * @memberof RdsEndpoint
      */
-    port?: number;
+    Port?: number;
 }
 
 

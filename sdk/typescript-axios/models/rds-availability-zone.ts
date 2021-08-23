@@ -25,7 +25,7 @@ export interface RdsAvailabilityZone {
      * @type {string}
      * @memberof RdsAvailabilityZone
      */
-    name?: string;
+    Name?: string;
 }
 
 

@@ -26,25 +26,31 @@ export interface ModelsJob {
      * @type {string}
      * @memberof ModelsJob
      */
-    createdAt?: string;
+    CreatedAt?: string;
     /**
      * 
      * @type {GormDeletedAt}
      * @memberof ModelsJob
      */
-    deletedAt?: GormDeletedAt;
+    DeletedAt?: GormDeletedAt;
+    /**
+     * 
+     * @type {number}
+     * @memberof ModelsJob
+     */
+    ID?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ModelsJob
+     */
+    UpdatedAt?: string;
     /**
      * an environment may have many jobs
      * @type {number}
      * @memberof ModelsJob
      */
     environment_id?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ModelsJob
-     */
-    id?: number;
     /**
      * 
      * @type {string}
@@ -69,12 +75,6 @@ export interface ModelsJob {
      * @memberof ModelsJob
      */
     status?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof ModelsJob
-     */
-    updatedAt?: string;
 }
 
 

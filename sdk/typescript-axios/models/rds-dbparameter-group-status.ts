@@ -25,13 +25,13 @@ export interface RdsDBParameterGroupStatus {
      * @type {string}
      * @memberof RdsDBParameterGroupStatus
      */
-    dbparameterGroupName?: string;
+    DBParameterGroupName?: string;
     /**
      * The status of parameter updates.
      * @type {string}
      * @memberof RdsDBParameterGroupStatus
      */
-    parameterApplyStatus?: string;
+    ParameterApplyStatus?: string;
 }
 
 

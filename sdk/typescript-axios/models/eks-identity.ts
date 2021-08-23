@@ -26,7 +26,7 @@ export interface EksIdentity {
      * @type {EksOIDC}
      * @memberof EksIdentity
      */
-    oidc?: EksOIDC;
+    Oidc?: EksOIDC;
 }
 
 

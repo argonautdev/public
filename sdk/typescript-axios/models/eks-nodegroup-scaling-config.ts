@@ -25,19 +25,19 @@ export interface EksNodegroupScalingConfig {
      * @type {number}
      * @memberof EksNodegroupScalingConfig
      */
-    desiredSize?: number;
+    DesiredSize?: number;
     /**
      * The maximum number of nodes that the managed node group can scale out to. For information about the maximum number that you can specify, see Amazon EKS service quotas (https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html) in the Amazon EKS User Guide.
      * @type {number}
      * @memberof EksNodegroupScalingConfig
      */
-    maxSize?: number;
+    MaxSize?: number;
     /**
      * The minimum number of nodes that the managed node group can scale in to. This number must be greater than zero.
      * @type {number}
      * @memberof EksNodegroupScalingConfig
      */
-    minSize?: number;
+    MinSize?: number;
 }
 
 

@@ -26,49 +26,49 @@ export interface ElasticacheCacheNode {
      * @type {string}
      * @memberof ElasticacheCacheNode
      */
-    cacheNodeCreateTime?: string;
+    CacheNodeCreateTime?: string;
     /**
      * The cache node identifier. A node ID is a numeric identifier (0001, 0002, etc.). The combination of cluster ID and node ID uniquely identifies every cache node used in a customer\'s AWS account.
      * @type {string}
      * @memberof ElasticacheCacheNode
      */
-    cacheNodeId?: string;
+    CacheNodeId?: string;
     /**
      * The current state of this cache node, one of the following values: available, creating, rebooting, or deleting.
      * @type {string}
      * @memberof ElasticacheCacheNode
      */
-    cacheNodeStatus?: string;
+    CacheNodeStatus?: string;
     /**
      * The Availability Zone where this node was created and now resides.
      * @type {string}
      * @memberof ElasticacheCacheNode
      */
-    customerAvailabilityZone?: string;
+    CustomerAvailabilityZone?: string;
     /**
      * The customer outpost ARN of the cache node.
      * @type {string}
      * @memberof ElasticacheCacheNode
      */
-    customerOutpostArn?: string;
+    CustomerOutpostArn?: string;
     /**
      * 
      * @type {ElasticacheEndpoint}
      * @memberof ElasticacheCacheNode
      */
-    endpoint?: ElasticacheEndpoint;
+    Endpoint?: ElasticacheEndpoint;
     /**
      * The status of the parameter group applied to this cache node.
      * @type {string}
      * @memberof ElasticacheCacheNode
      */
-    parameterGroupStatus?: string;
+    ParameterGroupStatus?: string;
     /**
      * The ID of the primary node to which this read replica node is synchronized. If this field is empty, this node is not associated with a primary cluster.
      * @type {string}
      * @memberof ElasticacheCacheNode
      */
-    sourceCacheNodeId?: string;
+    SourceCacheNodeId?: string;
 }
 
 

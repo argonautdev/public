@@ -25,13 +25,13 @@ export interface EksLogSetup {
      * @type {boolean}
      * @memberof EksLogSetup
      */
-    enabled?: boolean;
+    Enabled?: boolean;
     /**
      * The available cluster control plane log types.
      * @type {Array<string>}
      * @memberof EksLogSetup
      */
-    types?: Array<string>;
+    Types?: Array<string>;
 }
 
 

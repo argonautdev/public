@@ -27,13 +27,13 @@ export interface ElasticacheDestinationDetails {
      * @type {ElasticacheCloudWatchLogsDestinationDetails}
      * @memberof ElasticacheDestinationDetails
      */
-    cloudWatchLogsDetails?: ElasticacheCloudWatchLogsDestinationDetails;
+    CloudWatchLogsDetails?: ElasticacheCloudWatchLogsDestinationDetails;
     /**
      * 
      * @type {ElasticacheKinesisFirehoseDestinationDetails}
      * @memberof ElasticacheDestinationDetails
      */
-    kinesisFirehoseDetails?: ElasticacheKinesisFirehoseDestinationDetails;
+    KinesisFirehoseDetails?: ElasticacheKinesisFirehoseDestinationDetails;
 }
 
 

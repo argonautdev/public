@@ -26,7 +26,7 @@ export interface IntegrationsDescribeDBInstancesOutput {
      * @type {RdsDescribeDBInstancesOutput}
      * @memberof IntegrationsDescribeDBInstancesOutput
      */
-    rds?: RdsDescribeDBInstancesOutput;
+    RDS?: RdsDescribeDBInstancesOutput;
     /**
      * 
      * @type {string}

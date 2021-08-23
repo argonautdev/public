@@ -26,7 +26,7 @@ export interface EksLogging {
      * @type {Array<EksLogSetup>}
      * @memberof EksLogging
      */
-    clusterLogging?: Array<EksLogSetup>;
+    ClusterLogging?: Array<EksLogSetup>;
 }
 
 

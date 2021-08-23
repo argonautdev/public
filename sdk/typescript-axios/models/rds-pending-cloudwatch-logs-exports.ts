@@ -25,13 +25,13 @@ export interface RdsPendingCloudwatchLogsExports {
      * @type {Array<string>}
      * @memberof RdsPendingCloudwatchLogsExports
      */
-    logTypesToDisable?: Array<string>;
+    LogTypesToDisable?: Array<string>;
     /**
      * Log types that are in the process of being deactivated. After they are deactivated, these log types aren\'t exported to CloudWatch Logs.
      * @type {Array<string>}
      * @memberof RdsPendingCloudwatchLogsExports
      */
-    logTypesToEnable?: Array<string>;
+    LogTypesToEnable?: Array<string>;
 }
 
 

@@ -25,13 +25,13 @@ export interface ElasticacheNotificationConfiguration {
      * @type {string}
      * @memberof ElasticacheNotificationConfiguration
      */
-    topicArn?: string;
+    TopicArn?: string;
     /**
      * The current state of the topic.
      * @type {string}
      * @memberof ElasticacheNotificationConfiguration
      */
-    topicStatus?: string;
+    TopicStatus?: string;
 }
 
 

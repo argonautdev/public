@@ -26,13 +26,13 @@ export interface EksNodegroupResources {
      * @type {Array<EksAutoScalingGroup>}
      * @memberof EksNodegroupResources
      */
-    autoScalingGroups?: Array<EksAutoScalingGroup>;
+    AutoScalingGroups?: Array<EksAutoScalingGroup>;
     /**
      * The remote access security group associated with the node group. This security group controls SSH access to the nodes.
      * @type {string}
      * @memberof EksNodegroupResources
      */
-    remoteAccessSecurityGroup?: string;
+    RemoteAccessSecurityGroup?: string;
 }
 
 

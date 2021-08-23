@@ -31,97 +31,97 @@ export interface EksCluster {
      * @type {string}
      * @memberof EksCluster
      */
-    arn?: string;
+    Arn?: string;
     /**
      * 
      * @type {EksCertificate}
      * @memberof EksCluster
      */
-    certificateAuthority?: EksCertificate;
+    CertificateAuthority?: EksCertificate;
     /**
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * @type {string}
      * @memberof EksCluster
      */
-    clientRequestToken?: string;
+    ClientRequestToken?: string;
     /**
      * The Unix epoch timestamp in seconds for when the cluster was created.
      * @type {string}
      * @memberof EksCluster
      */
-    createdAt?: string;
+    CreatedAt?: string;
     /**
      * The encryption configuration for the cluster.
      * @type {Array<EksEncryptionConfig>}
      * @memberof EksCluster
      */
-    encryptionConfig?: Array<EksEncryptionConfig>;
+    EncryptionConfig?: Array<EksEncryptionConfig>;
     /**
      * The endpoint for your Kubernetes API server.
      * @type {string}
      * @memberof EksCluster
      */
-    endpoint?: string;
+    Endpoint?: string;
     /**
      * 
      * @type {EksIdentity}
      * @memberof EksCluster
      */
-    identity?: EksIdentity;
+    Identity?: EksIdentity;
     /**
      * 
      * @type {EksKubernetesNetworkConfigResponse}
      * @memberof EksCluster
      */
-    kubernetesNetworkConfig?: EksKubernetesNetworkConfigResponse;
+    KubernetesNetworkConfig?: EksKubernetesNetworkConfigResponse;
     /**
      * 
      * @type {EksLogging}
      * @memberof EksCluster
      */
-    logging?: EksLogging;
+    Logging?: EksLogging;
     /**
      * The name of the cluster.
      * @type {string}
      * @memberof EksCluster
      */
-    name?: string;
+    Name?: string;
     /**
      * The platform version of your Amazon EKS cluster. For more information, see Platform Versions (https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html) in the Amazon EKS User Guide .
      * @type {string}
      * @memberof EksCluster
      */
-    platformVersion?: string;
+    PlatformVersion?: string;
     /**
      * 
      * @type {EksVpcConfigResponse}
      * @memberof EksCluster
      */
-    resourcesVpcConfig?: EksVpcConfigResponse;
+    ResourcesVpcConfig?: EksVpcConfigResponse;
     /**
      * The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to AWS API operations on your behalf.
      * @type {string}
      * @memberof EksCluster
      */
-    roleArn?: string;
+    RoleArn?: string;
     /**
      * The current status of the cluster.
      * @type {string}
      * @memberof EksCluster
      */
-    status?: string;
+    Status?: string;
     /**
      * The metadata that you apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Cluster tags do not propagate to any other resources associated with the cluster.
      * @type {{ [key: string]: string; }}
      * @memberof EksCluster
      */
-    tags?: { [key: string]: string; };
+    Tags?: { [key: string]: string; };
     /**
      * The Kubernetes server version for the cluster.
      * @type {string}
      * @memberof EksCluster
      */
-    version?: string;
+    Version?: string;
 }
 
 

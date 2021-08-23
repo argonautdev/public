@@ -25,19 +25,19 @@ export interface EksIssue {
      * @type {string}
      * @memberof EksIssue
      */
-    code?: string;
+    Code?: string;
     /**
      * The error message associated with the issue.
      * @type {string}
      * @memberof EksIssue
      */
-    message?: string;
+    Message?: string;
     /**
      * The AWS resources that are afflicted by this issue.
      * @type {Array<string>}
      * @memberof EksIssue
      */
-    resourceIds?: Array<string>;
+    ResourceIds?: Array<string>;
 }
 
 

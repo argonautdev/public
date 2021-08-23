@@ -25,19 +25,19 @@ export interface EksTaint {
      * @type {string}
      * @memberof EksTaint
      */
-    effect?: string;
+    Effect?: string;
     /**
      * The key of the taint.
      * @type {string}
      * @memberof EksTaint
      */
-    key?: string;
+    Key?: string;
     /**
      * The value of the taint.
      * @type {string}
      * @memberof EksTaint
      */
-    value?: string;
+    Value?: string;
 }
 
 

@@ -25,13 +25,13 @@ export interface GormDeletedAt {
      * @type {string}
      * @memberof GormDeletedAt
      */
-    time?: string;
+    Time?: string;
     /**
      * Valid is true if Time is not NULL
      * @type {boolean}
      * @memberof GormDeletedAt
      */
-    valid?: boolean;
+    Valid?: boolean;
 }
 
 

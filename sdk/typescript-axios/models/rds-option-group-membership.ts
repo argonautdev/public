@@ -25,13 +25,13 @@ export interface RdsOptionGroupMembership {
      * @type {string}
      * @memberof RdsOptionGroupMembership
      */
-    optionGroupName?: string;
+    OptionGroupName?: string;
     /**
      * The status of the DB instance\'s option group membership. Valid values are: in-sync, pending-apply, pending-removal, pending-maintenance-apply, pending-maintenance-removal, applying, removing, and failed.
      * @type {string}
      * @memberof RdsOptionGroupMembership
      */
-    status?: string;
+    Status?: string;
 }
 
 

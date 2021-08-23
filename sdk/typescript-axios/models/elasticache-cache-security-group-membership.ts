@@ -25,13 +25,13 @@ export interface ElasticacheCacheSecurityGroupMembership {
      * @type {string}
      * @memberof ElasticacheCacheSecurityGroupMembership
      */
-    cacheSecurityGroupName?: string;
+    CacheSecurityGroupName?: string;
     /**
      * The membership status in the cache security group. The status changes when a cache security group is modified, or when the cache security groups assigned to a cluster are modified.
      * @type {string}
      * @memberof ElasticacheCacheSecurityGroupMembership
      */
-    status?: string;
+    Status?: string;
 }
 
 

@@ -25,19 +25,19 @@ export interface EksLaunchTemplateSpecification {
      * @type {string}
      * @memberof EksLaunchTemplateSpecification
      */
-    id?: string;
+    Id?: string;
     /**
      * The name of the launch template.
      * @type {string}
      * @memberof EksLaunchTemplateSpecification
      */
-    name?: string;
+    Name?: string;
     /**
      * The version of the launch template to use. If no version is specified, then the template\'s default version is used.
      * @type {string}
      * @memberof EksLaunchTemplateSpecification
      */
-    version?: string;
+    Version?: string;
 }
 
 

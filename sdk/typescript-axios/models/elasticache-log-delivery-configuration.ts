@@ -26,37 +26,37 @@ export interface ElasticacheLogDeliveryConfiguration {
      * @type {ElasticacheDestinationDetails}
      * @memberof ElasticacheLogDeliveryConfiguration
      */
-    destinationDetails?: ElasticacheDestinationDetails;
+    DestinationDetails?: ElasticacheDestinationDetails;
     /**
      * Returns the destination type, either cloudwatch-logs or kinesis-firehose.
      * @type {string}
      * @memberof ElasticacheLogDeliveryConfiguration
      */
-    destinationType?: string;
+    DestinationType?: string;
     /**
      * Returns the log format, either JSON or TEXT.
      * @type {string}
      * @memberof ElasticacheLogDeliveryConfiguration
      */
-    logFormat?: string;
+    LogFormat?: string;
     /**
      * Refers to slow-log (https://redis.io/commands/slowlog).
      * @type {string}
      * @memberof ElasticacheLogDeliveryConfiguration
      */
-    logType?: string;
+    LogType?: string;
     /**
      * Returns an error message for the log delivery configuration.
      * @type {string}
      * @memberof ElasticacheLogDeliveryConfiguration
      */
-    message?: string;
+    Message?: string;
     /**
      * Returns the log delivery configuration status. Values are one of enabling | disabling | modifying | active | error
      * @type {string}
      * @memberof ElasticacheLogDeliveryConfiguration
      */
-    status?: string;
+    Status?: string;
 }
 
 

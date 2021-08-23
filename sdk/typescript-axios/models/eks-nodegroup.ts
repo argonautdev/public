@@ -32,139 +32,139 @@ export interface EksNodegroup {
      * @type {string}
      * @memberof EksNodegroup
      */
-    amiType?: string;
+    AmiType?: string;
     /**
      * The capacity type of your managed node group.
      * @type {string}
      * @memberof EksNodegroup
      */
-    capacityType?: string;
+    CapacityType?: string;
     /**
      * The name of the cluster that the managed node group resides in.
      * @type {string}
      * @memberof EksNodegroup
      */
-    clusterName?: string;
+    ClusterName?: string;
     /**
      * The Unix epoch timestamp in seconds for when the managed node group was created.
      * @type {string}
      * @memberof EksNodegroup
      */
-    createdAt?: string;
+    CreatedAt?: string;
     /**
      * If the node group wasn\'t deployed with a launch template, then this is the disk size in the node group configuration. If the node group was deployed with a launch template, then this is null.
      * @type {number}
      * @memberof EksNodegroup
      */
-    diskSize?: number;
+    DiskSize?: number;
     /**
      * 
      * @type {EksNodegroupHealth}
      * @memberof EksNodegroup
      */
-    health?: EksNodegroupHealth;
+    Health?: EksNodegroupHealth;
     /**
      * If the node group wasn\'t deployed with a launch template, then this is the instance type that is associated with the node group. If the node group was deployed with a launch template, then this is null.
      * @type {Array<string>}
      * @memberof EksNodegroup
      */
-    instanceTypes?: Array<string>;
+    InstanceTypes?: Array<string>;
     /**
      * The Kubernetes labels applied to the nodes in the node group.  Only labels that are applied with the Amazon EKS API are shown here. There may be other Kubernetes labels applied to the nodes in this group.
      * @type {{ [key: string]: string; }}
      * @memberof EksNodegroup
      */
-    labels?: { [key: string]: string; };
+    Labels?: { [key: string]: string; };
     /**
      * 
      * @type {EksLaunchTemplateSpecification}
      * @memberof EksNodegroup
      */
-    launchTemplate?: EksLaunchTemplateSpecification;
+    LaunchTemplate?: EksLaunchTemplateSpecification;
     /**
      * The Unix epoch timestamp in seconds for when the managed node group was last modified.
      * @type {string}
      * @memberof EksNodegroup
      */
-    modifiedAt?: string;
+    ModifiedAt?: string;
     /**
      * The IAM role associated with your node group. The Amazon EKS node kubelet daemon makes calls to AWS APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile and associated policies.
      * @type {string}
      * @memberof EksNodegroup
      */
-    nodeRole?: string;
+    NodeRole?: string;
     /**
      * The Amazon Resource Name (ARN) associated with the managed node group.
      * @type {string}
      * @memberof EksNodegroup
      */
-    nodegroupArn?: string;
+    NodegroupArn?: string;
     /**
      * The name associated with an Amazon EKS managed node group.
      * @type {string}
      * @memberof EksNodegroup
      */
-    nodegroupName?: string;
+    NodegroupName?: string;
     /**
      * If the node group was deployed using a launch template with a custom AMI, then this is the AMI ID that was specified in the launch template. For node groups that weren\'t deployed using a launch template, this is the version of the Amazon EKS optimized AMI that the node group was deployed with.
      * @type {string}
      * @memberof EksNodegroup
      */
-    releaseVersion?: string;
+    ReleaseVersion?: string;
     /**
      * 
      * @type {EksRemoteAccessConfig}
      * @memberof EksNodegroup
      */
-    remoteAccess?: EksRemoteAccessConfig;
+    RemoteAccess?: EksRemoteAccessConfig;
     /**
      * 
      * @type {EksNodegroupResources}
      * @memberof EksNodegroup
      */
-    resources?: EksNodegroupResources;
+    Resources?: EksNodegroupResources;
     /**
      * 
      * @type {EksNodegroupScalingConfig}
      * @memberof EksNodegroup
      */
-    scalingConfig?: EksNodegroupScalingConfig;
+    ScalingConfig?: EksNodegroupScalingConfig;
     /**
      * The current status of the managed node group.
      * @type {string}
      * @memberof EksNodegroup
      */
-    status?: string;
+    Status?: string;
     /**
      * The subnets that were specified for the Auto Scaling group that is associated with your node group.
      * @type {Array<string>}
      * @memberof EksNodegroup
      */
-    subnets?: Array<string>;
+    Subnets?: Array<string>;
     /**
      * The metadata applied to the node group to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Node group tags do not propagate to any other resources associated with the node group, such as the Amazon EC2 instances or subnets.
      * @type {{ [key: string]: string; }}
      * @memberof EksNodegroup
      */
-    tags?: { [key: string]: string; };
+    Tags?: { [key: string]: string; };
     /**
      * The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of NoSchedule, PreferNoSchedule, or NoExecute. Kubernetes taints can be used together with tolerations to control how workloads are scheduled to your nodes.
      * @type {Array<EksTaint>}
      * @memberof EksNodegroup
      */
-    taints?: Array<EksTaint>;
+    Taints?: Array<EksTaint>;
     /**
      * 
      * @type {EksNodegroupUpdateConfig}
      * @memberof EksNodegroup
      */
-    updateConfig?: EksNodegroupUpdateConfig;
+    UpdateConfig?: EksNodegroupUpdateConfig;
     /**
      * The Kubernetes version of the managed node group.
      * @type {string}
      * @memberof EksNodegroup
      */
-    version?: string;
+    Version?: string;
 }
 
 

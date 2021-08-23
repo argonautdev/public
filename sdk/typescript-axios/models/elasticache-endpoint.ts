@@ -25,13 +25,13 @@ export interface ElasticacheEndpoint {
      * @type {string}
      * @memberof ElasticacheEndpoint
      */
-    address?: string;
+    Address?: string;
     /**
      * The port number that the cache engine is listening on.
      * @type {number}
      * @memberof ElasticacheEndpoint
      */
-    port?: number;
+    Port?: number;
 }
 
 

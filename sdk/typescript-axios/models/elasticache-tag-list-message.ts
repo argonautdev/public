@@ -26,7 +26,7 @@ export interface ElasticacheTagListMessage {
      * @type {Array<ElasticacheTag>}
      * @memberof ElasticacheTagListMessage
      */
-    tagList?: Array<ElasticacheTag>;
+    TagList?: Array<ElasticacheTag>;
 }
 
 

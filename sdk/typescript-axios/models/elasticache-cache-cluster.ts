@@ -33,181 +33,181 @@ export interface ElasticacheCacheCluster {
      * @type {string}
      * @memberof ElasticacheCacheCluster
      */
-    arn?: string;
+    ARN?: string;
     /**
      * A flag that enables encryption at-rest when set to true.  You cannot modify the value of AtRestEncryptionEnabled after the cluster is created. To enable at-rest encryption on a cluster you must set AtRestEncryptionEnabled to true when you create a cluster.  Required: Only available when creating a replication group in an Amazon VPC using redis version 3.2.6, 4.x or later.  Default: false
      * @type {boolean}
      * @memberof ElasticacheCacheCluster
      */
-    atRestEncryptionEnabled?: boolean;
+    AtRestEncryptionEnabled?: boolean;
     /**
      * A flag that enables using an AuthToken (password) when issuing Redis commands.  Default: false
      * @type {boolean}
      * @memberof ElasticacheCacheCluster
      */
-    authTokenEnabled?: boolean;
+    AuthTokenEnabled?: boolean;
     /**
      * The date the auth token was last modified
      * @type {string}
      * @memberof ElasticacheCacheCluster
      */
-    authTokenLastModifiedDate?: string;
+    AuthTokenLastModifiedDate?: string;
     /**
      * This parameter is currently disabled.
      * @type {boolean}
      * @memberof ElasticacheCacheCluster
      */
-    autoMinorVersionUpgrade?: boolean;
+    AutoMinorVersionUpgrade?: boolean;
     /**
      * The date and time when the cluster was created.
      * @type {string}
      * @memberof ElasticacheCacheCluster
      */
-    cacheClusterCreateTime?: string;
+    CacheClusterCreateTime?: string;
     /**
      * The user-supplied identifier of the cluster. This identifier is a unique key that identifies a cluster.
      * @type {string}
      * @memberof ElasticacheCacheCluster
      */
-    cacheClusterId?: string;
+    CacheClusterId?: string;
     /**
      * The current state of this cluster, one of the following values: available, creating, deleted, deleting, incompatible-network, modifying, rebooting cluster nodes, restore-failed, or snapshotting.
      * @type {string}
      * @memberof ElasticacheCacheCluster
      */
-    cacheClusterStatus?: string;
+    CacheClusterStatus?: string;
     /**
      * The name of the compute and memory capacity node type for the cluster.  The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.     * General purpose: Current generation: M6g node types (available only    for Redis engine version 5.0.6 onward and for Memcached engine version    1.5.16 onward). cache.m6g.large, cache.m6g.xlarge, cache.m6g.2xlarge,    cache.m6g.4xlarge, cache.m6g.8xlarge, cache.m6g.12xlarge, cache.m6g.16xlarge    For region availability, see Supported Node Types (https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion)    M5 node types: cache.m5.large, cache.m5.xlarge, cache.m5.2xlarge, cache.m5.4xlarge,    cache.m5.12xlarge, cache.m5.24xlarge M4 node types: cache.m4.large, cache.m4.xlarge,    cache.m4.2xlarge, cache.m4.4xlarge, cache.m4.10xlarge T3 node types: cache.t3.micro,    cache.t3.small, cache.t3.medium T2 node types: cache.t2.micro, cache.t2.small,    cache.t2.medium Previous generation: (not recommended) T1 node types:    cache.t1.micro M1 node types: cache.m1.small, cache.m1.medium, cache.m1.large,    cache.m1.xlarge M3 node types: cache.m3.medium, cache.m3.large, cache.m3.xlarge,    cache.m3.2xlarge     * Compute optimized: Previous generation: (not recommended) C1 node types:    cache.c1.xlarge     * Memory optimized: Current generation: R6g node types (available only    for Redis engine version 5.0.6 onward and for Memcached engine version    1.5.16 onward). cache.r6g.large, cache.r6g.xlarge, cache.r6g.2xlarge,    cache.r6g.4xlarge, cache.r6g.8xlarge, cache.r6g.12xlarge, cache.r6g.16xlarge    For region availability, see Supported Node Types (https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion)    R5 node types: cache.r5.large, cache.r5.xlarge, cache.r5.2xlarge, cache.r5.4xlarge,    cache.r5.12xlarge, cache.r5.24xlarge R4 node types: cache.r4.large, cache.r4.xlarge,    cache.r4.2xlarge, cache.r4.4xlarge, cache.r4.8xlarge, cache.r4.16xlarge    Previous generation: (not recommended) M2 node types: cache.m2.xlarge,    cache.m2.2xlarge, cache.m2.4xlarge R3 node types: cache.r3.large, cache.r3.xlarge,    cache.r3.2xlarge, cache.r3.4xlarge, cache.r3.8xlarge  Additional node type info     * All current generation instance types are created in Amazon VPC by default.     * Redis append-only files (AOF) are not supported for T1 or T2 instances.     * Redis Multi-AZ with automatic failover is not supported on T1 instances.     * Redis configuration variables appendonly and appendfsync are not supported    on Redis version 2.8.22 and later.
      * @type {string}
      * @memberof ElasticacheCacheCluster
      */
-    cacheNodeType?: string;
+    CacheNodeType?: string;
     /**
      * A list of cache nodes that are members of the cluster.
      * @type {Array<ElasticacheCacheNode>}
      * @memberof ElasticacheCacheCluster
      */
-    cacheNodes?: Array<ElasticacheCacheNode>;
+    CacheNodes?: Array<ElasticacheCacheNode>;
     /**
      * 
      * @type {ElasticacheCacheParameterGroupStatus}
      * @memberof ElasticacheCacheCluster
      */
-    cacheParameterGroup?: ElasticacheCacheParameterGroupStatus;
+    CacheParameterGroup?: ElasticacheCacheParameterGroupStatus;
     /**
      * A list of cache security group elements, composed of name and status sub-elements.
      * @type {Array<ElasticacheCacheSecurityGroupMembership>}
      * @memberof ElasticacheCacheCluster
      */
-    cacheSecurityGroups?: Array<ElasticacheCacheSecurityGroupMembership>;
+    CacheSecurityGroups?: Array<ElasticacheCacheSecurityGroupMembership>;
     /**
      * The name of the cache subnet group associated with the cluster.
      * @type {string}
      * @memberof ElasticacheCacheCluster
      */
-    cacheSubnetGroupName?: string;
+    CacheSubnetGroupName?: string;
     /**
      * The URL of the web page where you can download the latest ElastiCache client library.
      * @type {string}
      * @memberof ElasticacheCacheCluster
      */
-    clientDownloadLandingPage?: string;
+    ClientDownloadLandingPage?: string;
     /**
      * 
      * @type {ElasticacheEndpoint}
      * @memberof ElasticacheCacheCluster
      */
-    configurationEndpoint?: ElasticacheEndpoint;
+    ConfigurationEndpoint?: ElasticacheEndpoint;
     /**
      * The name of the cache engine (memcached or redis) to be used for this cluster.
      * @type {string}
      * @memberof ElasticacheCacheCluster
      */
-    engine?: string;
+    Engine?: string;
     /**
      * The version of the cache engine that is used in this cluster.
      * @type {string}
      * @memberof ElasticacheCacheCluster
      */
-    engineVersion?: string;
+    EngineVersion?: string;
     /**
      * Returns the destination, format and type of the logs.
      * @type {Array<ElasticacheLogDeliveryConfiguration>}
      * @memberof ElasticacheCacheCluster
      */
-    logDeliveryConfigurations?: Array<ElasticacheLogDeliveryConfiguration>;
+    LogDeliveryConfigurations?: Array<ElasticacheLogDeliveryConfiguration>;
     /**
      * 
      * @type {ElasticacheNotificationConfiguration}
      * @memberof ElasticacheCacheCluster
      */
-    notificationConfiguration?: ElasticacheNotificationConfiguration;
+    NotificationConfiguration?: ElasticacheNotificationConfiguration;
     /**
      * The number of cache nodes in the cluster.  For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.
      * @type {number}
      * @memberof ElasticacheCacheCluster
      */
-    numCacheNodes?: number;
+    NumCacheNodes?: number;
     /**
      * 
      * @type {ElasticachePendingModifiedValues}
      * @memberof ElasticacheCacheCluster
      */
-    pendingModifiedValues?: ElasticachePendingModifiedValues;
+    PendingModifiedValues?: ElasticachePendingModifiedValues;
     /**
      * The name of the Availability Zone in which the cluster is located or \"Multiple\" if the cache nodes are located in different Availability Zones.
      * @type {string}
      * @memberof ElasticacheCacheCluster
      */
-    preferredAvailabilityZone?: string;
+    PreferredAvailabilityZone?: string;
     /**
      * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.  Valid values for ddd are:     * sun     * mon     * tue     * wed     * thu     * fri     * sat  Example: sun:23:00-mon:01:30
      * @type {string}
      * @memberof ElasticacheCacheCluster
      */
-    preferredMaintenanceWindow?: string;
+    PreferredMaintenanceWindow?: string;
     /**
      * The outpost ARN in which the cache cluster is created.
      * @type {string}
      * @memberof ElasticacheCacheCluster
      */
-    preferredOutpostArn?: string;
+    PreferredOutpostArn?: string;
     /**
      * The replication group to which this cluster belongs. If this field is empty, the cluster is not associated with any replication group.
      * @type {string}
      * @memberof ElasticacheCacheCluster
      */
-    replicationGroupId?: string;
+    ReplicationGroupId?: string;
     /**
      * A boolean value indicating whether log delivery is enabled for the replication group.
      * @type {boolean}
      * @memberof ElasticacheCacheCluster
      */
-    replicationGroupLogDeliveryEnabled?: boolean;
+    ReplicationGroupLogDeliveryEnabled?: boolean;
     /**
      * A list of VPC Security Groups associated with the cluster.
      * @type {Array<ElasticacheSecurityGroupMembership>}
      * @memberof ElasticacheCacheCluster
      */
-    securityGroups?: Array<ElasticacheSecurityGroupMembership>;
+    SecurityGroups?: Array<ElasticacheSecurityGroupMembership>;
     /**
      * The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.  If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.
      * @type {number}
      * @memberof ElasticacheCacheCluster
      */
-    snapshotRetentionLimit?: number;
+    SnapshotRetentionLimit?: number;
     /**
      * The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cluster.  Example: 05:00-09:00
      * @type {string}
      * @memberof ElasticacheCacheCluster
      */
-    snapshotWindow?: string;
+    SnapshotWindow?: string;
     /**
      * A flag that enables in-transit encryption when set to true.  You cannot modify the value of TransitEncryptionEnabled after the cluster is created. To enable in-transit encryption on a cluster you must set TransitEncryptionEnabled to true when you create a cluster.  Required: Only available when creating a replication group in an Amazon VPC using redis version 3.2.6, 4.x or later.  Default: false
      * @type {boolean}
      * @memberof ElasticacheCacheCluster
      */
-    transitEncryptionEnabled?: boolean;
+    TransitEncryptionEnabled?: boolean;
 }
 
 

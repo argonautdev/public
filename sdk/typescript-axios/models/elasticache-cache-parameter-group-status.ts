@@ -25,19 +25,19 @@ export interface ElasticacheCacheParameterGroupStatus {
      * @type {Array<string>}
      * @memberof ElasticacheCacheParameterGroupStatus
      */
-    cacheNodeIdsToReboot?: Array<string>;
+    CacheNodeIdsToReboot?: Array<string>;
     /**
      * The name of the cache parameter group.
      * @type {string}
      * @memberof ElasticacheCacheParameterGroupStatus
      */
-    cacheParameterGroupName?: string;
+    CacheParameterGroupName?: string;
     /**
      * The status of parameter updates.
      * @type {string}
      * @memberof ElasticacheCacheParameterGroupStatus
      */
-    parameterApplyStatus?: string;
+    ParameterApplyStatus?: string;
 }
 
 

@@ -25,7 +25,7 @@ export interface EksProvider {
      * @type {string}
      * @memberof EksProvider
      */
-    keyArn?: string;
+    KeyArn?: string;
 }
 
 

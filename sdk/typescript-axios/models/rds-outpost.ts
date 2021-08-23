@@ -25,7 +25,7 @@ export interface RdsOutpost {
      * @type {string}
      * @memberof RdsOutpost
      */
-    arn?: string;
+    Arn?: string;
 }
 
 

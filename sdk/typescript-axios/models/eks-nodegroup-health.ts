@@ -26,7 +26,7 @@ export interface EksNodegroupHealth {
      * @type {Array<EksIssue>}
      * @memberof EksNodegroupHealth
      */
-    issues?: Array<EksIssue>;
+    Issues?: Array<EksIssue>;
 }
 
 

@@ -25,13 +25,13 @@ export interface RdsVpcSecurityGroupMembership {
      * @type {string}
      * @memberof RdsVpcSecurityGroupMembership
      */
-    status?: string;
+    Status?: string;
     /**
      * The name of the VPC security group.
      * @type {string}
      * @memberof RdsVpcSecurityGroupMembership
      */
-    vpcSecurityGroupId?: string;
+    VpcSecurityGroupId?: string;
 }
 
 

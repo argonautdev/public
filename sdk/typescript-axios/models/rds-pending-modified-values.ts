@@ -27,97 +27,97 @@ export interface RdsPendingModifiedValues {
      * @type {number}
      * @memberof RdsPendingModifiedValues
      */
-    allocatedStorage?: number;
+    AllocatedStorage?: number;
     /**
      * The number of days for which automated backups are retained.
      * @type {number}
      * @memberof RdsPendingModifiedValues
      */
-    backupRetentionPeriod?: number;
+    BackupRetentionPeriod?: number;
     /**
      * The identifier of the CA certificate for the DB instance.
      * @type {string}
      * @memberof RdsPendingModifiedValues
      */
-    cacertificateIdentifier?: string;
+    CACertificateIdentifier?: string;
     /**
      * The name of the compute and memory capacity class for the DB instance.
      * @type {string}
      * @memberof RdsPendingModifiedValues
      */
-    dbinstanceClass?: string;
+    DBInstanceClass?: string;
     /**
      * The database identifier for the DB instance.
      * @type {string}
      * @memberof RdsPendingModifiedValues
      */
-    dbinstanceIdentifier?: string;
+    DBInstanceIdentifier?: string;
     /**
      * The DB subnet group for the DB instance.
      * @type {string}
      * @memberof RdsPendingModifiedValues
      */
-    dbsubnetGroupName?: string;
+    DBSubnetGroupName?: string;
     /**
      * The database engine version.
      * @type {string}
      * @memberof RdsPendingModifiedValues
      */
-    engineVersion?: string;
+    EngineVersion?: string;
     /**
      * Whether mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled.
      * @type {boolean}
      * @memberof RdsPendingModifiedValues
      */
-    iamdatabaseAuthenticationEnabled?: boolean;
+    IAMDatabaseAuthenticationEnabled?: boolean;
     /**
      * The Provisioned IOPS value for the DB instance.
      * @type {number}
      * @memberof RdsPendingModifiedValues
      */
-    iops?: number;
+    Iops?: number;
     /**
      * The license model for the DB instance.  Valid values: license-included | bring-your-own-license | general-public-license
      * @type {string}
      * @memberof RdsPendingModifiedValues
      */
-    licenseModel?: string;
+    LicenseModel?: string;
     /**
      * The master credentials for the DB instance.
      * @type {string}
      * @memberof RdsPendingModifiedValues
      */
-    masterUserPassword?: string;
+    MasterUserPassword?: string;
     /**
      * A value that indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.
      * @type {boolean}
      * @memberof RdsPendingModifiedValues
      */
-    multiAZ?: boolean;
+    MultiAZ?: boolean;
     /**
      * 
      * @type {RdsPendingCloudwatchLogsExports}
      * @memberof RdsPendingModifiedValues
      */
-    pendingCloudwatchLogsExports?: RdsPendingCloudwatchLogsExports;
+    PendingCloudwatchLogsExports?: RdsPendingCloudwatchLogsExports;
     /**
      * The port for the DB instance.
      * @type {number}
      * @memberof RdsPendingModifiedValues
      */
-    port?: number;
+    Port?: number;
     /**
      * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
      * @type {Array<RdsProcessorFeature>}
      * @memberof RdsPendingModifiedValues
      */
-    processorFeatures?: Array<RdsProcessorFeature>;
+    ProcessorFeatures?: Array<RdsProcessorFeature>;
     /**
      * The storage type of the DB instance.
      * @type {string}
      * @memberof RdsPendingModifiedValues
      */
-    storageType?: string;
+    StorageType?: string;
 }
 
 

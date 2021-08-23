@@ -27,13 +27,13 @@ export interface IntegrationsDescribeClusterOutput {
      * @type {EksCluster}
      * @memberof IntegrationsDescribeClusterOutput
      */
-    cluster?: EksCluster;
+    Cluster?: EksCluster;
     /**
      * 
      * @type {Array<EksNodegroup>}
      * @memberof IntegrationsDescribeClusterOutput
      */
-    nodegroups?: Array<EksNodegroup>;
+    Nodegroups?: Array<EksNodegroup>;
     /**
      * 
      * @type {string}

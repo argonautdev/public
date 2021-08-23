@@ -25,13 +25,13 @@ export interface EksNodegroupUpdateConfig {
      * @type {number}
      * @memberof EksNodegroupUpdateConfig
      */
-    maxUnavailable?: number;
+    MaxUnavailable?: number;
     /**
      * 
      * @type {number}
      * @memberof EksNodegroupUpdateConfig
      */
-    maxUnavailablePercentage?: number;
+    MaxUnavailablePercentage?: number;
 }
 
 

@@ -25,7 +25,7 @@ export interface EksCertificate {
      * @type {string}
      * @memberof EksCertificate
      */
-    data?: string;
+    Data?: string;
 }
 
 

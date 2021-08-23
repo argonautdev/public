@@ -25,13 +25,13 @@ export interface RdsDBSecurityGroupMembership {
      * @type {string}
      * @memberof RdsDBSecurityGroupMembership
      */
-    dbsecurityGroupName?: string;
+    DBSecurityGroupName?: string;
     /**
      * The status of the DB security group.
      * @type {string}
      * @memberof RdsDBSecurityGroupMembership
      */
-    status?: string;
+    Status?: string;
 }
 
 

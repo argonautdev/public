@@ -25,13 +25,13 @@ export interface RdsProcessorFeature {
      * @type {string}
      * @memberof RdsProcessorFeature
      */
-    name?: string;
+    Name?: string;
     /**
      * The value of a processor feature name.
      * @type {string}
      * @memberof RdsProcessorFeature
      */
-    value?: string;
+    Value?: string;
 }
 
 

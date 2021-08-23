@@ -27,19 +27,19 @@ export interface IntegrationsBucketsInRegion {
      * @type {Array<S3Bucket>}
      * @memberof IntegrationsBucketsInRegion
      */
-    buckets?: Array<S3Bucket>;
+    Buckets?: Array<S3Bucket>;
     /**
      * 
      * @type {S3Owner}
      * @memberof IntegrationsBucketsInRegion
      */
-    owner?: S3Owner;
+    Owner?: S3Owner;
     /**
      * 
      * @type {string}
      * @memberof IntegrationsBucketsInRegion
      */
-    region?: string;
+    Region?: string;
 }
 
 

@@ -25,25 +25,25 @@ export interface RdsDomainMembership {
      * @type {string}
      * @memberof RdsDomainMembership
      */
-    domain?: string;
+    Domain?: string;
     /**
      * The fully qualified domain name of the Active Directory Domain.
      * @type {string}
      * @memberof RdsDomainMembership
      */
-    fqdn?: string;
+    FQDN?: string;
     /**
      * The name of the IAM role to be used when making API calls to the Directory Service.
      * @type {string}
      * @memberof RdsDomainMembership
      */
-    iamroleName?: string;
+    IAMRoleName?: string;
     /**
      * The status of the Active Directory Domain membership for the DB instance or cluster. Values include joined, pending-join, failed, and so on.
      * @type {string}
      * @memberof RdsDomainMembership
      */
-    status?: string;
+    Status?: string;
 }
 
 

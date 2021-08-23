@@ -25,13 +25,13 @@ export interface S3Owner {
      * @type {string}
      * @memberof S3Owner
      */
-    displayName?: string;
+    DisplayName?: string;
     /**
      * Container for the ID of the owner.
      * @type {string}
      * @memberof S3Owner
      */
-    id?: string;
+    ID?: string;
 }
 
 

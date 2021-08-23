@@ -25,7 +25,7 @@ export interface ElasticacheKinesisFirehoseDestinationDetails {
      * @type {string}
      * @memberof ElasticacheKinesisFirehoseDestinationDetails
      */
-    deliveryStream?: string;
+    DeliveryStream?: string;
 }
 
 

@@ -27,25 +27,25 @@ export interface RdsSubnet {
      * @type {RdsAvailabilityZone}
      * @memberof RdsSubnet
      */
-    subnetAvailabilityZone?: RdsAvailabilityZone;
+    SubnetAvailabilityZone?: RdsAvailabilityZone;
     /**
      * The identifier of the subnet.
      * @type {string}
      * @memberof RdsSubnet
      */
-    subnetIdentifier?: string;
+    SubnetIdentifier?: string;
     /**
      * 
      * @type {RdsOutpost}
      * @memberof RdsSubnet
      */
-    subnetOutpost?: RdsOutpost;
+    SubnetOutpost?: RdsOutpost;
     /**
      * The status of the subnet.
      * @type {string}
      * @memberof RdsSubnet
      */
-    subnetStatus?: string;
+    SubnetStatus?: string;
 }
 
 

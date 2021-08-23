@@ -25,7 +25,7 @@ export interface EksKubernetesNetworkConfigResponse {
      * @type {string}
      * @memberof EksKubernetesNetworkConfigResponse
      */
-    serviceIpv4Cidr?: string;
+    ServiceIpv4Cidr?: string;
 }
 
 
