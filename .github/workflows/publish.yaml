@@ -17,4 +17,4 @@ jobs:
           token: ${{ secrets.NPM_TOKEN }}
           package: ./sdk/typescript-axios/package.json
           access: public
-          dry-run: true
+          dry-run: false
