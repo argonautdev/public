@@ -23,7 +23,7 @@ import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } fr
 // @ts-ignore
 import { InlineResponseDefault } from '../models';
 // @ts-ignore
-import { IntegrationsAWSIntegration } from '../models';
+import { IntegrationsAwsResources } from '../models';
 // @ts-ignore
 import { V1TerragruntParserRequestConfig } from '../models';
 // @ts-ignore
@@ -327,7 +327,7 @@ export const V1EnvironmentApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listResourcesInEnvironment(environmentName: string, rds?: boolean, eks?: boolean, s3Bucket?: boolean, elasticache?: boolean, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<IntegrationsAWSIntegration>> {
+        async listResourcesInEnvironment(environmentName: string, rds?: boolean, eks?: boolean, s3Bucket?: boolean, elasticache?: boolean, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<IntegrationsAwsResources>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listResourcesInEnvironment(environmentName, rds, eks, s3Bucket, elasticache, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -409,7 +409,7 @@ export const V1EnvironmentApiFactory = function (configuration?: Configuration, 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listResourcesInEnvironment(environmentName: string, rds?: boolean, eks?: boolean, s3Bucket?: boolean, elasticache?: boolean, options?: any): AxiosPromise<IntegrationsAWSIntegration> {
+        listResourcesInEnvironment(environmentName: string, rds?: boolean, eks?: boolean, s3Bucket?: boolean, elasticache?: boolean, options?: any): AxiosPromise<IntegrationsAwsResources> {
             return localVarFp.listResourcesInEnvironment(environmentName, rds, eks, s3Bucket, elasticache, options).then((request) => request(axios, basePath));
         },
         /**
