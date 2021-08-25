@@ -22,6 +22,30 @@ import { GormDeletedAt } from './gorm-deleted-at';
  */
 export interface IntegrationsAWSIntegration {
     /**
+     * 
+     * @type {string}
+     * @memberof IntegrationsAWSIntegration
+     */
+    CreatedAt?: string;
+    /**
+     * 
+     * @type {GormDeletedAt}
+     * @memberof IntegrationsAWSIntegration
+     */
+    DeletedAt?: GormDeletedAt;
+    /**
+     * 
+     * @type {number}
+     * @memberof IntegrationsAWSIntegration
+     */
+    ID?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof IntegrationsAWSIntegration
+     */
+    UpdatedAt?: string;
+    /**
      * The AWS access key for this IAM user
      * @type {Array<number>}
      * @memberof IntegrationsAWSIntegration
@@ -64,35 +88,11 @@ export interface IntegrationsAWSIntegration {
      */
     aws_session_token?: Array<number>;
     /**
-     * 
-     * @type {string}
-     * @memberof IntegrationsAWSIntegration
-     */
-    createdAt?: string;
-    /**
-     * 
-     * @type {GormDeletedAt}
-     * @memberof IntegrationsAWSIntegration
-     */
-    deletedAt?: GormDeletedAt;
-    /**
-     * 
-     * @type {number}
-     * @memberof IntegrationsAWSIntegration
-     */
-    id?: number;
-    /**
      * The Organization that this integration belongs to
      * @type {number}
      * @memberof IntegrationsAWSIntegration
      */
     organization_id?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof IntegrationsAWSIntegration
-     */
-    updatedAt?: string;
     /**
      * The id of the user that linked this auth mechanism
      * @type {number}

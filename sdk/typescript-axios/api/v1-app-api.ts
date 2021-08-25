@@ -30,6 +30,10 @@ import { TypesAppDeleteRequest } from '../models';
 import { TypesAppDeleteResponse } from '../models';
 // @ts-ignore
 import { TypesAppDeployRequest } from '../models';
+// @ts-ignore
+import { V1GetApplicationDetailsHasuraRequest } from '../models';
+// @ts-ignore
+import { V1GetApplicationDetailsResponse } from '../models';
 /**
  * V1AppApi - axios parameter creator
  * @export
@@ -114,6 +118,45 @@ export const V1AppApiAxiosParamCreator = function (configuration?: Configuration
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * Get Application Details will return the list of the following `PodStruct`, `ServiceStruct`,`SecretStruct`, `ConfigMapStruct`, `PersistentVolumeStruct`, `DaemonSetStruct` `StatefulSetStruct`, and `DeploymentStruct`. 
+         * @summary Get all the details for a given application in a cluster
+         * @param {V1GetApplicationDetailsHasuraRequest} body Get Application Details Request Body
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApplicationDetails: async (body: V1GetApplicationDetailsHasuraRequest, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('getApplicationDetails', 'body', body)
+            const localVarPath = `/getApplicationDetails`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication JWTKeyAuth required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -146,6 +189,17 @@ export const V1AppApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.appDeploy(body, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
+        /**
+         * Get Application Details will return the list of the following `PodStruct`, `ServiceStruct`,`SecretStruct`, `ConfigMapStruct`, `PersistentVolumeStruct`, `DaemonSetStruct` `StatefulSetStruct`, and `DeploymentStruct`. 
+         * @summary Get all the details for a given application in a cluster
+         * @param {V1GetApplicationDetailsHasuraRequest} body Get Application Details Request Body
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getApplicationDetails(body: V1GetApplicationDetailsHasuraRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V1GetApplicationDetailsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getApplicationDetails(body, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
     }
 };
 
@@ -175,6 +229,16 @@ export const V1AppApiFactory = function (configuration?: Configuration, basePath
          */
         appDeploy(body: TypesAppDeployRequest, options?: any): AxiosPromise<ReleaseRelease> {
             return localVarFp.appDeploy(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get Application Details will return the list of the following `PodStruct`, `ServiceStruct`,`SecretStruct`, `ConfigMapStruct`, `PersistentVolumeStruct`, `DaemonSetStruct` `StatefulSetStruct`, and `DeploymentStruct`. 
+         * @summary Get all the details for a given application in a cluster
+         * @param {V1GetApplicationDetailsHasuraRequest} body Get Application Details Request Body
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getApplicationDetails(body: V1GetApplicationDetailsHasuraRequest, options?: any): AxiosPromise<V1GetApplicationDetailsResponse> {
+            return localVarFp.getApplicationDetails(body, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -208,6 +272,20 @@ export interface V1AppApiAppDeployRequest {
 }
 
 /**
+ * Request parameters for getApplicationDetails operation in V1AppApi.
+ * @export
+ * @interface V1AppApiGetApplicationDetailsRequest
+ */
+export interface V1AppApiGetApplicationDetailsRequest {
+    /**
+     * Get Application Details Request Body
+     * @type {V1GetApplicationDetailsHasuraRequest}
+     * @memberof V1AppApiGetApplicationDetails
+     */
+    readonly body: V1GetApplicationDetailsHasuraRequest
+}
+
+/**
  * V1AppApi - object-oriented interface
  * @export
  * @class V1AppApi
@@ -236,5 +314,17 @@ export class V1AppApi extends BaseAPI {
      */
     public appDeploy(requestParameters: V1AppApiAppDeployRequest, options?: any) {
         return V1AppApiFp(this.configuration).appDeploy(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get Application Details will return the list of the following `PodStruct`, `ServiceStruct`,`SecretStruct`, `ConfigMapStruct`, `PersistentVolumeStruct`, `DaemonSetStruct` `StatefulSetStruct`, and `DeploymentStruct`. 
+     * @summary Get all the details for a given application in a cluster
+     * @param {V1AppApiGetApplicationDetailsRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof V1AppApi
+     */
+    public getApplicationDetails(requestParameters: V1AppApiGetApplicationDetailsRequest, options?: any) {
+        return V1AppApiFp(this.configuration).getApplicationDetails(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }
