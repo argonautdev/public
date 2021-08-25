@@ -1,10 +1,10 @@
-# GormDeletedAt
+# S3Owner
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Time** | [**String**](string.md) |  | [optional] [default to null]
-**Valid** | [**Boolean**](boolean.md) | Valid is true if Time is not NULL | [optional] [default to null]
+**DisplayName** | [**String**](string.md) | Container for the display name of the owner. | [optional] [default to null]
+**ID** | [**String**](string.md) | Container for the ID of the owner. | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -40,7 +40,7 @@ Name | Type | Description  | Notes
 
 <a name="listResourcesInEnvironment"></a>
 # **listResourcesInEnvironment**
-> integrations.AWSIntegration listResourcesInEnvironment(environment\_name, rds, eks, s3Bucket, elasticache)
+> integrations.AwsResources listResourcesInEnvironment(environment\_name, rds, eks, s3Bucket, elasticache)
 
 List all the resources in an environment
 
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**integrations.AWSIntegration**](../Models/integrations.AWSIntegration.md)
+[**integrations.AwsResources**](../Models/integrations.AwsResources.md)
 
 ### Authorization
 

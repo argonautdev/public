@@ -1,10 +1,10 @@
-# GormDeletedAt
+# ElasticacheTag
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Time** | [**String**](string.md) |  | [optional] [default to null]
-**Valid** | [**Boolean**](boolean.md) | Valid is true if Time is not NULL | [optional] [default to null]
+**Key** | [**String**](string.md) | The key for the tag. May not be null. | [optional] [default to null]
+**Value** | [**String**](string.md) | The tag&#39;s value. May be null. | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
