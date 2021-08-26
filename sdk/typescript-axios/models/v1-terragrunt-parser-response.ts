@@ -13,6 +13,7 @@
  */
 
 
+import { ModelsEnvironment } from './models-environment';
 import { ModelsJob } from './models-job';
 
 /**
@@ -27,6 +28,12 @@ export interface V1TerragruntParserResponse {
      * @memberof V1TerragruntParserResponse
      */
     data?: { [key: string]: string; };
+    /**
+     * 
+     * @type {ModelsEnvironment}
+     * @memberof V1TerragruntParserResponse
+     */
+    environment?: ModelsEnvironment;
     /**
      * 
      * @type {ModelsJob}

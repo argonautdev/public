@@ -1,6 +1,6 @@
 {
   "name": "@argonautdev/midgard-js-sdk",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "OpenAPI client for @argonautdev/midgard-js-sdk",
   "author": "OpenAPI-Generator Contributors",
   "keywords": [
