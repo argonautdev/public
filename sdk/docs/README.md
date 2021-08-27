@@ -9,10 +9,15 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *V1AppApi* | [**appDelete**](Apis/V1AppApi.md#appdelete) | **POST** /appDelete | Deletes an app
 *V1AppApi* | [**appDeploy**](Apis/V1AppApi.md#appdeploy) | **POST** /appDeploy | Deploys an app using the art.yaml file
+*V1AppApi* | [**appRestart**](Apis/V1AppApi.md#apprestart) | **PATCH** /app/restart/{environment_name}/{environment_region}/{cluster_name}/{app_name}/{app_type} | Restarts the app in a rolling fashion
+*V1AppApi* | [**appSecretDelete**](Apis/V1AppApi.md#appsecretdelete) | **POST** /app/secret/delete | Deletes the app secret if it exists otherwise returns an error saying the app secret doesn't exist
+*V1AppApi* | [**appSecretGet**](Apis/V1AppApi.md#appsecretget) | **POST** /app/secret/get | Return the app secret if it exists otherwise returns an error saying the app secret doesn't exist
+*V1AppApi* | [**appSecretSet**](Apis/V1AppApi.md#appsecretset) | **POST** /app/secret/set | Creates/Updates app secret with the name `art-{appName}-secret`
 *V1AppApi* | [**deletePod**](Apis/V1AppApi.md#deletepod) | **DELETE** /pods/delete/{cluster_name}/{cluster_region}/{pod_name} | Deletes the given pod in the (namespace, cluster, region)
 *V1AppApi* | [**getApplicationDetails**](Apis/V1AppApi.md#getapplicationdetails) | **POST** /getApplicationDetails | Get all the details for a given application in a cluster
 *V1AppApi* | [**getPodsForDeployment**](Apis/V1AppApi.md#getpodsfordeployment) | **GET** /pods/list/{cluster_name}/{cluster_region}/{deployment_name} | Get all the pods for the given deployment
 *V1AppApi* | [**logPod**](Apis/V1AppApi.md#logpod) | **GET** /pods/logs/{cluster_name}/{cluster_region}/{pod_name} | Shows the logs of the given pod in the (namespace, cluster, region)
+*V1AppApi* | [**toolInstallFromLibrary**](Apis/V1AppApi.md#toolinstallfromlibrary) | **POST** /toolInstall | Install tools from the supported library
 *V1EnvironmentApi* | [**getCurrentEnvironmentSpec**](Apis/V1EnvironmentApi.md#getcurrentenvironmentspec) | **GET** /environment/spec/{environment_name}/{environment_region} | Gets the last applied spec for the environment if it exists
 *V1EnvironmentApi* | [**listResourcesInEnvironment**](Apis/V1EnvironmentApi.md#listresourcesinenvironment) | **GET** /environment/list-resources/{environment_name} | List all the resources in an environment
 *V1EnvironmentApi* | [**removeResourceInEnvironment**](Apis/V1EnvironmentApi.md#removeresourceinenvironment) | **DELETE** /environment/github/delete/{environment_name}/{environment_region}/{resource} | Removes the resource folder from argonaut_terraform_configs
@@ -27,6 +32,17 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [BasicJSONMessage](./Models/BasicJSONMessage.md)
+ - [CapsulesConfigCertManager](./Models/CapsulesConfigCertManager.md)
+ - [CapsulesConfigClusterAutoScaler](./Models/CapsulesConfigClusterAutoScaler.md)
+ - [CapsulesConfigClusterIssuer](./Models/CapsulesConfigClusterIssuer.md)
+ - [CapsulesConfigGrafana](./Models/CapsulesConfigGrafana.md)
+ - [CapsulesInputCertManager](./Models/CapsulesInputCertManager.md)
+ - [CapsulesInputClusterAutoScaler](./Models/CapsulesInputClusterAutoScaler.md)
+ - [CapsulesInputClusterIssuer](./Models/CapsulesInputClusterIssuer.md)
+ - [CapsulesInputEventExporter](./Models/CapsulesInputEventExporter.md)
+ - [CapsulesInputFluentBit](./Models/CapsulesInputFluentBit.md)
+ - [CapsulesInputGrafana](./Models/CapsulesInputGrafana.md)
+ - [CapsulesInputPrometheus](./Models/CapsulesInputPrometheus.md)
  - [ChartChart](./Models/ChartChart.md)
  - [ChartDependency](./Models/ChartDependency.md)
  - [ChartFile](./Models/ChartFile.md)
@@ -125,18 +141,22 @@ Class | Method | HTTP request | Description
  - [TypesNodeGroup](./Models/TypesNodeGroup.md)
  - [V1AWSElasticBlockStoreVolumeSource](./Models/V1AWSElasticBlockStoreVolumeSource.md)
  - [V1Affinity](./Models/V1Affinity.md)
+ - [V1AppSecretRequest](./Models/V1AppSecretRequest.md)
  - [V1AwsS3Bucket](./Models/V1AwsS3Bucket.md)
  - [V1AwsS3StaticSite](./Models/V1AwsS3StaticSite.md)
  - [V1AzureDiskVolumeSource](./Models/V1AzureDiskVolumeSource.md)
  - [V1AzureFileVolumeSource](./Models/V1AzureFileVolumeSource.md)
  - [V1CSIVolumeSource](./Models/V1CSIVolumeSource.md)
  - [V1Capabilities](./Models/V1Capabilities.md)
+ - [V1CapsulesStruct](./Models/V1CapsulesStruct.md)
  - [V1CephFSVolumeSource](./Models/V1CephFSVolumeSource.md)
  - [V1CinderVolumeSource](./Models/V1CinderVolumeSource.md)
  - [V1ConfigMapEnvSource](./Models/V1ConfigMapEnvSource.md)
+ - [V1ConfigMapKeySelector](./Models/V1ConfigMapKeySelector.md)
  - [V1ConfigMapProjection](./Models/V1ConfigMapProjection.md)
  - [V1ConfigMapStruct](./Models/V1ConfigMapStruct.md)
  - [V1ConfigMapVolumeSource](./Models/V1ConfigMapVolumeSource.md)
+ - [V1ConnectionResponse](./Models/V1ConnectionResponse.md)
  - [V1Container](./Models/V1Container.md)
  - [V1ContainerPort](./Models/V1ContainerPort.md)
  - [V1ContainerState](./Models/V1ContainerState.md)
@@ -153,6 +173,7 @@ Class | Method | HTTP request | Description
  - [V1EmptyDirVolumeSource](./Models/V1EmptyDirVolumeSource.md)
  - [V1EnvFromSource](./Models/V1EnvFromSource.md)
  - [V1EnvVar](./Models/V1EnvVar.md)
+ - [V1EnvVarSource](./Models/V1EnvVarSource.md)
  - [V1EnvironmentRequest](./Models/V1EnvironmentRequest.md)
  - [V1EphemeralContainer](./Models/V1EphemeralContainer.md)
  - [V1EphemeralVolumeSource](./Models/V1EphemeralVolumeSource.md)
@@ -173,6 +194,7 @@ Class | Method | HTTP request | Description
  - [V1HostAlias](./Models/V1HostAlias.md)
  - [V1HostPathVolumeSource](./Models/V1HostPathVolumeSource.md)
  - [V1ISCSIVolumeSource](./Models/V1ISCSIVolumeSource.md)
+ - [V1InstallCapsulesBody](./Models/V1InstallCapsulesBody.md)
  - [V1KeyToPath](./Models/V1KeyToPath.md)
  - [V1LabelSelector](./Models/V1LabelSelector.md)
  - [V1LabelSelectorRequirement](./Models/V1LabelSelectorRequirement.md)
@@ -217,7 +239,9 @@ Class | Method | HTTP request | Description
  - [V1SELinuxOptions](./Models/V1SELinuxOptions.md)
  - [V1ScaleIOVolumeSource](./Models/V1ScaleIOVolumeSource.md)
  - [V1SeccompProfile](./Models/V1SeccompProfile.md)
+ - [V1Secret](./Models/V1Secret.md)
  - [V1SecretEnvSource](./Models/V1SecretEnvSource.md)
+ - [V1SecretKeySelector](./Models/V1SecretKeySelector.md)
  - [V1SecretProjection](./Models/V1SecretProjection.md)
  - [V1SecretStruct](./Models/V1SecretStruct.md)
  - [V1SecretVolumeSource](./Models/V1SecretVolumeSource.md)
