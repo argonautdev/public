@@ -15,6 +15,7 @@ jobs:
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
+          registry: https://npm.pkg.github.com/
           package: ./sdk/typescript-axios/package.json
-          access: public
+          access: restricted
           dry-run: false
