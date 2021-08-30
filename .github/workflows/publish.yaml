@@ -16,6 +16,7 @@ jobs:
           registry-url: "https://npm.pkg.github.com"
       - run: |
           cd sdk/typescript-axios
+          npm login --scope=@argonautdev --registry=https://npm.pkg.github.com
           npm install
           npm publish --access restricted
         env:
