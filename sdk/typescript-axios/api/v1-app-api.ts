@@ -452,10 +452,12 @@ export const V1AppApiAxiosParamCreator = function (configuration?: Configuration
          * @param {string} clusterRegion The region of the cluster
          * @param {string} podName Name of the pod
          * @param {string} [namespace] searches for in the namespace
+         * @param {number} [sinceSeconds] limits the logs to given seconds
+         * @param {number} [tailLines] limits the logs to given number of lines, counting from the lastest log line
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        logPod: async (clusterName: string, clusterRegion: string, podName: string, namespace?: string, options: any = {}): Promise<RequestArgs> => {
+        logPod: async (clusterName: string, clusterRegion: string, podName: string, namespace?: string, sinceSeconds?: number, tailLines?: number, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'clusterName' is not null or undefined
             assertParamExists('logPod', 'clusterName', clusterName)
             // verify required parameter 'clusterRegion' is not null or undefined
@@ -482,6 +484,14 @@ export const V1AppApiAxiosParamCreator = function (configuration?: Configuration
 
             if (namespace !== undefined) {
                 localVarQueryParameter['namespace'] = namespace;
+            }
+
+            if (sinceSeconds !== undefined) {
+                localVarQueryParameter['sinceSeconds'] = sinceSeconds;
+            }
+
+            if (tailLines !== undefined) {
+                localVarQueryParameter['tailLines'] = tailLines;
             }
 
 
@@ -700,11 +710,13 @@ export const V1AppApiFp = function(configuration?: Configuration) {
          * @param {string} clusterRegion The region of the cluster
          * @param {string} podName Name of the pod
          * @param {string} [namespace] searches for in the namespace
+         * @param {number} [sinceSeconds] limits the logs to given seconds
+         * @param {number} [tailLines] limits the logs to given number of lines, counting from the lastest log line
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async logPod(clusterName: string, clusterRegion: string, podName: string, namespace?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.logPod(clusterName, clusterRegion, podName, namespace, options);
+        async logPod(clusterName: string, clusterRegion: string, podName: string, namespace?: string, sinceSeconds?: number, tailLines?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.logPod(clusterName, clusterRegion, podName, namespace, sinceSeconds, tailLines, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -847,11 +859,13 @@ export const V1AppApiFactory = function (configuration?: Configuration, basePath
          * @param {string} clusterRegion The region of the cluster
          * @param {string} podName Name of the pod
          * @param {string} [namespace] searches for in the namespace
+         * @param {number} [sinceSeconds] limits the logs to given seconds
+         * @param {number} [tailLines] limits the logs to given number of lines, counting from the lastest log line
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        logPod(clusterName: string, clusterRegion: string, podName: string, namespace?: string, options?: any): AxiosPromise<string> {
-            return localVarFp.logPod(clusterName, clusterRegion, podName, namespace, options).then((request) => request(axios, basePath));
+        logPod(clusterName: string, clusterRegion: string, podName: string, namespace?: string, sinceSeconds?: number, tailLines?: number, options?: any): AxiosPromise<string> {
+            return localVarFp.logPod(clusterName, clusterRegion, podName, namespace, sinceSeconds, tailLines, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1112,6 +1126,20 @@ export interface V1AppApiLogPodRequest {
      * @memberof V1AppApiLogPod
      */
     readonly namespace?: string
+
+    /**
+     * limits the logs to given seconds
+     * @type {number}
+     * @memberof V1AppApiLogPod
+     */
+    readonly sinceSeconds?: number
+
+    /**
+     * limits the logs to given number of lines, counting from the lastest log line
+     * @type {number}
+     * @memberof V1AppApiLogPod
+     */
+    readonly tailLines?: number
 }
 
 /**
@@ -1266,7 +1294,7 @@ export class V1AppApi extends BaseAPI {
      * @memberof V1AppApi
      */
     public logPod(requestParameters: V1AppApiLogPodRequest, options?: any) {
-        return V1AppApiFp(this.configuration).logPod(requestParameters.clusterName, requestParameters.clusterRegion, requestParameters.podName, requestParameters.namespace, options).then((request) => request(this.axios, this.basePath));
+        return V1AppApiFp(this.configuration).logPod(requestParameters.clusterName, requestParameters.clusterRegion, requestParameters.podName, requestParameters.namespace, requestParameters.sinceSeconds, requestParameters.tailLines, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
