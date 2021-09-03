@@ -112,6 +112,7 @@ export { $types_AppDeleteResponse } from './schemas/$types_AppDeleteResponse';
 export { $types_AppDeployRequest } from './schemas/$types_AppDeployRequest';
 export { $types_Cluster } from './schemas/$types_Cluster';
 export { $types_NodeGroup } from './schemas/$types_NodeGroup';
+export { $types_ToolDeleteRequest } from './schemas/$types_ToolDeleteRequest';
 export { $v1_Affinity } from './schemas/$v1_Affinity';
 export { $v1_AppSecretRequest } from './schemas/$v1_AppSecretRequest';
 export { $v1_AWSElasticBlockStoreVolumeSource } from './schemas/$v1_AWSElasticBlockStoreVolumeSource';

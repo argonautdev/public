@@ -17,13 +17,6 @@
     "build": "tsc --outDir dist/",
     "prepublishOnly": "npm run build"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/argonautdev/public.git"
-  },
   "dependencies": {
     "axios": "^0.21.1"
   },

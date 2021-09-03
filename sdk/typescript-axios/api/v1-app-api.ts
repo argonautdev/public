@@ -33,6 +33,8 @@ import { TypesAppDeleteResponse } from '../models';
 // @ts-ignore
 import { TypesAppDeployRequest } from '../models';
 // @ts-ignore
+import { TypesToolDeleteRequest } from '../models';
+// @ts-ignore
 import { V1AppSecretRequest } from '../models';
 // @ts-ignore
 import { V1ConnectionResponse } from '../models';
@@ -394,22 +396,26 @@ export const V1AppApiAxiosParamCreator = function (configuration?: Configuration
          * @summary Get all the pods for the given deployment
          * @param {string} clusterName Cluster name in which the pods are to be searched for
          * @param {string} clusterRegion The region of the cluster
-         * @param {string} deploymentName Deployment name for which the pods are to be searched for
+         * @param {'daemon-set' | 'deployment' | 'stateful-set' | 'replica-set'} resourceType Type of the resource we need to search the pods for
+         * @param {string} resourceName Deployment name for which the pods are to be searched for
          * @param {string} [namespace] searches for in the namespace
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPodsForDeployment: async (clusterName: string, clusterRegion: string, deploymentName: string, namespace?: string, options: any = {}): Promise<RequestArgs> => {
+        getPodsForDeployment: async (clusterName: string, clusterRegion: string, resourceType: 'daemon-set' | 'deployment' | 'stateful-set' | 'replica-set', resourceName: string, namespace?: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'clusterName' is not null or undefined
             assertParamExists('getPodsForDeployment', 'clusterName', clusterName)
             // verify required parameter 'clusterRegion' is not null or undefined
             assertParamExists('getPodsForDeployment', 'clusterRegion', clusterRegion)
-            // verify required parameter 'deploymentName' is not null or undefined
-            assertParamExists('getPodsForDeployment', 'deploymentName', deploymentName)
-            const localVarPath = `/pods/list/{cluster_name}/{cluster_region}/{deployment_name}`
+            // verify required parameter 'resourceType' is not null or undefined
+            assertParamExists('getPodsForDeployment', 'resourceType', resourceType)
+            // verify required parameter 'resourceName' is not null or undefined
+            assertParamExists('getPodsForDeployment', 'resourceName', resourceName)
+            const localVarPath = `/pods/list/{cluster_name}/{cluster_region}/{resource_type}/{resource_name}`
                 .replace(`{${"cluster_name"}}`, encodeURIComponent(String(clusterName)))
                 .replace(`{${"cluster_region"}}`, encodeURIComponent(String(clusterRegion)))
-                .replace(`{${"deployment_name"}}`, encodeURIComponent(String(deploymentName)));
+                .replace(`{${"resource_type"}}`, encodeURIComponent(String(resourceType)))
+                .replace(`{${"resource_name"}}`, encodeURIComponent(String(resourceName)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -483,6 +489,45 @@ export const V1AppApiAxiosParamCreator = function (configuration?: Configuration
             setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Delete tools from supported library
+         * @param {TypesToolDeleteRequest} body Tools Delete Request Body
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        toolDeleteFromLibrary: async (body: TypesToolDeleteRequest, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('toolDeleteFromLibrary', 'body', body)
+            const localVarPath = `/tools/delete`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication JWTKeyAuth required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -638,13 +683,14 @@ export const V1AppApiFp = function(configuration?: Configuration) {
          * @summary Get all the pods for the given deployment
          * @param {string} clusterName Cluster name in which the pods are to be searched for
          * @param {string} clusterRegion The region of the cluster
-         * @param {string} deploymentName Deployment name for which the pods are to be searched for
+         * @param {'daemon-set' | 'deployment' | 'stateful-set' | 'replica-set'} resourceType Type of the resource we need to search the pods for
+         * @param {string} resourceName Deployment name for which the pods are to be searched for
          * @param {string} [namespace] searches for in the namespace
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getPodsForDeployment(clusterName: string, clusterRegion: string, deploymentName: string, namespace?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V1PodList>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getPodsForDeployment(clusterName, clusterRegion, deploymentName, namespace, options);
+        async getPodsForDeployment(clusterName: string, clusterRegion: string, resourceType: 'daemon-set' | 'deployment' | 'stateful-set' | 'replica-set', resourceName: string, namespace?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V1PodList>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getPodsForDeployment(clusterName, clusterRegion, resourceType, resourceName, namespace, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -659,6 +705,17 @@ export const V1AppApiFp = function(configuration?: Configuration) {
          */
         async logPod(clusterName: string, clusterRegion: string, podName: string, namespace?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.logPod(clusterName, clusterRegion, podName, namespace, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @summary Delete tools from supported library
+         * @param {TypesToolDeleteRequest} body Tools Delete Request Body
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async toolDeleteFromLibrary(body: TypesToolDeleteRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<TypesAppDeleteRequest>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.toolDeleteFromLibrary(body, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -774,13 +831,14 @@ export const V1AppApiFactory = function (configuration?: Configuration, basePath
          * @summary Get all the pods for the given deployment
          * @param {string} clusterName Cluster name in which the pods are to be searched for
          * @param {string} clusterRegion The region of the cluster
-         * @param {string} deploymentName Deployment name for which the pods are to be searched for
+         * @param {'daemon-set' | 'deployment' | 'stateful-set' | 'replica-set'} resourceType Type of the resource we need to search the pods for
+         * @param {string} resourceName Deployment name for which the pods are to be searched for
          * @param {string} [namespace] searches for in the namespace
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPodsForDeployment(clusterName: string, clusterRegion: string, deploymentName: string, namespace?: string, options?: any): AxiosPromise<V1PodList> {
-            return localVarFp.getPodsForDeployment(clusterName, clusterRegion, deploymentName, namespace, options).then((request) => request(axios, basePath));
+        getPodsForDeployment(clusterName: string, clusterRegion: string, resourceType: 'daemon-set' | 'deployment' | 'stateful-set' | 'replica-set', resourceName: string, namespace?: string, options?: any): AxiosPromise<V1PodList> {
+            return localVarFp.getPodsForDeployment(clusterName, clusterRegion, resourceType, resourceName, namespace, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -794,6 +852,16 @@ export const V1AppApiFactory = function (configuration?: Configuration, basePath
          */
         logPod(clusterName: string, clusterRegion: string, podName: string, namespace?: string, options?: any): AxiosPromise<string> {
             return localVarFp.logPod(clusterName, clusterRegion, podName, namespace, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Delete tools from supported library
+         * @param {TypesToolDeleteRequest} body Tools Delete Request Body
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        toolDeleteFromLibrary(body: TypesToolDeleteRequest, options?: any): AxiosPromise<Array<TypesAppDeleteRequest>> {
+            return localVarFp.toolDeleteFromLibrary(body, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -990,11 +1058,18 @@ export interface V1AppApiGetPodsForDeploymentRequest {
     readonly clusterRegion: string
 
     /**
+     * Type of the resource we need to search the pods for
+     * @type {'daemon-set' | 'deployment' | 'stateful-set' | 'replica-set'}
+     * @memberof V1AppApiGetPodsForDeployment
+     */
+    readonly resourceType: 'daemon-set' | 'deployment' | 'stateful-set' | 'replica-set'
+
+    /**
      * Deployment name for which the pods are to be searched for
      * @type {string}
      * @memberof V1AppApiGetPodsForDeployment
      */
-    readonly deploymentName: string
+    readonly resourceName: string
 
     /**
      * searches for in the namespace
@@ -1037,6 +1112,20 @@ export interface V1AppApiLogPodRequest {
      * @memberof V1AppApiLogPod
      */
     readonly namespace?: string
+}
+
+/**
+ * Request parameters for toolDeleteFromLibrary operation in V1AppApi.
+ * @export
+ * @interface V1AppApiToolDeleteFromLibraryRequest
+ */
+export interface V1AppApiToolDeleteFromLibraryRequest {
+    /**
+     * Tools Delete Request Body
+     * @type {TypesToolDeleteRequest}
+     * @memberof V1AppApiToolDeleteFromLibrary
+     */
+    readonly body: TypesToolDeleteRequest
 }
 
 /**
@@ -1165,7 +1254,7 @@ export class V1AppApi extends BaseAPI {
      * @memberof V1AppApi
      */
     public getPodsForDeployment(requestParameters: V1AppApiGetPodsForDeploymentRequest, options?: any) {
-        return V1AppApiFp(this.configuration).getPodsForDeployment(requestParameters.clusterName, requestParameters.clusterRegion, requestParameters.deploymentName, requestParameters.namespace, options).then((request) => request(this.axios, this.basePath));
+        return V1AppApiFp(this.configuration).getPodsForDeployment(requestParameters.clusterName, requestParameters.clusterRegion, requestParameters.resourceType, requestParameters.resourceName, requestParameters.namespace, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1178,6 +1267,18 @@ export class V1AppApi extends BaseAPI {
      */
     public logPod(requestParameters: V1AppApiLogPodRequest, options?: any) {
         return V1AppApiFp(this.configuration).logPod(requestParameters.clusterName, requestParameters.clusterRegion, requestParameters.podName, requestParameters.namespace, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Delete tools from supported library
+     * @param {V1AppApiToolDeleteFromLibraryRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof V1AppApi
+     */
+    public toolDeleteFromLibrary(requestParameters: V1AppApiToolDeleteFromLibraryRequest, options?: any) {
+        return V1AppApiFp(this.configuration).toolDeleteFromLibrary(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

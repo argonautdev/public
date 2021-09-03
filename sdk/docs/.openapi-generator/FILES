@@ -110,6 +110,7 @@ Models/TypesAppDeleteResponse.md
 Models/TypesAppDeployRequest.md
 Models/TypesCluster.md
 Models/TypesNodeGroup.md
+Models/TypesToolDeleteRequest.md
 Models/V1AWSElasticBlockStoreVolumeSource.md
 Models/V1Affinity.md
 Models/V1AppSecretRequest.md

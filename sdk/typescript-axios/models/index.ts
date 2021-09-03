@@ -106,6 +106,7 @@ export * from './types-app-delete-response';
 export * from './types-app-deploy-request';
 export * from './types-cluster';
 export * from './types-node-group';
+export * from './types-tool-delete-request';
 export * from './v1-awselastic-block-store-volume-source';
 export * from './v1-affinity';
 export * from './v1-app-secret-request';

@@ -15,8 +15,9 @@ Class | Method | HTTP request | Description
 *V1AppApi* | [**appSecretSet**](Apis/V1AppApi.md#appsecretset) | **POST** /app/secret/set | Creates/Updates app secret with the name `art-{appName}-secret`
 *V1AppApi* | [**deletePod**](Apis/V1AppApi.md#deletepod) | **DELETE** /pods/delete/{cluster_name}/{cluster_region}/{pod_name} | Deletes the given pod in the (namespace, cluster, region)
 *V1AppApi* | [**getApplicationDetails**](Apis/V1AppApi.md#getapplicationdetails) | **POST** /getApplicationDetails | Get all the details for a given application in a cluster
-*V1AppApi* | [**getPodsForDeployment**](Apis/V1AppApi.md#getpodsfordeployment) | **GET** /pods/list/{cluster_name}/{cluster_region}/{deployment_name} | Get all the pods for the given deployment
+*V1AppApi* | [**getPodsForDeployment**](Apis/V1AppApi.md#getpodsfordeployment) | **GET** /pods/list/{cluster_name}/{cluster_region}/{resource_type}/{resource_name} | Get all the pods for the given deployment
 *V1AppApi* | [**logPod**](Apis/V1AppApi.md#logpod) | **GET** /pods/logs/{cluster_name}/{cluster_region}/{pod_name} | Shows the logs of the given pod in the (namespace, cluster, region)
+*V1AppApi* | [**toolDeleteFromLibrary**](Apis/V1AppApi.md#tooldeletefromlibrary) | **POST** /tools/delete | Delete tools from supported library
 *V1AppApi* | [**toolInstallFromLibrary**](Apis/V1AppApi.md#toolinstallfromlibrary) | **POST** /toolInstall | Install tools from the supported library
 *V1EnvironmentApi* | [**getCurrentEnvironmentSpec**](Apis/V1EnvironmentApi.md#getcurrentenvironmentspec) | **GET** /environment/spec/{environment_name}/{environment_region} | Gets the last applied spec for the environment if it exists
 *V1EnvironmentApi* | [**listResourcesInEnvironment**](Apis/V1EnvironmentApi.md#listresourcesinenvironment) | **GET** /environment/list-resources/{environment_name} | List all the resources in an environment
@@ -139,6 +140,7 @@ Class | Method | HTTP request | Description
  - [TypesAppDeployRequest](./Models/TypesAppDeployRequest.md)
  - [TypesCluster](./Models/TypesCluster.md)
  - [TypesNodeGroup](./Models/TypesNodeGroup.md)
+ - [TypesToolDeleteRequest](./Models/TypesToolDeleteRequest.md)
  - [V1AWSElasticBlockStoreVolumeSource](./Models/V1AWSElasticBlockStoreVolumeSource.md)
  - [V1Affinity](./Models/V1Affinity.md)
  - [V1AppSecretRequest](./Models/V1AppSecretRequest.md)

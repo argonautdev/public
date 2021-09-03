@@ -1,24 +1,20 @@
-name: Node.js Package
-on:
-  push
-  # release:
-  #   types: [created]
+on: push
+
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
+    defaults:
+      run:
+        working-directory: sdk/typescript-axios
     steps:
-      - uses: actions/checkout@v2
-      # Setup .npmrc file to publish to npm
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
         with:
-          registry-url: "https://npm.pkg.github.com"
-      - run: |
-          cd sdk/typescript-axios
-          npm login --scope=@argonautdev --registry=https://npm.pkg.github.com
-          npm install
-          npm publish --access restricted
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          node-version: 14
+      - run: npm install
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./sdk/typescript-axios/package.json
+          access: public
+          dry-run: false

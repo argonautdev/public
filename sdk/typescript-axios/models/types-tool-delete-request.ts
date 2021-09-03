@@ -13,31 +13,32 @@
  */
 
 
+import { TypesAppDeleteRequest } from './types-app-delete-request';
 
 /**
  * 
  * @export
- * @interface TypesAppDeployRequest
+ * @interface TypesToolDeleteRequest
  */
-export interface TypesAppDeployRequest {
-    /**
-     * EnvironmentID int    `json:\"environment_id\" yaml:\"environment_id\"`
-     * @type {boolean}
-     * @memberof TypesAppDeployRequest
-     */
-    dry_run: boolean;
+export interface TypesToolDeleteRequest {
     /**
      * 
-     * @type {Array<string>}
-     * @memberof TypesAppDeployRequest
-     */
-    setOptions?: Array<string>;
-    /**
-     * values yaml encode in base64
      * @type {string}
-     * @memberof TypesAppDeployRequest
+     * @memberof TypesToolDeleteRequest
      */
-    values: string;
+    kind?: string;
+    /**
+     * 
+     * @type {Array<TypesAppDeleteRequest>}
+     * @memberof TypesToolDeleteRequest
+     */
+    spec?: Array<TypesAppDeleteRequest>;
+    /**
+     * 
+     * @type {string}
+     * @memberof TypesToolDeleteRequest
+     */
+    version?: string;
 }
 
 

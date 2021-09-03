@@ -12,8 +12,9 @@ Method | HTTP request | Description
 [**appSecretSet**](V1AppApi.md#appSecretSet) | **POST** /app/secret/set | Creates/Updates app secret with the name &#x60;art-{appName}-secret&#x60;
 [**deletePod**](V1AppApi.md#deletePod) | **DELETE** /pods/delete/{cluster_name}/{cluster_region}/{pod_name} | Deletes the given pod in the (namespace, cluster, region)
 [**getApplicationDetails**](V1AppApi.md#getApplicationDetails) | **POST** /getApplicationDetails | Get all the details for a given application in a cluster
-[**getPodsForDeployment**](V1AppApi.md#getPodsForDeployment) | **GET** /pods/list/{cluster_name}/{cluster_region}/{deployment_name} | Get all the pods for the given deployment
+[**getPodsForDeployment**](V1AppApi.md#getPodsForDeployment) | **GET** /pods/list/{cluster_name}/{cluster_region}/{resource_type}/{resource_name} | Get all the pods for the given deployment
 [**logPod**](V1AppApi.md#logPod) | **GET** /pods/logs/{cluster_name}/{cluster_region}/{pod_name} | Shows the logs of the given pod in the (namespace, cluster, region)
+[**toolDeleteFromLibrary**](V1AppApi.md#toolDeleteFromLibrary) | **POST** /tools/delete | Delete tools from supported library
 [**toolInstallFromLibrary**](V1AppApi.md#toolInstallFromLibrary) | **POST** /toolInstall | Install tools from the supported library
 
 
@@ -228,7 +229,7 @@ Name | Type | Description  | Notes
 
 <a name="getPodsForDeployment"></a>
 # **getPodsForDeployment**
-> v1.PodList getPodsForDeployment(cluster\_name, cluster\_region, deployment\_name, namespace)
+> v1.PodList getPodsForDeployment(cluster\_name, cluster\_region, resource\_type, resource\_name, namespace)
 
 Get all the pods for the given deployment
 
@@ -238,7 +239,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cluster\_name** | **String**| Cluster name in which the pods are to be searched for | [default to null]
  **cluster\_region** | **String**| The region of the cluster | [default to null]
- **deployment\_name** | **String**| Deployment name for which the pods are to be searched for | [default to null]
+ **resource\_type** | **String**| Type of the resource we need to search the pods for | [default to null] [enum: daemon-set, deployment, stateful-set, replica-set]
+ **resource\_name** | **String**| Deployment name for which the pods are to be searched for | [default to null]
  **namespace** | **String**| searches for in the namespace | [optional] [default to tools]
 
 ### Return type
@@ -280,6 +282,31 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+<a name="toolDeleteFromLibrary"></a>
+# **toolDeleteFromLibrary**
+> List toolDeleteFromLibrary(Body)
+
+Delete tools from supported library
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **Body** | [**TypesToolDeleteRequest**](../Models/TypesToolDeleteRequest.md)| Tools Delete Request Body |
+
+### Return type
+
+[**List**](../Models/types.AppDeleteRequest.md)
+
+### Authorization
+
+[JWTKeyAuth](../README.md#JWTKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 <a name="toolInstallFromLibrary"></a>

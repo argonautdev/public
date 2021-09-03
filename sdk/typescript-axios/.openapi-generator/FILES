@@ -120,6 +120,7 @@ models/types-app-delete-response.ts
 models/types-app-deploy-request.ts
 models/types-cluster.ts
 models/types-node-group.ts
+models/types-tool-delete-request.ts
 models/v1-affinity.ts
 models/v1-app-secret-request.ts
 models/v1-aws-s3-bucket.ts
