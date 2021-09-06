@@ -73,6 +73,7 @@ export { $integrations_OAuthIntegration } from './schemas/$integrations_OAuthInt
 export { $integrations_OIDCIntegration } from './schemas/$integrations_OIDCIntegration';
 export { $integrations_RegTokenCache } from './schemas/$integrations_RegTokenCache';
 export { $intstr_IntOrString } from './schemas/$intstr_IntOrString';
+export { $kubernetes_ListResourceInYamlOutput } from './schemas/$kubernetes_ListResourceInYamlOutput';
 export { $models_Capsule } from './schemas/$models_Capsule';
 export { $models_Environment } from './schemas/$models_Environment';
 export { $models_GhInstallation } from './schemas/$models_GhInstallation';

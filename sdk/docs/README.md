@@ -18,6 +18,7 @@ Class | Method | HTTP request | Description
 *V1AppApi* | [**getApplicationDetails**](Apis/V1AppApi.md#getapplicationdetails) | **POST** /getApplicationDetails | Get all the details for a given application in a cluster
 *V1AppApi* | [**getPod**](Apis/V1AppApi.md#getpod) | **GET** /pods/get/{cluster_name}/{cluster_region}/{pod_name} | Shows the pod information
 *V1AppApi* | [**getPodsForDeployment**](Apis/V1AppApi.md#getpodsfordeployment) | **GET** /pods/list/{cluster_name}/{cluster_region}/{resource_type}/{resource_name} | Get all the pods for the given deployment
+*V1AppApi* | [**listResourceInYaml**](Apis/V1AppApi.md#listresourceinyaml) | **GET** /list-resources/{cluster_name}/{cluster_region} | Get all the resource description in yaml format
 *V1AppApi* | [**logPod**](Apis/V1AppApi.md#logpod) | **GET** /pods/logs/{cluster_name}/{cluster_region}/{pod_name} | Shows the logs of the given pod in the (namespace, cluster, region)
 *V1AppApi* | [**toolDeleteFromLibrary**](Apis/V1AppApi.md#tooldeletefromlibrary) | **POST** /tools/delete | Delete tools from supported library
 *V1AppApi* | [**toolInstallFromLibrary**](Apis/V1AppApi.md#toolinstallfromlibrary) | **POST** /toolInstall | Install tools from the supported library
@@ -103,6 +104,7 @@ Class | Method | HTTP request | Description
  - [IntegrationsOIDCIntegration](./Models/IntegrationsOIDCIntegration.md)
  - [IntegrationsRegTokenCache](./Models/IntegrationsRegTokenCache.md)
  - [IntstrIntOrString](./Models/IntstrIntOrString.md)
+ - [KubernetesListResourceInYamlOutput](./Models/KubernetesListResourceInYamlOutput.md)
  - [ModelsCapsule](./Models/ModelsCapsule.md)
  - [ModelsEnvironment](./Models/ModelsEnvironment.md)
  - [ModelsGhInstallation](./Models/ModelsGhInstallation.md)

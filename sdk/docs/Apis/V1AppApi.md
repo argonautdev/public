@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**getApplicationDetails**](V1AppApi.md#getApplicationDetails) | **POST** /getApplicationDetails | Get all the details for a given application in a cluster
 [**getPod**](V1AppApi.md#getPod) | **GET** /pods/get/{cluster_name}/{cluster_region}/{pod_name} | Shows the pod information
 [**getPodsForDeployment**](V1AppApi.md#getPodsForDeployment) | **GET** /pods/list/{cluster_name}/{cluster_region}/{resource_type}/{resource_name} | Get all the pods for the given deployment
+[**listResourceInYaml**](V1AppApi.md#listResourceInYaml) | **GET** /list-resources/{cluster_name}/{cluster_region} | Get all the resource description in yaml format
 [**logPod**](V1AppApi.md#logPod) | **GET** /pods/logs/{cluster_name}/{cluster_region}/{pod_name} | Shows the logs of the given pod in the (namespace, cluster, region)
 [**toolDeleteFromLibrary**](V1AppApi.md#toolDeleteFromLibrary) | **POST** /tools/delete | Delete tools from supported library
 [**toolInstallFromLibrary**](V1AppApi.md#toolInstallFromLibrary) | **POST** /toolInstall | Install tools from the supported library
@@ -303,6 +304,34 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**v1.PodList**](../Models/v1.PodList.md)
+
+### Authorization
+
+[JWTKeyAuth](../README.md#JWTKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+<a name="listResourceInYaml"></a>
+# **listResourceInYaml**
+> kubernetes.ListResourceInYamlOutput listResourceInYaml(cluster\_name, cluster\_region, resource\_type, namespace)
+
+Get all the resource description in yaml format
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cluster\_name** | **String**| Cluster name | [default to null]
+ **cluster\_region** | **String**| The region of the cluster | [default to null]
+ **resource\_type** | [**List**](../Models/String.md)| Type of the resource to include | [default to null] [enum: ConfigMap, Secret, Service, Pod, Ingress, Certificate]
+ **namespace** | **String**| searches for in the namespace | [optional] [default to tools]
+
+### Return type
+
+[**kubernetes.ListResourceInYamlOutput**](../Models/kubernetes.ListResourceInYamlOutput.md)
 
 ### Authorization
 

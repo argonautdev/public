@@ -81,6 +81,7 @@ models/integrations-oauth-integration.ts
 models/integrations-oidcintegration.ts
 models/integrations-reg-token-cache.ts
 models/intstr-int-or-string.ts
+models/kubernetes-list-resource-in-yaml-output.ts
 models/models-capsule.ts
 models/models-environment.ts
 models/models-gh-installation.ts

@@ -25,6 +25,8 @@ import { BasicJSONMessage } from '../models';
 // @ts-ignore
 import { InlineResponseDefault } from '../models';
 // @ts-ignore
+import { KubernetesListResourceInYamlOutput } from '../models';
+// @ts-ignore
 import { ReleaseRelease } from '../models';
 // @ts-ignore
 import { TypesAppDeleteRequest } from '../models';
@@ -551,6 +553,59 @@ export const V1AppApiAxiosParamCreator = function (configuration?: Configuration
         },
         /**
          * 
+         * @summary Get all the resource description in yaml format
+         * @param {string} clusterName Cluster name
+         * @param {string} clusterRegion The region of the cluster
+         * @param {Array<string>} resourceType Type of the resource to include
+         * @param {string} [namespace] searches for in the namespace
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listResourceInYaml: async (clusterName: string, clusterRegion: string, resourceType: Array<string>, namespace?: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'clusterName' is not null or undefined
+            assertParamExists('listResourceInYaml', 'clusterName', clusterName)
+            // verify required parameter 'clusterRegion' is not null or undefined
+            assertParamExists('listResourceInYaml', 'clusterRegion', clusterRegion)
+            // verify required parameter 'resourceType' is not null or undefined
+            assertParamExists('listResourceInYaml', 'resourceType', resourceType)
+            const localVarPath = `/list-resources/{cluster_name}/{cluster_region}`
+                .replace(`{${"cluster_name"}}`, encodeURIComponent(String(clusterName)))
+                .replace(`{${"cluster_region"}}`, encodeURIComponent(String(clusterRegion)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication JWTKeyAuth required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            if (resourceType) {
+                localVarQueryParameter['resource_type'] = resourceType.join(COLLECTION_FORMATS.csv);
+            }
+
+            if (namespace !== undefined) {
+                localVarQueryParameter['namespace'] = namespace;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Shows the logs of the given pod in the (namespace, cluster, region)
          * @param {string} clusterName Cluster name in which the pods are to be searched for
          * @param {string} clusterRegion The region of the cluster
@@ -836,6 +891,20 @@ export const V1AppApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Get all the resource description in yaml format
+         * @param {string} clusterName Cluster name
+         * @param {string} clusterRegion The region of the cluster
+         * @param {Array<string>} resourceType Type of the resource to include
+         * @param {string} [namespace] searches for in the namespace
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async listResourceInYaml(clusterName: string, clusterRegion: string, resourceType: Array<string>, namespace?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<KubernetesListResourceInYamlOutput>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listResourceInYaml(clusterName, clusterRegion, resourceType, namespace, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
          * @summary Shows the logs of the given pod in the (namespace, cluster, region)
          * @param {string} clusterName Cluster name in which the pods are to be searched for
          * @param {string} clusterRegion The region of the cluster
@@ -1007,6 +1076,19 @@ export const V1AppApiFactory = function (configuration?: Configuration, basePath
          */
         getPodsForDeployment(clusterName: string, clusterRegion: string, resourceType: 'daemon-set' | 'deployment' | 'stateful-set' | 'replica-set', resourceName: string, namespace?: string, options?: any): AxiosPromise<V1PodList> {
             return localVarFp.getPodsForDeployment(clusterName, clusterRegion, resourceType, resourceName, namespace, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Get all the resource description in yaml format
+         * @param {string} clusterName Cluster name
+         * @param {string} clusterRegion The region of the cluster
+         * @param {Array<string>} resourceType Type of the resource to include
+         * @param {string} [namespace] searches for in the namespace
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listResourceInYaml(clusterName: string, clusterRegion: string, resourceType: Array<string>, namespace?: string, options?: any): AxiosPromise<KubernetesListResourceInYamlOutput> {
+            return localVarFp.listResourceInYaml(clusterName, clusterRegion, resourceType, namespace, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1313,6 +1395,41 @@ export interface V1AppApiGetPodsForDeploymentRequest {
 }
 
 /**
+ * Request parameters for listResourceInYaml operation in V1AppApi.
+ * @export
+ * @interface V1AppApiListResourceInYamlRequest
+ */
+export interface V1AppApiListResourceInYamlRequest {
+    /**
+     * Cluster name
+     * @type {string}
+     * @memberof V1AppApiListResourceInYaml
+     */
+    readonly clusterName: string
+
+    /**
+     * The region of the cluster
+     * @type {string}
+     * @memberof V1AppApiListResourceInYaml
+     */
+    readonly clusterRegion: string
+
+    /**
+     * Type of the resource to include
+     * @type {Array<string>}
+     * @memberof V1AppApiListResourceInYaml
+     */
+    readonly resourceType: Array<string>
+
+    /**
+     * searches for in the namespace
+     * @type {string}
+     * @memberof V1AppApiListResourceInYaml
+     */
+    readonly namespace?: string
+}
+
+/**
  * Request parameters for logPod operation in V1AppApi.
  * @export
  * @interface V1AppApiLogPodRequest
@@ -1526,6 +1643,18 @@ export class V1AppApi extends BaseAPI {
      */
     public getPodsForDeployment(requestParameters: V1AppApiGetPodsForDeploymentRequest, options?: any) {
         return V1AppApiFp(this.configuration).getPodsForDeployment(requestParameters.clusterName, requestParameters.clusterRegion, requestParameters.resourceType, requestParameters.resourceName, requestParameters.namespace, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Get all the resource description in yaml format
+     * @param {V1AppApiListResourceInYamlRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof V1AppApi
+     */
+    public listResourceInYaml(requestParameters: V1AppApiListResourceInYamlRequest, options?: any) {
+        return V1AppApiFp(this.configuration).listResourceInYaml(requestParameters.clusterName, requestParameters.clusterRegion, requestParameters.resourceType, requestParameters.namespace, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

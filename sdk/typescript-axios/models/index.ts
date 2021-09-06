@@ -67,6 +67,7 @@ export * from './integrations-oauth-integration';
 export * from './integrations-oidcintegration';
 export * from './integrations-reg-token-cache';
 export * from './intstr-int-or-string';
+export * from './kubernetes-list-resource-in-yaml-output';
 export * from './models-capsule';
 export * from './models-environment';
 export * from './models-gh-installation';

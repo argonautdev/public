@@ -71,6 +71,7 @@ Models/IntegrationsOAuthIntegration.md
 Models/IntegrationsOIDCIntegration.md
 Models/IntegrationsRegTokenCache.md
 Models/IntstrIntOrString.md
+Models/KubernetesListResourceInYamlOutput.md
 Models/ModelsCapsule.md
 Models/ModelsEnvironment.md
 Models/ModelsGhInstallation.md
