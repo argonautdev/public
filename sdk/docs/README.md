@@ -13,8 +13,10 @@ Class | Method | HTTP request | Description
 *V1AppApi* | [**appSecretDelete**](Apis/V1AppApi.md#appsecretdelete) | **POST** /app/secret/delete | Deletes the app secret if it exists otherwise returns an error saying the app secret doesn't exist
 *V1AppApi* | [**appSecretGet**](Apis/V1AppApi.md#appsecretget) | **POST** /app/secret/get | Return the app secret if it exists otherwise returns an error saying the app secret doesn't exist
 *V1AppApi* | [**appSecretSet**](Apis/V1AppApi.md#appsecretset) | **POST** /app/secret/set | Creates/Updates app secret with the name `art-{appName}-secret`
+*V1AppApi* | [**authenticationTokenForCluster**](Apis/V1AppApi.md#authenticationtokenforcluster) | **GET** /auth-token | Get the token for the cluster
 *V1AppApi* | [**deletePod**](Apis/V1AppApi.md#deletepod) | **DELETE** /pods/delete/{cluster_name}/{cluster_region}/{pod_name} | Deletes the given pod in the (namespace, cluster, region)
 *V1AppApi* | [**getApplicationDetails**](Apis/V1AppApi.md#getapplicationdetails) | **POST** /getApplicationDetails | Get all the details for a given application in a cluster
+*V1AppApi* | [**getPod**](Apis/V1AppApi.md#getpod) | **GET** /pods/get/{cluster_name}/{cluster_region}/{pod_name} | Shows the pod information
 *V1AppApi* | [**getPodsForDeployment**](Apis/V1AppApi.md#getpodsfordeployment) | **GET** /pods/list/{cluster_name}/{cluster_region}/{resource_type}/{resource_name} | Get all the pods for the given deployment
 *V1AppApi* | [**logPod**](Apis/V1AppApi.md#logpod) | **GET** /pods/logs/{cluster_name}/{cluster_region}/{pod_name} | Shows the logs of the given pod in the (namespace, cluster, region)
 *V1AppApi* | [**toolDeleteFromLibrary**](Apis/V1AppApi.md#tooldeletefromlibrary) | **POST** /tools/delete | Delete tools from supported library

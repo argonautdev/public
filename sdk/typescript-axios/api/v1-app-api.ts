@@ -45,6 +45,8 @@ import { V1GetApplicationDetailsResponse } from '../models';
 // @ts-ignore
 import { V1InstallCapsulesBody } from '../models';
 // @ts-ignore
+import { V1Pod } from '../models';
+// @ts-ignore
 import { V1PodList } from '../models';
 // @ts-ignore
 import { V1Secret } from '../models';
@@ -304,6 +306,58 @@ export const V1AppApiAxiosParamCreator = function (configuration?: Configuration
         },
         /**
          * 
+         * @summary Get the token for the cluster
+         * @param {string} clusterName Cluster name in which the pods are to be searched for
+         * @param {string} clusterRegion The region of the cluster
+         * @param {string} [namespace] searches for in the namespace
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        authenticationTokenForCluster: async (clusterName: string, clusterRegion: string, namespace?: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'clusterName' is not null or undefined
+            assertParamExists('authenticationTokenForCluster', 'clusterName', clusterName)
+            // verify required parameter 'clusterRegion' is not null or undefined
+            assertParamExists('authenticationTokenForCluster', 'clusterRegion', clusterRegion)
+            const localVarPath = `/auth-token`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication JWTKeyAuth required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            if (clusterName !== undefined) {
+                localVarQueryParameter['cluster_name'] = clusterName;
+            }
+
+            if (clusterRegion !== undefined) {
+                localVarQueryParameter['cluster_region'] = clusterRegion;
+            }
+
+            if (namespace !== undefined) {
+                localVarQueryParameter['namespace'] = namespace;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Deletes the given pod in the (namespace, cluster, region)
          * @param {string} clusterName Cluster name in which the pods are to be searched for
          * @param {string} clusterRegion The region of the cluster
@@ -385,6 +439,56 @@ export const V1AppApiAxiosParamCreator = function (configuration?: Configuration
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Shows the pod information
+         * @param {string} clusterName Cluster name
+         * @param {string} clusterRegion The region of the cluster
+         * @param {string} podName Name of the pod
+         * @param {string} [namespace] searches for in the namespace
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getPod: async (clusterName: string, clusterRegion: string, podName: string, namespace?: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'clusterName' is not null or undefined
+            assertParamExists('getPod', 'clusterName', clusterName)
+            // verify required parameter 'clusterRegion' is not null or undefined
+            assertParamExists('getPod', 'clusterRegion', clusterRegion)
+            // verify required parameter 'podName' is not null or undefined
+            assertParamExists('getPod', 'podName', podName)
+            const localVarPath = `/pods/get/{cluster_name}/{cluster_region}/{pod_name}`
+                .replace(`{${"cluster_name"}}`, encodeURIComponent(String(clusterName)))
+                .replace(`{${"cluster_region"}}`, encodeURIComponent(String(clusterRegion)))
+                .replace(`{${"pod_name"}}`, encodeURIComponent(String(podName)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication JWTKeyAuth required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            if (namespace !== undefined) {
+                localVarQueryParameter['namespace'] = namespace;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -665,6 +769,19 @@ export const V1AppApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Get the token for the cluster
+         * @param {string} clusterName Cluster name in which the pods are to be searched for
+         * @param {string} clusterRegion The region of the cluster
+         * @param {string} [namespace] searches for in the namespace
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async authenticationTokenForCluster(clusterName: string, clusterRegion: string, namespace?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.authenticationTokenForCluster(clusterName, clusterRegion, namespace, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
          * @summary Deletes the given pod in the (namespace, cluster, region)
          * @param {string} clusterName Cluster name in which the pods are to be searched for
          * @param {string} clusterRegion The region of the cluster
@@ -686,6 +803,20 @@ export const V1AppApiFp = function(configuration?: Configuration) {
          */
         async getApplicationDetails(body: V1GetApplicationDetailsHasuraRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V1GetApplicationDetailsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getApplicationDetails(body, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @summary Shows the pod information
+         * @param {string} clusterName Cluster name
+         * @param {string} clusterRegion The region of the cluster
+         * @param {string} podName Name of the pod
+         * @param {string} [namespace] searches for in the namespace
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getPod(clusterName: string, clusterRegion: string, podName: string, namespace?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V1Pod>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getPod(clusterName, clusterRegion, podName, namespace, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -817,6 +948,18 @@ export const V1AppApiFactory = function (configuration?: Configuration, basePath
         },
         /**
          * 
+         * @summary Get the token for the cluster
+         * @param {string} clusterName Cluster name in which the pods are to be searched for
+         * @param {string} clusterRegion The region of the cluster
+         * @param {string} [namespace] searches for in the namespace
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        authenticationTokenForCluster(clusterName: string, clusterRegion: string, namespace?: string, options?: any): AxiosPromise<string> {
+            return localVarFp.authenticationTokenForCluster(clusterName, clusterRegion, namespace, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Deletes the given pod in the (namespace, cluster, region)
          * @param {string} clusterName Cluster name in which the pods are to be searched for
          * @param {string} clusterRegion The region of the cluster
@@ -837,6 +980,19 @@ export const V1AppApiFactory = function (configuration?: Configuration, basePath
          */
         getApplicationDetails(body: V1GetApplicationDetailsHasuraRequest, options?: any): AxiosPromise<V1GetApplicationDetailsResponse> {
             return localVarFp.getApplicationDetails(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Shows the pod information
+         * @param {string} clusterName Cluster name
+         * @param {string} clusterRegion The region of the cluster
+         * @param {string} podName Name of the pod
+         * @param {string} [namespace] searches for in the namespace
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getPod(clusterName: string, clusterRegion: string, podName: string, namespace?: string, options?: any): AxiosPromise<V1Pod> {
+            return localVarFp.getPod(clusterName, clusterRegion, podName, namespace, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1003,6 +1159,34 @@ export interface V1AppApiAppSecretSetRequest {
 }
 
 /**
+ * Request parameters for authenticationTokenForCluster operation in V1AppApi.
+ * @export
+ * @interface V1AppApiAuthenticationTokenForClusterRequest
+ */
+export interface V1AppApiAuthenticationTokenForClusterRequest {
+    /**
+     * Cluster name in which the pods are to be searched for
+     * @type {string}
+     * @memberof V1AppApiAuthenticationTokenForCluster
+     */
+    readonly clusterName: string
+
+    /**
+     * The region of the cluster
+     * @type {string}
+     * @memberof V1AppApiAuthenticationTokenForCluster
+     */
+    readonly clusterRegion: string
+
+    /**
+     * searches for in the namespace
+     * @type {string}
+     * @memberof V1AppApiAuthenticationTokenForCluster
+     */
+    readonly namespace?: string
+}
+
+/**
  * Request parameters for deletePod operation in V1AppApi.
  * @export
  * @interface V1AppApiDeletePodRequest
@@ -1049,6 +1233,41 @@ export interface V1AppApiGetApplicationDetailsRequest {
      * @memberof V1AppApiGetApplicationDetails
      */
     readonly body: V1GetApplicationDetailsHasuraRequest
+}
+
+/**
+ * Request parameters for getPod operation in V1AppApi.
+ * @export
+ * @interface V1AppApiGetPodRequest
+ */
+export interface V1AppApiGetPodRequest {
+    /**
+     * Cluster name
+     * @type {string}
+     * @memberof V1AppApiGetPod
+     */
+    readonly clusterName: string
+
+    /**
+     * The region of the cluster
+     * @type {string}
+     * @memberof V1AppApiGetPod
+     */
+    readonly clusterRegion: string
+
+    /**
+     * Name of the pod
+     * @type {string}
+     * @memberof V1AppApiGetPod
+     */
+    readonly podName: string
+
+    /**
+     * searches for in the namespace
+     * @type {string}
+     * @memberof V1AppApiGetPod
+     */
+    readonly namespace?: string
 }
 
 /**
@@ -1251,6 +1470,18 @@ export class V1AppApi extends BaseAPI {
 
     /**
      * 
+     * @summary Get the token for the cluster
+     * @param {V1AppApiAuthenticationTokenForClusterRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof V1AppApi
+     */
+    public authenticationTokenForCluster(requestParameters: V1AppApiAuthenticationTokenForClusterRequest, options?: any) {
+        return V1AppApiFp(this.configuration).authenticationTokenForCluster(requestParameters.clusterName, requestParameters.clusterRegion, requestParameters.namespace, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
      * @summary Deletes the given pod in the (namespace, cluster, region)
      * @param {V1AppApiDeletePodRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
@@ -1271,6 +1502,18 @@ export class V1AppApi extends BaseAPI {
      */
     public getApplicationDetails(requestParameters: V1AppApiGetApplicationDetailsRequest, options?: any) {
         return V1AppApiFp(this.configuration).getApplicationDetails(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Shows the pod information
+     * @param {V1AppApiGetPodRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof V1AppApi
+     */
+    public getPod(requestParameters: V1AppApiGetPodRequest, options?: any) {
+        return V1AppApiFp(this.configuration).getPod(requestParameters.clusterName, requestParameters.clusterRegion, requestParameters.podName, requestParameters.namespace, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
