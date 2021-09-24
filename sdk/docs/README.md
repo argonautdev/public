@@ -29,6 +29,7 @@ Class | Method | HTTP request | Description
 *V1EnvironmentApi* | [**terragruntParserCreate**](Apis/V1EnvironmentApi.md#terragruntparsercreate) | **POST** /infra/terragrunt/create | Creates an environment and all the resources send in body
 *V1EnvironmentApi* | [**terragruntParserDelete**](Apis/V1EnvironmentApi.md#terragruntparserdelete) | **POST** /infra/terragrunt/delete | Deletes all the resources and the environment
 *V1EnvironmentApi* | [**terragruntParserUpdate**](Apis/V1EnvironmentApi.md#terragruntparserupdate) | **POST** /infra/terragrunt/update | Updates all the resources send in body for the existing environment
+*V1EnvironmentApi* | [**validEnvironmentName**](Apis/V1EnvironmentApi.md#validenvironmentname) | **GET** /env/{environment_name}/{environment_region}/check | Checks if the environment name is valid or not
 *V1GithubApi* | [**getGhInstallations**](Apis/V1GithubApi.md#getghinstallations) | **GET** /getGhInstallations | Get all the github installations associated with the current argonaut organization
 *V1MediaApi* | [**mediaDownload**](Apis/V1MediaApi.md#mediadownload) | **GET** /media/download/{path} | Download media file at the given path
 *V1SettingsApi* | [**setAWSCreds**](Apis/V1SettingsApi.md#setawscreds) | **PUT** /aws-creds/set | Updates the aws creds with the new credentails
@@ -93,6 +94,7 @@ Class | Method | HTTP request | Description
  - [ElasticacheTag](./Models/ElasticacheTag.md)
  - [ElasticacheTagListMessage](./Models/ElasticacheTagListMessage.md)
  - [GormDeletedAt](./Models/GormDeletedAt.md)
+ - [InlineResponse200](./Models/InlineResponse200.md)
  - [InlineResponseDefault](./Models/InlineResponseDefault.md)
  - [IntegrationsAWSIntegration](./Models/IntegrationsAWSIntegration.md)
  - [IntegrationsAwsResources](./Models/IntegrationsAwsResources.md)

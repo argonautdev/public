@@ -21,6 +21,8 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
 // @ts-ignore
+import { InlineResponse200 } from '../models';
+// @ts-ignore
 import { InlineResponseDefault } from '../models';
 // @ts-ignore
 import { IntegrationsAwsResources } from '../models';
@@ -294,6 +296,47 @@ export const V1EnvironmentApiAxiosParamCreator = function (configuration?: Confi
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * 
+         * @summary Checks if the environment name is valid or not
+         * @param {string} environmentName Environment name
+         * @param {string} environmentRegion Environment region
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        validEnvironmentName: async (environmentName: string, environmentRegion: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'environmentName' is not null or undefined
+            assertParamExists('validEnvironmentName', 'environmentName', environmentName)
+            // verify required parameter 'environmentRegion' is not null or undefined
+            assertParamExists('validEnvironmentName', 'environmentRegion', environmentRegion)
+            const localVarPath = `/env/{environment_name}/{environment_region}/check`
+                .replace(`{${"environment_name"}}`, encodeURIComponent(String(environmentName)))
+                .replace(`{${"environment_region"}}`, encodeURIComponent(String(environmentRegion)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication JWTKeyAuth required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -377,6 +420,18 @@ export const V1EnvironmentApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.terragruntParserUpdate(body, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
+        /**
+         * 
+         * @summary Checks if the environment name is valid or not
+         * @param {string} environmentName Environment name
+         * @param {string} environmentRegion Environment region
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async validEnvironmentName(environmentName: string, environmentRegion: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InlineResponse200>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.validEnvironmentName(environmentName, environmentRegion, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
     }
 };
 
@@ -453,6 +508,17 @@ export const V1EnvironmentApiFactory = function (configuration?: Configuration, 
          */
         terragruntParserUpdate(body: V1TerragruntParserRequestConfig, options?: any): AxiosPromise<V1TerragruntParserResponse> {
             return localVarFp.terragruntParserUpdate(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Checks if the environment name is valid or not
+         * @param {string} environmentName Environment name
+         * @param {string} environmentRegion Environment region
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        validEnvironmentName(environmentName: string, environmentRegion: string, options?: any): AxiosPromise<InlineResponse200> {
+            return localVarFp.validEnvironmentName(environmentName, environmentRegion, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -591,6 +657,27 @@ export interface V1EnvironmentApiTerragruntParserUpdateRequest {
 }
 
 /**
+ * Request parameters for validEnvironmentName operation in V1EnvironmentApi.
+ * @export
+ * @interface V1EnvironmentApiValidEnvironmentNameRequest
+ */
+export interface V1EnvironmentApiValidEnvironmentNameRequest {
+    /**
+     * Environment name
+     * @type {string}
+     * @memberof V1EnvironmentApiValidEnvironmentName
+     */
+    readonly environmentName: string
+
+    /**
+     * Environment region
+     * @type {string}
+     * @memberof V1EnvironmentApiValidEnvironmentName
+     */
+    readonly environmentRegion: string
+}
+
+/**
  * V1EnvironmentApi - object-oriented interface
  * @export
  * @class V1EnvironmentApi
@@ -667,5 +754,17 @@ export class V1EnvironmentApi extends BaseAPI {
      */
     public terragruntParserUpdate(requestParameters: V1EnvironmentApiTerragruntParserUpdateRequest, options?: any) {
         return V1EnvironmentApiFp(this.configuration).terragruntParserUpdate(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Checks if the environment name is valid or not
+     * @param {V1EnvironmentApiValidEnvironmentNameRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof V1EnvironmentApi
+     */
+    public validEnvironmentName(requestParameters: V1EnvironmentApiValidEnvironmentNameRequest, options?: any) {
+        return V1EnvironmentApiFp(this.configuration).validEnvironmentName(requestParameters.environmentName, requestParameters.environmentRegion, options).then((request) => request(this.axios, this.basePath));
     }
 }

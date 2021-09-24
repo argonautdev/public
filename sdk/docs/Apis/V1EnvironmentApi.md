@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**terragruntParserCreate**](V1EnvironmentApi.md#terragruntParserCreate) | **POST** /infra/terragrunt/create | Creates an environment and all the resources send in body
 [**terragruntParserDelete**](V1EnvironmentApi.md#terragruntParserDelete) | **POST** /infra/terragrunt/delete | Deletes all the resources and the environment
 [**terragruntParserUpdate**](V1EnvironmentApi.md#terragruntParserUpdate) | **POST** /infra/terragrunt/update | Updates all the resources send in body for the existing environment
+[**validEnvironmentName**](V1EnvironmentApi.md#validEnvironmentName) | **GET** /env/{environment_name}/{environment_region}/check | Checks if the environment name is valid or not
 
 
 <a name="getCurrentEnvironmentSpec"></a>
@@ -175,5 +176,31 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+<a name="validEnvironmentName"></a>
+# **validEnvironmentName**
+> inline_response_200 validEnvironmentName(environment\_name, environment\_region)
+
+Checks if the environment name is valid or not
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **environment\_name** | **String**| Environment name | [default to null]
+ **environment\_region** | **String**| Environment region | [default to null]
+
+### Return type
+
+[**inline_response_200**](../Models/inline_response_200.md)
+
+### Authorization
+
+[JWTKeyAuth](../README.md#JWTKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 

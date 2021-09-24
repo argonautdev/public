@@ -54,6 +54,7 @@ export * from './elasticache-security-group-membership';
 export * from './elasticache-tag';
 export * from './elasticache-tag-list-message';
 export * from './gorm-deleted-at';
+export * from './inline-response200';
 export * from './inline-response-default';
 export * from './integrations-awsintegration';
 export * from './integrations-aws-resources';

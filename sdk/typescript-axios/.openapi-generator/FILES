@@ -71,6 +71,7 @@ models/elasticache-tag.ts
 models/gorm-deleted-at.ts
 models/index.ts
 models/inline-response-default.ts
+models/inline-response200.ts
 models/integrations-aws-resources.ts
 models/integrations-awsintegration.ts
 models/integrations-basic-integration.ts
