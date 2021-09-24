@@ -3,7 +3,7 @@
 <a name="documentation-for-api-endpoints"></a>
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://localhost:8000/api/v1*
+All URIs are relative to *https://midgard.argonaut.dev/api/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -22,6 +22,7 @@ Class | Method | HTTP request | Description
 *V1AppApi* | [**logPod**](Apis/V1AppApi.md#logpod) | **GET** /pods/logs/{cluster_name}/{cluster_region}/{pod_name} | Shows the logs of the given pod in the (namespace, cluster, region)
 *V1AppApi* | [**toolDeleteFromLibrary**](Apis/V1AppApi.md#tooldeletefromlibrary) | **POST** /tools/delete | Delete tools from supported library
 *V1AppApi* | [**toolInstallFromLibrary**](Apis/V1AppApi.md#toolinstallfromlibrary) | **POST** /toolInstall | Install tools from the supported library
+*V1ArgoWorkflowApi* | [**argoWorkflowTrigger**](Apis/V1ArgoWorkflowApi.md#argoworkflowtrigger) | **POST** /argo-workflows/trigger/{workflow} | Triggers an argo workflow
 *V1EnvironmentApi* | [**getCurrentEnvironmentSpec**](Apis/V1EnvironmentApi.md#getcurrentenvironmentspec) | **GET** /environment/spec/{environment_name}/{environment_region} | Gets the last applied spec for the environment if it exists
 *V1EnvironmentApi* | [**listResourcesInEnvironment**](Apis/V1EnvironmentApi.md#listresourcesinenvironment) | **GET** /environment/list-resources/{environment_name} | List all the resources in an environment
 *V1EnvironmentApi* | [**removeResourceInEnvironment**](Apis/V1EnvironmentApi.md#removeresourceinenvironment) | **DELETE** /environment/github/delete/{environment_name}/{environment_region}/{resource} | Removes the resource folder from argonaut_terraform_configs
@@ -30,11 +31,13 @@ Class | Method | HTTP request | Description
 *V1EnvironmentApi* | [**terragruntParserUpdate**](Apis/V1EnvironmentApi.md#terragruntparserupdate) | **POST** /infra/terragrunt/update | Updates all the resources send in body for the existing environment
 *V1GithubApi* | [**getGhInstallations**](Apis/V1GithubApi.md#getghinstallations) | **GET** /getGhInstallations | Get all the github installations associated with the current argonaut organization
 *V1MediaApi* | [**mediaDownload**](Apis/V1MediaApi.md#mediadownload) | **GET** /media/download/{path} | Download media file at the given path
+*V1SettingsApi* | [**setAWSCreds**](Apis/V1SettingsApi.md#setawscreds) | **PUT** /aws-creds/set | Updates the aws creds with the new credentails
 
 
 <a name="documentation-for-models"></a>
 ## Documentation for Models
 
+ - [AwsCredsSetAWSBody](./Models/AwsCredsSetAWSBody.md)
  - [BasicJSONMessage](./Models/BasicJSONMessage.md)
  - [CapsulesConfigCertManager](./Models/CapsulesConfigCertManager.md)
  - [CapsulesConfigClusterAutoScaler](./Models/CapsulesConfigClusterAutoScaler.md)
@@ -56,6 +59,7 @@ Class | Method | HTTP request | Description
  - [EksAutoScalingGroup](./Models/EksAutoScalingGroup.md)
  - [EksCertificate](./Models/EksCertificate.md)
  - [EksCluster](./Models/EksCluster.md)
+ - [EksConnectorConfigResponse](./Models/EksConnectorConfigResponse.md)
  - [EksEncryptionConfig](./Models/EksEncryptionConfig.md)
  - [EksIdentity](./Models/EksIdentity.md)
  - [EksIssue](./Models/EksIssue.md)
@@ -200,6 +204,7 @@ Class | Method | HTTP request | Description
  - [V1HostAlias](./Models/V1HostAlias.md)
  - [V1HostPathVolumeSource](./Models/V1HostPathVolumeSource.md)
  - [V1ISCSIVolumeSource](./Models/V1ISCSIVolumeSource.md)
+ - [V1IngressStruct](./Models/V1IngressStruct.md)
  - [V1InstallCapsulesBody](./Models/V1InstallCapsulesBody.md)
  - [V1KeyToPath](./Models/V1KeyToPath.md)
  - [V1LabelSelector](./Models/V1LabelSelector.md)

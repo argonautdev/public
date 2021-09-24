@@ -3,14 +3,17 @@
 README.md
 api.ts
 api/v1-app-api.ts
+api/v1-argo-workflow-api.ts
 api/v1-environment-api.ts
 api/v1-github-api.ts
 api/v1-media-api.ts
+api/v1-settings-api.ts
 base.ts
 common.ts
 configuration.ts
 git_push.sh
 index.ts
+models/aws-creds-set-awsbody.ts
 models/basic-jsonmessage.ts
 models/capsules-config-cert-manager.ts
 models/capsules-config-cluster-auto-scaler.ts
@@ -32,6 +35,7 @@ models/chart-metadata.ts
 models/eks-auto-scaling-group.ts
 models/eks-certificate.ts
 models/eks-cluster.ts
+models/eks-connector-config-response.ts
 models/eks-encryption-config.ts
 models/eks-identity.ts
 models/eks-issue.ts
@@ -176,6 +180,7 @@ models/v1-host-alias.ts
 models/v1-host-path-volume-source.ts
 models/v1-httpget-action.ts
 models/v1-httpheader.ts
+models/v1-ingress-struct.ts
 models/v1-install-capsules-body.ts
 models/v1-iscsivolume-source.ts
 models/v1-key-to-path.ts

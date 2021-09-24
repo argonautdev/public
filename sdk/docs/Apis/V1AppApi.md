@@ -1,6 +1,6 @@
 # V1AppApi
 
-All URIs are relative to *http://localhost:8000/api/v1*
+All URIs are relative to *https://midgard.argonaut.dev/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -316,7 +316,7 @@ Name | Type | Description  | Notes
 
 <a name="listResourceInYaml"></a>
 # **listResourceInYaml**
-> kubernetes.ListResourceInYamlOutput listResourceInYaml(cluster\_name, cluster\_region, resource\_type, namespace)
+> kubernetes.ListResourceInYamlOutput listResourceInYaml(cluster\_name, cluster\_region, app\_name, resource\_type, namespace)
 
 Get all the resource description in yaml format
 
@@ -326,6 +326,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cluster\_name** | **String**| Cluster name | [default to null]
  **cluster\_region** | **String**| The region of the cluster | [default to null]
+ **app\_name** | **String**| The app name | [default to null]
  **resource\_type** | [**List**](../Models/String.md)| Type of the resource to include | [default to null] [enum: ConfigMap, Secret, Service, Pod, Ingress, Certificate]
  **namespace** | **String**| searches for in the namespace | [optional] [default to tools]
 

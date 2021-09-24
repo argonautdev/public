@@ -12,6 +12,9 @@ export const $v1_PersistentVolumeClaimSpec = {
         dataSource: {
             type: 'v1_TypedLocalObjectReference',
         },
+        dataSourceRef: {
+            type: 'v1_TypedLocalObjectReference',
+        },
         resources: {
             type: 'v1_ResourceRequirements',
         },

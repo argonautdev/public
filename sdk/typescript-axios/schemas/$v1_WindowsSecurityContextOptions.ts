@@ -9,6 +9,9 @@ export const $v1_WindowsSecurityContextOptions = {
         gmsaCredentialSpecName: {
             type: 'string',
         },
+        hostProcess: {
+            type: 'boolean',
+        },
         runAsUserName: {
             type: 'string',
         },

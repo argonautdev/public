@@ -18,6 +18,9 @@ export const $v1_ManagedFieldsEntry = {
         operation: {
             type: 'string',
         },
+        subresource: {
+            type: 'string',
+        },
         time: {
             type: 'string',
         },

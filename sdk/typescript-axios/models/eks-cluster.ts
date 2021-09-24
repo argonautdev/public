@@ -14,6 +14,7 @@
 
 
 import { EksCertificate } from './eks-certificate';
+import { EksConnectorConfigResponse } from './eks-connector-config-response';
 import { EksEncryptionConfig } from './eks-encryption-config';
 import { EksIdentity } from './eks-identity';
 import { EksKubernetesNetworkConfigResponse } from './eks-kubernetes-network-config-response';
@@ -44,6 +45,12 @@ export interface EksCluster {
      * @memberof EksCluster
      */
     ClientRequestToken?: string;
+    /**
+     * 
+     * @type {EksConnectorConfigResponse}
+     * @memberof EksCluster
+     */
+    ConnectorConfig?: EksConnectorConfigResponse;
     /**
      * The Unix epoch timestamp in seconds for when the cluster was created.
      * @type {string}
@@ -99,7 +106,7 @@ export interface EksCluster {
      */
     ResourcesVpcConfig?: EksVpcConfigResponse;
     /**
-     * The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to AWS API operations on your behalf.
+     * The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to Amazon Web Services API operations on your behalf.
      * @type {string}
      * @memberof EksCluster
      */

@@ -1,7 +1,10 @@
 Apis/V1AppApi.md
+Apis/V1ArgoWorkflowApi.md
 Apis/V1EnvironmentApi.md
 Apis/V1GithubApi.md
 Apis/V1MediaApi.md
+Apis/V1SettingsApi.md
+Models/AwsCredsSetAWSBody.md
 Models/BasicJSONMessage.md
 Models/CapsulesConfigCertManager.md
 Models/CapsulesConfigClusterAutoScaler.md
@@ -23,6 +26,7 @@ Models/ChartMetadata.md
 Models/EksAutoScalingGroup.md
 Models/EksCertificate.md
 Models/EksCluster.md
+Models/EksConnectorConfigResponse.md
 Models/EksEncryptionConfig.md
 Models/EksIdentity.md
 Models/EksIssue.md
@@ -167,6 +171,7 @@ Models/V1Handler.md
 Models/V1HostAlias.md
 Models/V1HostPathVolumeSource.md
 Models/V1ISCSIVolumeSource.md
+Models/V1IngressStruct.md
 Models/V1InstallCapsulesBody.md
 Models/V1KeyToPath.md
 Models/V1LabelSelector.md

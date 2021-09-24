@@ -16,6 +16,7 @@
 import { V1ConfigMapStruct } from './v1-config-map-struct';
 import { V1DaemonSetStruct } from './v1-daemon-set-struct';
 import { V1DeploymentStruct } from './v1-deployment-struct';
+import { V1IngressStruct } from './v1-ingress-struct';
 import { V1PersistentVolumeStruct } from './v1-persistent-volume-struct';
 import { V1PodStruct } from './v1-pod-struct';
 import { V1SecretStruct } from './v1-secret-struct';
@@ -46,6 +47,12 @@ export interface V1GetApplicationDetailsResponse {
      * @memberof V1GetApplicationDetailsResponse
      */
     Deployment?: Array<V1DeploymentStruct>;
+    /**
+     * 
+     * @type {Array<V1IngressStruct>}
+     * @memberof V1GetApplicationDetailsResponse
+     */
+    Ingress?: Array<V1IngressStruct>;
     /**
      * 
      * @type {Array<V1PersistentVolumeStruct>}

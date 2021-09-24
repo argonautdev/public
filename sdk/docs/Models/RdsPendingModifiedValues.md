@@ -3,14 +3,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AllocatedStorage** | [**Integer**](integer.md) | The allocated storage size for the DB instance specified in gibibytes . | [optional] [default to null]
+**AllocatedStorage** | [**Integer**](integer.md) | The allocated storage size for the DB instance specified in gibibytes (GiB). | [optional] [default to null]
 **BackupRetentionPeriod** | [**Integer**](integer.md) | The number of days for which automated backups are retained. | [optional] [default to null]
 **CACertificateIdentifier** | [**String**](string.md) | The identifier of the CA certificate for the DB instance. | [optional] [default to null]
 **DBInstanceClass** | [**String**](string.md) | The name of the compute and memory capacity class for the DB instance. | [optional] [default to null]
 **DBInstanceIdentifier** | [**String**](string.md) | The database identifier for the DB instance. | [optional] [default to null]
 **DBSubnetGroupName** | [**String**](string.md) | The DB subnet group for the DB instance. | [optional] [default to null]
 **EngineVersion** | [**String**](string.md) | The database engine version. | [optional] [default to null]
-**IAMDatabaseAuthenticationEnabled** | [**Boolean**](boolean.md) | Whether mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled. | [optional] [default to null]
+**IAMDatabaseAuthenticationEnabled** | [**Boolean**](boolean.md) | Whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled. | [optional] [default to null]
 **Iops** | [**Integer**](integer.md) | The Provisioned IOPS value for the DB instance. | [optional] [default to null]
 **LicenseModel** | [**String**](string.md) | The license model for the DB instance.  Valid values: license-included | bring-your-own-license | general-public-license | [optional] [default to null]
 **MasterUserPassword** | [**String**](string.md) | The master credentials for the DB instance. | [optional] [default to null]

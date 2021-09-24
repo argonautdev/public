@@ -1,6 +1,6 @@
 # V1GithubApi
 
-All URIs are relative to *http://localhost:8000/api/v1*
+All URIs are relative to *https://midgard.argonaut.dev/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

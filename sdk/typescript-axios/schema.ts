@@ -1,6 +1,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+export { $aws_creds_SetAWSBody } from './schemas/$aws_creds_SetAWSBody';
 export { $basic_JSONMessage } from './schemas/$basic_JSONMessage';
 export { $capsules_ConfigCertManager } from './schemas/$capsules_ConfigCertManager';
 export { $capsules_ConfigClusterAutoScaler } from './schemas/$capsules_ConfigClusterAutoScaler';
@@ -25,6 +26,7 @@ export { $chart_Metadata } from './schemas/$chart_Metadata';
 export { $eks_AutoScalingGroup } from './schemas/$eks_AutoScalingGroup';
 export { $eks_Certificate } from './schemas/$eks_Certificate';
 export { $eks_Cluster } from './schemas/$eks_Cluster';
+export { $eks_ConnectorConfigResponse } from './schemas/$eks_ConnectorConfigResponse';
 export { $eks_EncryptionConfig } from './schemas/$eks_EncryptionConfig';
 export { $eks_Identity } from './schemas/$eks_Identity';
 export { $eks_Issue } from './schemas/$eks_Issue';
@@ -167,6 +169,7 @@ export { $v1_HostAlias } from './schemas/$v1_HostAlias';
 export { $v1_HostPathVolumeSource } from './schemas/$v1_HostPathVolumeSource';
 export { $v1_HTTPGetAction } from './schemas/$v1_HTTPGetAction';
 export { $v1_HTTPHeader } from './schemas/$v1_HTTPHeader';
+export { $v1_IngressStruct } from './schemas/$v1_IngressStruct';
 export { $v1_InstallCapsulesBody } from './schemas/$v1_InstallCapsulesBody';
 export { $v1_ISCSIVolumeSource } from './schemas/$v1_ISCSIVolumeSource';
 export { $v1_KeyToPath } from './schemas/$v1_KeyToPath';

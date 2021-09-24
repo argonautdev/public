@@ -556,21 +556,25 @@ export const V1AppApiAxiosParamCreator = function (configuration?: Configuration
          * @summary Get all the resource description in yaml format
          * @param {string} clusterName Cluster name
          * @param {string} clusterRegion The region of the cluster
-         * @param {Array<string>} resourceType Type of the resource to include
+         * @param {string} appName The app name
+         * @param {Array<'ConfigMap' | 'Secret' | 'Service' | 'Pod' | 'Ingress' | 'Certificate'>} resourceType Type of the resource to include
          * @param {string} [namespace] searches for in the namespace
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listResourceInYaml: async (clusterName: string, clusterRegion: string, resourceType: Array<string>, namespace?: string, options: any = {}): Promise<RequestArgs> => {
+        listResourceInYaml: async (clusterName: string, clusterRegion: string, appName: string, resourceType: Array<'ConfigMap' | 'Secret' | 'Service' | 'Pod' | 'Ingress' | 'Certificate'>, namespace?: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'clusterName' is not null or undefined
             assertParamExists('listResourceInYaml', 'clusterName', clusterName)
             // verify required parameter 'clusterRegion' is not null or undefined
             assertParamExists('listResourceInYaml', 'clusterRegion', clusterRegion)
+            // verify required parameter 'appName' is not null or undefined
+            assertParamExists('listResourceInYaml', 'appName', appName)
             // verify required parameter 'resourceType' is not null or undefined
             assertParamExists('listResourceInYaml', 'resourceType', resourceType)
             const localVarPath = `/list-resources/{cluster_name}/{cluster_region}`
                 .replace(`{${"cluster_name"}}`, encodeURIComponent(String(clusterName)))
-                .replace(`{${"cluster_region"}}`, encodeURIComponent(String(clusterRegion)));
+                .replace(`{${"cluster_region"}}`, encodeURIComponent(String(clusterRegion)))
+                .replace(`{${"app_name"}}`, encodeURIComponent(String(appName)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -894,13 +898,14 @@ export const V1AppApiFp = function(configuration?: Configuration) {
          * @summary Get all the resource description in yaml format
          * @param {string} clusterName Cluster name
          * @param {string} clusterRegion The region of the cluster
-         * @param {Array<string>} resourceType Type of the resource to include
+         * @param {string} appName The app name
+         * @param {Array<'ConfigMap' | 'Secret' | 'Service' | 'Pod' | 'Ingress' | 'Certificate'>} resourceType Type of the resource to include
          * @param {string} [namespace] searches for in the namespace
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listResourceInYaml(clusterName: string, clusterRegion: string, resourceType: Array<string>, namespace?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<KubernetesListResourceInYamlOutput>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listResourceInYaml(clusterName, clusterRegion, resourceType, namespace, options);
+        async listResourceInYaml(clusterName: string, clusterRegion: string, appName: string, resourceType: Array<'ConfigMap' | 'Secret' | 'Service' | 'Pod' | 'Ingress' | 'Certificate'>, namespace?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<KubernetesListResourceInYamlOutput>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listResourceInYaml(clusterName, clusterRegion, appName, resourceType, namespace, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -1082,13 +1087,14 @@ export const V1AppApiFactory = function (configuration?: Configuration, basePath
          * @summary Get all the resource description in yaml format
          * @param {string} clusterName Cluster name
          * @param {string} clusterRegion The region of the cluster
-         * @param {Array<string>} resourceType Type of the resource to include
+         * @param {string} appName The app name
+         * @param {Array<'ConfigMap' | 'Secret' | 'Service' | 'Pod' | 'Ingress' | 'Certificate'>} resourceType Type of the resource to include
          * @param {string} [namespace] searches for in the namespace
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listResourceInYaml(clusterName: string, clusterRegion: string, resourceType: Array<string>, namespace?: string, options?: any): AxiosPromise<KubernetesListResourceInYamlOutput> {
-            return localVarFp.listResourceInYaml(clusterName, clusterRegion, resourceType, namespace, options).then((request) => request(axios, basePath));
+        listResourceInYaml(clusterName: string, clusterRegion: string, appName: string, resourceType: Array<'ConfigMap' | 'Secret' | 'Service' | 'Pod' | 'Ingress' | 'Certificate'>, namespace?: string, options?: any): AxiosPromise<KubernetesListResourceInYamlOutput> {
+            return localVarFp.listResourceInYaml(clusterName, clusterRegion, appName, resourceType, namespace, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1415,11 +1421,18 @@ export interface V1AppApiListResourceInYamlRequest {
     readonly clusterRegion: string
 
     /**
-     * Type of the resource to include
-     * @type {Array<string>}
+     * The app name
+     * @type {string}
      * @memberof V1AppApiListResourceInYaml
      */
-    readonly resourceType: Array<string>
+    readonly appName: string
+
+    /**
+     * Type of the resource to include
+     * @type {Array<'ConfigMap' | 'Secret' | 'Service' | 'Pod' | 'Ingress' | 'Certificate'>}
+     * @memberof V1AppApiListResourceInYaml
+     */
+    readonly resourceType: Array<'ConfigMap' | 'Secret' | 'Service' | 'Pod' | 'Ingress' | 'Certificate'>
 
     /**
      * searches for in the namespace
@@ -1654,7 +1667,7 @@ export class V1AppApi extends BaseAPI {
      * @memberof V1AppApi
      */
     public listResourceInYaml(requestParameters: V1AppApiListResourceInYamlRequest, options?: any) {
-        return V1AppApiFp(this.configuration).listResourceInYaml(requestParameters.clusterName, requestParameters.clusterRegion, requestParameters.resourceType, requestParameters.namespace, options).then((request) => request(this.axios, this.basePath));
+        return V1AppApiFp(this.configuration).listResourceInYaml(requestParameters.clusterName, requestParameters.clusterRegion, requestParameters.appName, requestParameters.resourceType, requestParameters.namespace, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

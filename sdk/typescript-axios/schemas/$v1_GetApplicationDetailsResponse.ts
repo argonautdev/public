@@ -21,6 +21,12 @@ export const $v1_GetApplicationDetailsResponse = {
                 type: 'v1_DeploymentStruct',
             },
         },
+        Ingress: {
+            type: 'array',
+            contains: {
+                type: 'v1_IngressStruct',
+            },
+        },
         PersistantVolumeClaims: {
             type: 'array',
             contains: {
