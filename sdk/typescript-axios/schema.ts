@@ -26,7 +26,6 @@ export { $chart_Metadata } from './schemas/$chart_Metadata';
 export { $eks_AutoScalingGroup } from './schemas/$eks_AutoScalingGroup';
 export { $eks_Certificate } from './schemas/$eks_Certificate';
 export { $eks_Cluster } from './schemas/$eks_Cluster';
-export { $eks_ConnectorConfigResponse } from './schemas/$eks_ConnectorConfigResponse';
 export { $eks_EncryptionConfig } from './schemas/$eks_EncryptionConfig';
 export { $eks_Identity } from './schemas/$eks_Identity';
 export { $eks_Issue } from './schemas/$eks_Issue';

@@ -3,7 +3,7 @@
 <a name="documentation-for-api-endpoints"></a>
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://midgard.argonaut.dev/api/v1*
+All URIs are relative to *http://localhost:8000/api/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -13,7 +13,6 @@ Class | Method | HTTP request | Description
 *V1AppApi* | [**appSecretDelete**](Apis/V1AppApi.md#appsecretdelete) | **POST** /app/secret/delete | Deletes the app secret if it exists otherwise returns an error saying the app secret doesn't exist
 *V1AppApi* | [**appSecretGet**](Apis/V1AppApi.md#appsecretget) | **POST** /app/secret/get | Return the app secret if it exists otherwise returns an error saying the app secret doesn't exist
 *V1AppApi* | [**appSecretSet**](Apis/V1AppApi.md#appsecretset) | **POST** /app/secret/set | Creates/Updates app secret with the name `art-{appName}-secret`
-*V1AppApi* | [**authenticationTokenForCluster**](Apis/V1AppApi.md#authenticationtokenforcluster) | **GET** /auth-token | Get the token for the cluster
 *V1AppApi* | [**deletePod**](Apis/V1AppApi.md#deletepod) | **DELETE** /pods/delete/{cluster_name}/{cluster_region}/{pod_name} | Deletes the given pod in the (namespace, cluster, region)
 *V1AppApi* | [**getApplicationDetails**](Apis/V1AppApi.md#getapplicationdetails) | **POST** /getApplicationDetails | Get all the details for a given application in a cluster
 *V1AppApi* | [**getPod**](Apis/V1AppApi.md#getpod) | **GET** /pods/get/{cluster_name}/{cluster_region}/{pod_name} | Shows the pod information
@@ -22,7 +21,6 @@ Class | Method | HTTP request | Description
 *V1AppApi* | [**logPod**](Apis/V1AppApi.md#logpod) | **GET** /pods/logs/{cluster_name}/{cluster_region}/{pod_name} | Shows the logs of the given pod in the (namespace, cluster, region)
 *V1AppApi* | [**toolDeleteFromLibrary**](Apis/V1AppApi.md#tooldeletefromlibrary) | **POST** /tools/delete | Delete tools from supported library
 *V1AppApi* | [**toolInstallFromLibrary**](Apis/V1AppApi.md#toolinstallfromlibrary) | **POST** /toolInstall | Install tools from the supported library
-*V1ArgoWorkflowApi* | [**argoWorkflowTrigger**](Apis/V1ArgoWorkflowApi.md#argoworkflowtrigger) | **POST** /argo-workflows/trigger/{workflow} | Triggers an argo workflow
 *V1EnvironmentApi* | [**getCurrentEnvironmentSpec**](Apis/V1EnvironmentApi.md#getcurrentenvironmentspec) | **GET** /environment/spec/{environment_name}/{environment_region} | Gets the last applied spec for the environment if it exists
 *V1EnvironmentApi* | [**listResourcesInEnvironment**](Apis/V1EnvironmentApi.md#listresourcesinenvironment) | **GET** /environment/list-resources/{environment_name} | List all the resources in an environment
 *V1EnvironmentApi* | [**removeResourceInEnvironment**](Apis/V1EnvironmentApi.md#removeresourceinenvironment) | **DELETE** /environment/github/delete/{environment_name}/{environment_region}/{resource} | Removes the resource folder from argonaut_terraform_configs
@@ -31,6 +29,7 @@ Class | Method | HTTP request | Description
 *V1EnvironmentApi* | [**terragruntParserUpdate**](Apis/V1EnvironmentApi.md#terragruntparserupdate) | **POST** /infra/terragrunt/update | Updates all the resources send in body for the existing environment
 *V1EnvironmentApi* | [**validEnvironmentName**](Apis/V1EnvironmentApi.md#validenvironmentname) | **GET** /env/{environment_name}/{environment_region}/check | Checks if the environment name is valid or not
 *V1GithubApi* | [**getGhInstallations**](Apis/V1GithubApi.md#getghinstallations) | **GET** /getGhInstallations | Get all the github installations associated with the current argonaut organization
+*V1KubernetesApi* | [**kubernetesApiCaller**](Apis/V1KubernetesApi.md#kubernetesapicaller) | **GET** /cluster/{cluster}/region/{region}/kubernetes/{url} | Wrapper around k8s api to make calls
 *V1MediaApi* | [**mediaDownload**](Apis/V1MediaApi.md#mediadownload) | **GET** /media/download/{path} | Download media file at the given path
 *V1SettingsApi* | [**setAWSCreds**](Apis/V1SettingsApi.md#setawscreds) | **PUT** /aws-creds/set | Updates the aws creds with the new credentails
 
@@ -60,7 +59,6 @@ Class | Method | HTTP request | Description
  - [EksAutoScalingGroup](./Models/EksAutoScalingGroup.md)
  - [EksCertificate](./Models/EksCertificate.md)
  - [EksCluster](./Models/EksCluster.md)
- - [EksConnectorConfigResponse](./Models/EksConnectorConfigResponse.md)
  - [EksEncryptionConfig](./Models/EksEncryptionConfig.md)
  - [EksIdentity](./Models/EksIdentity.md)
  - [EksIssue](./Models/EksIssue.md)

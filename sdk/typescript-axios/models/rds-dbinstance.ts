@@ -34,43 +34,13 @@ import { RdsVpcSecurityGroupMembership } from './rds-vpc-security-group-membersh
  */
 export interface RdsDBInstance {
     /**
-     * Indicates whether engine-native audit fields are included in the database activity stream.
-     * @type {boolean}
-     * @memberof RdsDBInstance
-     */
-    ActivityStreamEngineNativeAuditFieldsIncluded?: boolean;
-    /**
-     * The name of the Amazon Kinesis data stream used for the database activity stream.
-     * @type {string}
-     * @memberof RdsDBInstance
-     */
-    ActivityStreamKinesisStreamName?: string;
-    /**
-     * The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
-     * @type {string}
-     * @memberof RdsDBInstance
-     */
-    ActivityStreamKmsKeyId?: string;
-    /**
-     * The mode of the database activity stream. Database events such as a change or access generate an activity stream event. RDS for Oracle always handles these events asynchronously.
-     * @type {string}
-     * @memberof RdsDBInstance
-     */
-    ActivityStreamMode?: string;
-    /**
-     * The status of the database activity stream.
-     * @type {string}
-     * @memberof RdsDBInstance
-     */
-    ActivityStreamStatus?: string;
-    /**
-     * Specifies the allocated storage size specified in gibibytes (GiB).
+     * Specifies the allocated storage size specified in gibibytes.
      * @type {number}
      * @memberof RdsDBInstance
      */
     AllocatedStorage?: number;
     /**
-     * The Amazon Web Services Identity and Access Management (IAM) roles associated with the DB instance.
+     * The AWS Identity and Access Management (IAM) roles associated with the DB instance.
      * @type {Array<RdsDBInstanceRole>}
      * @memberof RdsDBInstance
      */
@@ -82,19 +52,13 @@ export interface RdsDBInstance {
      */
     AutoMinorVersionUpgrade?: boolean;
     /**
-     * The time when a stopped DB instance is restarted automatically.
-     * @type {string}
-     * @memberof RdsDBInstance
-     */
-    AutomaticRestartTime?: string;
-    /**
      * Specifies the name of the Availability Zone the DB instance is located in.
      * @type {string}
      * @memberof RdsDBInstance
      */
     AvailabilityZone?: string;
     /**
-     * The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.
+     * The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
      * @type {string}
      * @memberof RdsDBInstance
      */
@@ -124,7 +88,7 @@ export interface RdsDBInstance {
      */
     CopyTagsToSnapshot?: boolean;
     /**
-     * Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.  A CoIP provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.  For more information about RDS on Outposts, see Working with Amazon RDS on Amazon Web Services Outposts (https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html) in the Amazon RDS User Guide.  For more information about CoIPs, see Customer-owned IP addresses (https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing) in the Amazon Web Services Outposts User Guide.
+     * Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.  A CoIP provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.  For more information about RDS on Outposts, see Working with Amazon RDS on AWS Outposts (https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html) in the Amazon RDS User Guide.  For more information about CoIPs, see Customer-owned IP addresses (https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing) in the AWS Outposts User Guide.
      * @type {boolean}
      * @memberof RdsDBInstance
      */
@@ -196,7 +160,7 @@ export interface RdsDBInstance {
      */
     DbInstancePort?: number;
     /**
-     * The Amazon Web Services Region-unique, immutable identifier for the DB instance. This identifier is found in Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS customer master key (CMK) for the DB instance is accessed.
+     * The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the DB instance is accessed.
      * @type {string}
      * @memberof RdsDBInstance
      */
@@ -244,7 +208,7 @@ export interface RdsDBInstance {
      */
     EnhancedMonitoringResourceArn?: string;
     /**
-     * True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.  IAM database authentication can be enabled for the following database engines     * For MySQL 5.6, minor version 5.6.34 or higher     * For MySQL 5.7, minor version 5.7.16 or higher     * Aurora 5.6 or higher. To enable IAM database authentication for Aurora,    see DBCluster Type.
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.  IAM database authentication can be enabled for the following database engines     * For MySQL 5.6, minor version 5.6.34 or higher     * For MySQL 5.7, minor version 5.7.16 or higher     * Aurora 5.6 or higher. To enable IAM database authentication for Aurora,    see DBCluster Type.
      * @type {boolean}
      * @memberof RdsDBInstance
      */
@@ -262,7 +226,7 @@ export interface RdsDBInstance {
      */
     Iops?: number;
     /**
-     * If StorageEncrypted is true, the Amazon Web Services KMS key identifier for the encrypted DB instance.  The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
+     * If StorageEncrypted is true, the AWS KMS key identifier for the encrypted DB instance.  The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).
      * @type {string}
      * @memberof RdsDBInstance
      */
@@ -292,7 +256,7 @@ export interface RdsDBInstance {
      */
     MasterUsername?: string;
     /**
-     * The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.
+     * The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.
      * @type {number}
      * @memberof RdsDBInstance
      */
@@ -340,7 +304,7 @@ export interface RdsDBInstance {
      */
     PerformanceInsightsEnabled?: boolean;
     /**
-     * The Amazon Web Services KMS key identifier for encryption of Performance Insights data.  The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master key (CMK).
+     * The AWS KMS key identifier for encryption of Performance Insights data.  The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).
      * @type {string}
      * @memberof RdsDBInstance
      */

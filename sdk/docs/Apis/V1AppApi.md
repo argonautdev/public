@@ -1,6 +1,6 @@
 # V1AppApi
 
-All URIs are relative to *https://midgard.argonaut.dev/api/v1*
+All URIs are relative to *http://localhost:8000/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,7 +10,6 @@ Method | HTTP request | Description
 [**appSecretDelete**](V1AppApi.md#appSecretDelete) | **POST** /app/secret/delete | Deletes the app secret if it exists otherwise returns an error saying the app secret doesn&#39;t exist
 [**appSecretGet**](V1AppApi.md#appSecretGet) | **POST** /app/secret/get | Return the app secret if it exists otherwise returns an error saying the app secret doesn&#39;t exist
 [**appSecretSet**](V1AppApi.md#appSecretSet) | **POST** /app/secret/set | Creates/Updates app secret with the name &#x60;art-{appName}-secret&#x60;
-[**authenticationTokenForCluster**](V1AppApi.md#authenticationTokenForCluster) | **GET** /auth-token | Get the token for the cluster
 [**deletePod**](V1AppApi.md#deletePod) | **DELETE** /pods/delete/{cluster_name}/{cluster_region}/{pod_name} | Deletes the given pod in the (namespace, cluster, region)
 [**getApplicationDetails**](V1AppApi.md#getApplicationDetails) | **POST** /getApplicationDetails | Get all the details for a given application in a cluster
 [**getPod**](V1AppApi.md#getPod) | **GET** /pods/get/{cluster_name}/{cluster_region}/{pod_name} | Shows the pod information
@@ -173,33 +172,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
-
-<a name="authenticationTokenForCluster"></a>
-# **authenticationTokenForCluster**
-> String authenticationTokenForCluster(cluster\_name, cluster\_region, namespace)
-
-Get the token for the cluster
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cluster\_name** | **String**| Cluster name in which the pods are to be searched for | [default to null]
- **cluster\_region** | **String**| The region of the cluster | [default to null]
- **namespace** | **String**| searches for in the namespace | [optional] [default to tools]
-
-### Return type
-
-[**String**](../Models/string.md)
-
-### Authorization
-
-[JWTKeyAuth](../README.md#JWTKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
 - **Accept**: application/json
 
 <a name="deletePod"></a>

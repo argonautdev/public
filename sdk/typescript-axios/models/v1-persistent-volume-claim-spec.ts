@@ -37,12 +37,6 @@ export interface V1PersistentVolumeClaimSpec {
     dataSource?: V1TypedLocalObjectReference;
     /**
      * 
-     * @type {V1TypedLocalObjectReference}
-     * @memberof V1PersistentVolumeClaimSpec
-     */
-    dataSourceRef?: V1TypedLocalObjectReference;
-    /**
-     * 
      * @type {V1ResourceRequirements}
      * @memberof V1PersistentVolumeClaimSpec
      */

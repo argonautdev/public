@@ -308,58 +308,6 @@ export const V1AppApiAxiosParamCreator = function (configuration?: Configuration
         },
         /**
          * 
-         * @summary Get the token for the cluster
-         * @param {string} clusterName Cluster name in which the pods are to be searched for
-         * @param {string} clusterRegion The region of the cluster
-         * @param {string} [namespace] searches for in the namespace
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        authenticationTokenForCluster: async (clusterName: string, clusterRegion: string, namespace?: string, options: any = {}): Promise<RequestArgs> => {
-            // verify required parameter 'clusterName' is not null or undefined
-            assertParamExists('authenticationTokenForCluster', 'clusterName', clusterName)
-            // verify required parameter 'clusterRegion' is not null or undefined
-            assertParamExists('authenticationTokenForCluster', 'clusterRegion', clusterRegion)
-            const localVarPath = `/auth-token`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication JWTKeyAuth required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-            if (clusterName !== undefined) {
-                localVarQueryParameter['cluster_name'] = clusterName;
-            }
-
-            if (clusterRegion !== undefined) {
-                localVarQueryParameter['cluster_region'] = clusterRegion;
-            }
-
-            if (namespace !== undefined) {
-                localVarQueryParameter['namespace'] = namespace;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
          * @summary Deletes the given pod in the (namespace, cluster, region)
          * @param {string} clusterName Cluster name in which the pods are to be searched for
          * @param {string} clusterRegion The region of the cluster
@@ -828,19 +776,6 @@ export const V1AppApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
-         * @summary Get the token for the cluster
-         * @param {string} clusterName Cluster name in which the pods are to be searched for
-         * @param {string} clusterRegion The region of the cluster
-         * @param {string} [namespace] searches for in the namespace
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async authenticationTokenForCluster(clusterName: string, clusterRegion: string, namespace?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.authenticationTokenForCluster(clusterName, clusterRegion, namespace, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * 
          * @summary Deletes the given pod in the (namespace, cluster, region)
          * @param {string} clusterName Cluster name in which the pods are to be searched for
          * @param {string} clusterRegion The region of the cluster
@@ -1019,18 +954,6 @@ export const V1AppApiFactory = function (configuration?: Configuration, basePath
          */
         appSecretSet(body: V1AppSecretRequest, options?: any): AxiosPromise<V1Secret> {
             return localVarFp.appSecretSet(body, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Get the token for the cluster
-         * @param {string} clusterName Cluster name in which the pods are to be searched for
-         * @param {string} clusterRegion The region of the cluster
-         * @param {string} [namespace] searches for in the namespace
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        authenticationTokenForCluster(clusterName: string, clusterRegion: string, namespace?: string, options?: any): AxiosPromise<string> {
-            return localVarFp.authenticationTokenForCluster(clusterName, clusterRegion, namespace, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1244,34 +1167,6 @@ export interface V1AppApiAppSecretSetRequest {
      * @memberof V1AppApiAppSecretSet
      */
     readonly body: V1AppSecretRequest
-}
-
-/**
- * Request parameters for authenticationTokenForCluster operation in V1AppApi.
- * @export
- * @interface V1AppApiAuthenticationTokenForClusterRequest
- */
-export interface V1AppApiAuthenticationTokenForClusterRequest {
-    /**
-     * Cluster name in which the pods are to be searched for
-     * @type {string}
-     * @memberof V1AppApiAuthenticationTokenForCluster
-     */
-    readonly clusterName: string
-
-    /**
-     * The region of the cluster
-     * @type {string}
-     * @memberof V1AppApiAuthenticationTokenForCluster
-     */
-    readonly clusterRegion: string
-
-    /**
-     * searches for in the namespace
-     * @type {string}
-     * @memberof V1AppApiAuthenticationTokenForCluster
-     */
-    readonly namespace?: string
 }
 
 /**
@@ -1596,18 +1491,6 @@ export class V1AppApi extends BaseAPI {
      */
     public appSecretSet(requestParameters: V1AppApiAppSecretSetRequest, options?: any) {
         return V1AppApiFp(this.configuration).appSecretSet(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Get the token for the cluster
-     * @param {V1AppApiAuthenticationTokenForClusterRequest} requestParameters Request parameters.
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof V1AppApi
-     */
-    public authenticationTokenForCluster(requestParameters: V1AppApiAuthenticationTokenForClusterRequest, options?: any) {
-        return V1AppApiFp(this.configuration).authenticationTokenForCluster(requestParameters.clusterName, requestParameters.clusterRegion, requestParameters.namespace, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

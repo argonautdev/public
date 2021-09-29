@@ -20,7 +20,6 @@ export * from './chart-metadata';
 export * from './eks-auto-scaling-group';
 export * from './eks-certificate';
 export * from './eks-cluster';
-export * from './eks-connector-config-response';
 export * from './eks-encryption-config';
 export * from './eks-identity';
 export * from './eks-issue';

@@ -3,9 +3,9 @@
 README.md
 api.ts
 api/v1-app-api.ts
-api/v1-argo-workflow-api.ts
 api/v1-environment-api.ts
 api/v1-github-api.ts
+api/v1-kubernetes-api.ts
 api/v1-media-api.ts
 api/v1-settings-api.ts
 base.ts
@@ -35,7 +35,6 @@ models/chart-metadata.ts
 models/eks-auto-scaling-group.ts
 models/eks-certificate.ts
 models/eks-cluster.ts
-models/eks-connector-config-response.ts
 models/eks-encryption-config.ts
 models/eks-identity.ts
 models/eks-issue.ts

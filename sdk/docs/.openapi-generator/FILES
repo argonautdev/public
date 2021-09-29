@@ -1,7 +1,7 @@
 Apis/V1AppApi.md
-Apis/V1ArgoWorkflowApi.md
 Apis/V1EnvironmentApi.md
 Apis/V1GithubApi.md
+Apis/V1KubernetesApi.md
 Apis/V1MediaApi.md
 Apis/V1SettingsApi.md
 Models/AwsCredsSetAWSBody.md
@@ -26,7 +26,6 @@ Models/ChartMetadata.md
 Models/EksAutoScalingGroup.md
 Models/EksCertificate.md
 Models/EksCluster.md
-Models/EksConnectorConfigResponse.md
 Models/EksEncryptionConfig.md
 Models/EksIdentity.md
 Models/EksIssue.md
