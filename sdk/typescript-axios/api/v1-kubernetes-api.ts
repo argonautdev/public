@@ -20,6 +20,10 @@ import { Configuration } from '../configuration';
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+// @ts-ignore
+import { V1ConfigMap } from '../models';
+// @ts-ignore
+import { V1Secret } from '../models';
 /**
  * V1KubernetesApi - axios parameter creator
  * @export
@@ -71,6 +75,104 @@ export const V1KubernetesApiAxiosParamCreator = function (configuration?: Config
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * 
+         * @summary KubernetesConfigMap returns a config-map
+         * @param {string} cluster Cluster name
+         * @param {string} region The region of the cluster
+         * @param {string} namespace Namespace
+         * @param {string} name Config Map Name
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        kubernetesConfigMap: async (cluster: string, region: string, namespace: string, name: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'cluster' is not null or undefined
+            assertParamExists('kubernetesConfigMap', 'cluster', cluster)
+            // verify required parameter 'region' is not null or undefined
+            assertParamExists('kubernetesConfigMap', 'region', region)
+            // verify required parameter 'namespace' is not null or undefined
+            assertParamExists('kubernetesConfigMap', 'namespace', namespace)
+            // verify required parameter 'name' is not null or undefined
+            assertParamExists('kubernetesConfigMap', 'name', name)
+            const localVarPath = `/cluster/{cluster}/region/{region}/namespaces/{namespace}/configmaps/{name}`
+                .replace(`{${"cluster"}}`, encodeURIComponent(String(cluster)))
+                .replace(`{${"region"}}`, encodeURIComponent(String(region)))
+                .replace(`{${"namespace"}}`, encodeURIComponent(String(namespace)))
+                .replace(`{${"name"}}`, encodeURIComponent(String(name)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication JWTKeyAuth required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary KubernetesSecret returns a config-map
+         * @param {string} cluster Cluster name
+         * @param {string} region The region of the cluster
+         * @param {string} namespace Namespace
+         * @param {string} name Secret name
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        kubernetesSecret: async (cluster: string, region: string, namespace: string, name: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'cluster' is not null or undefined
+            assertParamExists('kubernetesSecret', 'cluster', cluster)
+            // verify required parameter 'region' is not null or undefined
+            assertParamExists('kubernetesSecret', 'region', region)
+            // verify required parameter 'namespace' is not null or undefined
+            assertParamExists('kubernetesSecret', 'namespace', namespace)
+            // verify required parameter 'name' is not null or undefined
+            assertParamExists('kubernetesSecret', 'name', name)
+            const localVarPath = `/cluster/{cluster}/region/{region}/namespaces/{namespace}/secrets/{name}`
+                .replace(`{${"cluster"}}`, encodeURIComponent(String(cluster)))
+                .replace(`{${"region"}}`, encodeURIComponent(String(region)))
+                .replace(`{${"namespace"}}`, encodeURIComponent(String(namespace)))
+                .replace(`{${"name"}}`, encodeURIComponent(String(name)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication JWTKeyAuth required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -94,6 +196,34 @@ export const V1KubernetesApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.kubernetesApiCaller(cluster, region, url, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
+        /**
+         * 
+         * @summary KubernetesConfigMap returns a config-map
+         * @param {string} cluster Cluster name
+         * @param {string} region The region of the cluster
+         * @param {string} namespace Namespace
+         * @param {string} name Config Map Name
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async kubernetesConfigMap(cluster: string, region: string, namespace: string, name: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V1ConfigMap>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.kubernetesConfigMap(cluster, region, namespace, name, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @summary KubernetesSecret returns a config-map
+         * @param {string} cluster Cluster name
+         * @param {string} region The region of the cluster
+         * @param {string} namespace Namespace
+         * @param {string} name Secret name
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async kubernetesSecret(cluster: string, region: string, namespace: string, name: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V1Secret>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.kubernetesSecret(cluster, region, namespace, name, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
     }
 };
 
@@ -115,6 +245,32 @@ export const V1KubernetesApiFactory = function (configuration?: Configuration, b
          */
         kubernetesApiCaller(cluster: string, region: string, url: string, options?: any): AxiosPromise<object> {
             return localVarFp.kubernetesApiCaller(cluster, region, url, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary KubernetesConfigMap returns a config-map
+         * @param {string} cluster Cluster name
+         * @param {string} region The region of the cluster
+         * @param {string} namespace Namespace
+         * @param {string} name Config Map Name
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        kubernetesConfigMap(cluster: string, region: string, namespace: string, name: string, options?: any): AxiosPromise<V1ConfigMap> {
+            return localVarFp.kubernetesConfigMap(cluster, region, namespace, name, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary KubernetesSecret returns a config-map
+         * @param {string} cluster Cluster name
+         * @param {string} region The region of the cluster
+         * @param {string} namespace Namespace
+         * @param {string} name Secret name
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        kubernetesSecret(cluster: string, region: string, namespace: string, name: string, options?: any): AxiosPromise<V1Secret> {
+            return localVarFp.kubernetesSecret(cluster, region, namespace, name, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -148,6 +304,76 @@ export interface V1KubernetesApiKubernetesApiCallerRequest {
 }
 
 /**
+ * Request parameters for kubernetesConfigMap operation in V1KubernetesApi.
+ * @export
+ * @interface V1KubernetesApiKubernetesConfigMapRequest
+ */
+export interface V1KubernetesApiKubernetesConfigMapRequest {
+    /**
+     * Cluster name
+     * @type {string}
+     * @memberof V1KubernetesApiKubernetesConfigMap
+     */
+    readonly cluster: string
+
+    /**
+     * The region of the cluster
+     * @type {string}
+     * @memberof V1KubernetesApiKubernetesConfigMap
+     */
+    readonly region: string
+
+    /**
+     * Namespace
+     * @type {string}
+     * @memberof V1KubernetesApiKubernetesConfigMap
+     */
+    readonly namespace: string
+
+    /**
+     * Config Map Name
+     * @type {string}
+     * @memberof V1KubernetesApiKubernetesConfigMap
+     */
+    readonly name: string
+}
+
+/**
+ * Request parameters for kubernetesSecret operation in V1KubernetesApi.
+ * @export
+ * @interface V1KubernetesApiKubernetesSecretRequest
+ */
+export interface V1KubernetesApiKubernetesSecretRequest {
+    /**
+     * Cluster name
+     * @type {string}
+     * @memberof V1KubernetesApiKubernetesSecret
+     */
+    readonly cluster: string
+
+    /**
+     * The region of the cluster
+     * @type {string}
+     * @memberof V1KubernetesApiKubernetesSecret
+     */
+    readonly region: string
+
+    /**
+     * Namespace
+     * @type {string}
+     * @memberof V1KubernetesApiKubernetesSecret
+     */
+    readonly namespace: string
+
+    /**
+     * Secret name
+     * @type {string}
+     * @memberof V1KubernetesApiKubernetesSecret
+     */
+    readonly name: string
+}
+
+/**
  * V1KubernetesApi - object-oriented interface
  * @export
  * @class V1KubernetesApi
@@ -164,5 +390,29 @@ export class V1KubernetesApi extends BaseAPI {
      */
     public kubernetesApiCaller(requestParameters: V1KubernetesApiKubernetesApiCallerRequest, options?: any) {
         return V1KubernetesApiFp(this.configuration).kubernetesApiCaller(requestParameters.cluster, requestParameters.region, requestParameters.url, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary KubernetesConfigMap returns a config-map
+     * @param {V1KubernetesApiKubernetesConfigMapRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof V1KubernetesApi
+     */
+    public kubernetesConfigMap(requestParameters: V1KubernetesApiKubernetesConfigMapRequest, options?: any) {
+        return V1KubernetesApiFp(this.configuration).kubernetesConfigMap(requestParameters.cluster, requestParameters.region, requestParameters.namespace, requestParameters.name, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary KubernetesSecret returns a config-map
+     * @param {V1KubernetesApiKubernetesSecretRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof V1KubernetesApi
+     */
+    public kubernetesSecret(requestParameters: V1KubernetesApiKubernetesSecretRequest, options?: any) {
+        return V1KubernetesApiFp(this.configuration).kubernetesSecret(requestParameters.cluster, requestParameters.region, requestParameters.namespace, requestParameters.name, options).then((request) => request(this.axios, this.basePath));
     }
 }

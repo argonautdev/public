@@ -142,6 +142,7 @@ models/v1-config-map-key-selector.ts
 models/v1-config-map-projection.ts
 models/v1-config-map-struct.ts
 models/v1-config-map-volume-source.ts
+models/v1-config-map.ts
 models/v1-connection-response.ts
 models/v1-container-port.ts
 models/v1-container-state-running.ts

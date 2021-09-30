@@ -128,6 +128,7 @@ Models/V1Capabilities.md
 Models/V1CapsulesStruct.md
 Models/V1CephFSVolumeSource.md
 Models/V1CinderVolumeSource.md
+Models/V1ConfigMap.md
 Models/V1ConfigMapEnvSource.md
 Models/V1ConfigMapKeySelector.md
 Models/V1ConfigMapProjection.md

@@ -122,6 +122,7 @@ export * from './v1-capabilities';
 export * from './v1-capsules-struct';
 export * from './v1-ceph-fsvolume-source';
 export * from './v1-cinder-volume-source';
+export * from './v1-config-map';
 export * from './v1-config-map-env-source';
 export * from './v1-config-map-key-selector';
 export * from './v1-config-map-projection';

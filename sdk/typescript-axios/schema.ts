@@ -126,6 +126,7 @@ export { $v1_Capabilities } from './schemas/$v1_Capabilities';
 export { $v1_CapsulesStruct } from './schemas/$v1_CapsulesStruct';
 export { $v1_CephFSVolumeSource } from './schemas/$v1_CephFSVolumeSource';
 export { $v1_CinderVolumeSource } from './schemas/$v1_CinderVolumeSource';
+export { $v1_ConfigMap } from './schemas/$v1_ConfigMap';
 export { $v1_ConfigMapEnvSource } from './schemas/$v1_ConfigMapEnvSource';
 export { $v1_ConfigMapKeySelector } from './schemas/$v1_ConfigMapKeySelector';
 export { $v1_ConfigMapProjection } from './schemas/$v1_ConfigMapProjection';
