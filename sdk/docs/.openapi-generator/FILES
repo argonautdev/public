@@ -1,7 +1,6 @@
 Apis/V1AppApi.md
 Apis/V1EnvironmentApi.md
 Apis/V1GithubApi.md
-Apis/V1KubernetesApi.md
 Apis/V1MediaApi.md
 Apis/V1SettingsApi.md
 Models/AwsCredsSetAWSBody.md
@@ -128,7 +127,6 @@ Models/V1Capabilities.md
 Models/V1CapsulesStruct.md
 Models/V1CephFSVolumeSource.md
 Models/V1CinderVolumeSource.md
-Models/V1ConfigMap.md
 Models/V1ConfigMapEnvSource.md
 Models/V1ConfigMapKeySelector.md
 Models/V1ConfigMapProjection.md
@@ -147,6 +145,7 @@ Models/V1DeploymentStruct.md
 Models/V1DownwardAPIProjection.md
 Models/V1DownwardAPIVolumeFile.md
 Models/V1DownwardAPIVolumeSource.md
+Models/V1ElasticSearch.md
 Models/V1ElasticacheRedis.md
 Models/V1EmptyDirVolumeSource.md
 Models/V1EnvFromSource.md

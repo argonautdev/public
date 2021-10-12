@@ -29,9 +29,6 @@ Class | Method | HTTP request | Description
 *V1EnvironmentApi* | [**terragruntParserUpdate**](Apis/V1EnvironmentApi.md#terragruntparserupdate) | **POST** /infra/terragrunt/update | Updates all the resources send in body for the existing environment
 *V1EnvironmentApi* | [**validEnvironmentName**](Apis/V1EnvironmentApi.md#validenvironmentname) | **GET** /env/{environment_name}/{environment_region}/check | Checks if the environment name is valid or not
 *V1GithubApi* | [**getGhInstallations**](Apis/V1GithubApi.md#getghinstallations) | **GET** /getGhInstallations | Get all the github installations associated with the current argonaut organization
-*V1KubernetesApi* | [**kubernetesApiCaller**](Apis/V1KubernetesApi.md#kubernetesapicaller) | **GET** /cluster/{cluster}/region/{region}/kubernetes/{url} | Wrapper around k8s api to make calls
-*V1KubernetesApi* | [**kubernetesConfigMap**](Apis/V1KubernetesApi.md#kubernetesconfigmap) | **GET** /cluster/{cluster}/region/{region}/namespaces/{namespace}/configmaps/{name} | KubernetesConfigMap returns a config-map
-*V1KubernetesApi* | [**kubernetesSecret**](Apis/V1KubernetesApi.md#kubernetessecret) | **GET** /cluster/{cluster}/region/{region}/namespaces/{namespace}/secrets/{name} | KubernetesSecret returns a config-map
 *V1MediaApi* | [**mediaDownload**](Apis/V1MediaApi.md#mediadownload) | **GET** /media/download/{path} | Download media file at the given path
 *V1SettingsApi* | [**setAWSCreds**](Apis/V1SettingsApi.md#setawscreds) | **PUT** /aws-creds/set | Updates the aws creds with the new credentails
 
@@ -163,7 +160,6 @@ Class | Method | HTTP request | Description
  - [V1CapsulesStruct](./Models/V1CapsulesStruct.md)
  - [V1CephFSVolumeSource](./Models/V1CephFSVolumeSource.md)
  - [V1CinderVolumeSource](./Models/V1CinderVolumeSource.md)
- - [V1ConfigMap](./Models/V1ConfigMap.md)
  - [V1ConfigMapEnvSource](./Models/V1ConfigMapEnvSource.md)
  - [V1ConfigMapKeySelector](./Models/V1ConfigMapKeySelector.md)
  - [V1ConfigMapProjection](./Models/V1ConfigMapProjection.md)
@@ -182,6 +178,7 @@ Class | Method | HTTP request | Description
  - [V1DownwardAPIProjection](./Models/V1DownwardAPIProjection.md)
  - [V1DownwardAPIVolumeFile](./Models/V1DownwardAPIVolumeFile.md)
  - [V1DownwardAPIVolumeSource](./Models/V1DownwardAPIVolumeSource.md)
+ - [V1ElasticSearch](./Models/V1ElasticSearch.md)
  - [V1ElasticacheRedis](./Models/V1ElasticacheRedis.md)
  - [V1EmptyDirVolumeSource](./Models/V1EmptyDirVolumeSource.md)
  - [V1EnvFromSource](./Models/V1EnvFromSource.md)

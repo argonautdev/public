@@ -9,6 +9,12 @@ export const $v1_TerragruntParserRequestConfig = {
                 type: 'types_Cluster',
             },
         },
+        elastic_search: {
+            type: 'array',
+            contains: {
+                type: 'v1_ElasticSearch',
+            },
+        },
         elasticache_redis: {
             type: 'array',
             contains: {

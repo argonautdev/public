@@ -5,7 +5,6 @@ api.ts
 api/v1-app-api.ts
 api/v1-environment-api.ts
 api/v1-github-api.ts
-api/v1-kubernetes-api.ts
 api/v1-media-api.ts
 api/v1-settings-api.ts
 base.ts
@@ -142,7 +141,6 @@ models/v1-config-map-key-selector.ts
 models/v1-config-map-projection.ts
 models/v1-config-map-struct.ts
 models/v1-config-map-volume-source.ts
-models/v1-config-map.ts
 models/v1-connection-response.ts
 models/v1-container-port.ts
 models/v1-container-state-running.ts
@@ -157,6 +155,7 @@ models/v1-deployment-struct.ts
 models/v1-downward-apiprojection.ts
 models/v1-downward-apivolume-file.ts
 models/v1-downward-apivolume-source.ts
+models/v1-elastic-search.ts
 models/v1-elasticache-redis.ts
 models/v1-empty-dir-volume-source.ts
 models/v1-env-from-source.ts

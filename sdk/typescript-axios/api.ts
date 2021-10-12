@@ -17,7 +17,6 @@
 export * from './api/v1-app-api';
 export * from './api/v1-environment-api';
 export * from './api/v1-github-api';
-export * from './api/v1-kubernetes-api';
 export * from './api/v1-media-api';
 export * from './api/v1-settings-api';
 
