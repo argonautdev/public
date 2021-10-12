@@ -45,11 +45,11 @@ export const $v1_Elasticsearch = {
         elasticsearch_version: {
             type: 'string',
         },
+        instance_count_per_az: {
+            type: 'number',
+        },
         instance_type: {
             type: 'string',
-        },
-        instances_count_per_az: {
-            type: 'number',
         },
         is_public: {
             type: 'boolean',

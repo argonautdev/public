@@ -106,16 +106,16 @@ export interface V1Elasticsearch {
     elasticsearch_version?: string;
     /**
      * 
+     * @type {number}
+     * @memberof V1Elasticsearch
+     */
+    instance_count_per_az?: number;
+    /**
+     * 
      * @type {string}
      * @memberof V1Elasticsearch
      */
     instance_type?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof V1Elasticsearch
-     */
-    instances_count_per_az?: number;
     /**
      * 
      * @type {boolean}
