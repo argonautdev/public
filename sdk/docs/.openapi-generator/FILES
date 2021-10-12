@@ -145,8 +145,8 @@ Models/V1DeploymentStruct.md
 Models/V1DownwardAPIProjection.md
 Models/V1DownwardAPIVolumeFile.md
 Models/V1DownwardAPIVolumeSource.md
-Models/V1ElasticSearch.md
 Models/V1ElasticacheRedis.md
+Models/V1Elasticsearch.md
 Models/V1EmptyDirVolumeSource.md
 Models/V1EnvFromSource.md
 Models/V1EnvVar.md

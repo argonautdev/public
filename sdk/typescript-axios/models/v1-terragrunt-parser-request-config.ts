@@ -16,8 +16,8 @@
 import { TypesCluster } from './types-cluster';
 import { V1AwsS3Bucket } from './v1-aws-s3-bucket';
 import { V1AwsS3StaticSite } from './v1-aws-s3-static-site';
-import { V1ElasticSearch } from './v1-elastic-search';
 import { V1ElasticacheRedis } from './v1-elasticache-redis';
+import { V1Elasticsearch } from './v1-elasticsearch';
 import { V1EnvironmentRequest } from './v1-environment-request';
 import { V1RDS } from './v1-rds';
 
@@ -35,16 +35,16 @@ export interface V1TerragruntParserRequestConfig {
     eks?: Array<TypesCluster>;
     /**
      * 
-     * @type {Array<V1ElasticSearch>}
-     * @memberof V1TerragruntParserRequestConfig
-     */
-    elastic_search?: Array<V1ElasticSearch>;
-    /**
-     * 
      * @type {Array<V1ElasticacheRedis>}
      * @memberof V1TerragruntParserRequestConfig
      */
     elasticache_redis?: Array<V1ElasticacheRedis>;
+    /**
+     * 
+     * @type {Array<V1Elasticsearch>}
+     * @memberof V1TerragruntParserRequestConfig
+     */
+    elasticsearch?: Array<V1Elasticsearch>;
     /**
      * 
      * @type {V1EnvironmentRequest}

@@ -4,8 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **eks** | [**List**](types.Cluster.md) |  | [optional] [default to null]
-**elastic\_search** | [**List**](v1.ElasticSearch.md) |  | [optional] [default to null]
 **elasticache\_redis** | [**List**](v1.ElasticacheRedis.md) |  | [optional] [default to null]
+**elasticsearch** | [**List**](v1.Elasticsearch.md) |  | [optional] [default to null]
 **environment** | [**v1.EnvironmentRequest**](v1.EnvironmentRequest.md) |  | [optional] [default to null]
 **rds** | [**List**](v1.RDS.md) |  | [optional] [default to null]
 **s3\_bucket** | [**List**](v1.AwsS3Bucket.md) |  | [optional] [default to null]

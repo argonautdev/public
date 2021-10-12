@@ -146,7 +146,7 @@ export { $v1_DownwardAPIProjection } from './schemas/$v1_DownwardAPIProjection';
 export { $v1_DownwardAPIVolumeFile } from './schemas/$v1_DownwardAPIVolumeFile';
 export { $v1_DownwardAPIVolumeSource } from './schemas/$v1_DownwardAPIVolumeSource';
 export { $v1_ElasticacheRedis } from './schemas/$v1_ElasticacheRedis';
-export { $v1_ElasticSearch } from './schemas/$v1_ElasticSearch';
+export { $v1_Elasticsearch } from './schemas/$v1_Elasticsearch';
 export { $v1_EmptyDirVolumeSource } from './schemas/$v1_EmptyDirVolumeSource';
 export { $v1_EnvFromSource } from './schemas/$v1_EnvFromSource';
 export { $v1_EnvironmentRequest } from './schemas/$v1_EnvironmentRequest';

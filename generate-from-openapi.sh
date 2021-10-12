@@ -47,3 +47,13 @@ openapi-generator-cli generate -i ~/argonaut/midgard/docs/swagger.json \
 	--additional-properties=generateInterfaces=true \
 	--additional-properties=packageName=go_midgard_sdk \
 	--additional-properties=packageVersion=$1
+
+git add .
+git commit -m "$1"
+git push
+
+cd ..
+git add .
+git commit -m "$1"
+git push
+gh release create $1 --title $1

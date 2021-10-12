@@ -155,8 +155,8 @@ models/v1-deployment-struct.ts
 models/v1-downward-apiprojection.ts
 models/v1-downward-apivolume-file.ts
 models/v1-downward-apivolume-source.ts
-models/v1-elastic-search.ts
 models/v1-elasticache-redis.ts
+models/v1-elasticsearch.ts
 models/v1-empty-dir-volume-source.ts
 models/v1-env-from-source.ts
 models/v1-env-var-source.ts
