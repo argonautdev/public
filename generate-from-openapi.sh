@@ -52,7 +52,7 @@ git add .
 git commit -m "$1"
 git push
 
-cd ..
+cd ../go-midgard-sdk
 git add .
 git commit -m "$1"
 git push
