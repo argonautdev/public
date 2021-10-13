@@ -121,12 +121,6 @@ export interface V1Elasticsearch {
      * @type {boolean}
      * @memberof V1Elasticsearch
      */
-    is_public?: boolean;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof V1Elasticsearch
-     */
     kibana_hostname_enabled?: boolean;
     /**
      * 
@@ -140,6 +134,12 @@ export interface V1Elasticsearch {
      * @memberof V1Elasticsearch
      */
     name?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof V1Elasticsearch
+     */
+    vpc_enabled?: boolean;
 }
 
 

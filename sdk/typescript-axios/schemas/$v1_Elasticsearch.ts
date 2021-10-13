@@ -51,9 +51,6 @@ export const $v1_Elasticsearch = {
         instance_type: {
             type: 'string',
         },
-        is_public: {
-            type: 'boolean',
-        },
         kibana_hostname_enabled: {
             type: 'boolean',
         },
@@ -62,6 +59,9 @@ export const $v1_Elasticsearch = {
         },
         name: {
             type: 'string',
+        },
+        vpc_enabled: {
+            type: 'boolean',
         },
     },
 };
