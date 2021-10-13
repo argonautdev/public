@@ -49,7 +49,7 @@ export interface V1Elasticsearch {
      * @type {number}
      * @memberof V1Elasticsearch
      */
-    az_count?: number;
+    availability_zone_count?: number;
     /**
      * 
      * @type {boolean}

@@ -56,4 +56,4 @@ cd ../go-midgard-sdk
 git add .
 git commit -m "$1"
 git push
-gh release create $1 --title $1
+gh release create "v$1" --title "v$1"

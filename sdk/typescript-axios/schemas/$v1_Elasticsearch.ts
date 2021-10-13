@@ -15,7 +15,7 @@ export const $v1_Elasticsearch = {
         advanced_security_options_master_user_password: {
             type: 'string',
         },
-        az_count: {
+        availability_zone_count: {
             type: 'number',
         },
         create_iam_service_linked_role: {

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **advanced\_security\_options\_internal\_user\_database\_enabled** | [**Boolean**](boolean.md) |  | [optional] [default to null]
 **advanced\_security\_options\_master\_user\_name** | [**String**](string.md) |  | [optional] [default to null]
 **advanced\_security\_options\_master\_user\_password** | [**String**](string.md) |  | [optional] [default to null]
-**az\_count** | [**Integer**](integer.md) |  | [optional] [default to null]
+**availability\_zone\_count** | [**Integer**](integer.md) |  | [optional] [default to null]
 **create\_iam\_service\_linked\_role** | [**Boolean**](boolean.md) |  | [optional] [default to null]
 **dedicated\_master\_count** | [**Integer**](integer.md) |  | [optional] [default to null]
 **dedicated\_master\_enabled** | [**Boolean**](boolean.md) |  | [optional] [default to null]
