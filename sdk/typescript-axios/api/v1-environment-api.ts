@@ -85,10 +85,11 @@ export const V1EnvironmentApiAxiosParamCreator = function (configuration?: Confi
          * @param {boolean} [eks] includes eks in response body if true
          * @param {boolean} [s3Bucket] includes s3 buckets in response body if true
          * @param {boolean} [elasticache] includes elasticache in response body if true
+         * @param {boolean} [elastisearch] includes elasticsearch in response body if true
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listResourcesInEnvironment: async (environmentName: string, rds?: boolean, eks?: boolean, s3Bucket?: boolean, elasticache?: boolean, options: any = {}): Promise<RequestArgs> => {
+        listResourcesInEnvironment: async (environmentName: string, rds?: boolean, eks?: boolean, s3Bucket?: boolean, elasticache?: boolean, elastisearch?: boolean, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'environmentName' is not null or undefined
             assertParamExists('listResourcesInEnvironment', 'environmentName', environmentName)
             const localVarPath = `/environment/list-resources/{environment_name}`
@@ -121,6 +122,10 @@ export const V1EnvironmentApiAxiosParamCreator = function (configuration?: Confi
 
             if (elasticache !== undefined) {
                 localVarQueryParameter['elasticache'] = elasticache;
+            }
+
+            if (elastisearch !== undefined) {
+                localVarQueryParameter['elastisearch'] = elastisearch;
             }
 
 
@@ -367,11 +372,12 @@ export const V1EnvironmentApiFp = function(configuration?: Configuration) {
          * @param {boolean} [eks] includes eks in response body if true
          * @param {boolean} [s3Bucket] includes s3 buckets in response body if true
          * @param {boolean} [elasticache] includes elasticache in response body if true
+         * @param {boolean} [elastisearch] includes elasticsearch in response body if true
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listResourcesInEnvironment(environmentName: string, rds?: boolean, eks?: boolean, s3Bucket?: boolean, elasticache?: boolean, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<IntegrationsAwsResources>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listResourcesInEnvironment(environmentName, rds, eks, s3Bucket, elasticache, options);
+        async listResourcesInEnvironment(environmentName: string, rds?: boolean, eks?: boolean, s3Bucket?: boolean, elasticache?: boolean, elastisearch?: boolean, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<IntegrationsAwsResources>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listResourcesInEnvironment(environmentName, rds, eks, s3Bucket, elasticache, elastisearch, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -461,11 +467,12 @@ export const V1EnvironmentApiFactory = function (configuration?: Configuration, 
          * @param {boolean} [eks] includes eks in response body if true
          * @param {boolean} [s3Bucket] includes s3 buckets in response body if true
          * @param {boolean} [elasticache] includes elasticache in response body if true
+         * @param {boolean} [elastisearch] includes elasticsearch in response body if true
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listResourcesInEnvironment(environmentName: string, rds?: boolean, eks?: boolean, s3Bucket?: boolean, elasticache?: boolean, options?: any): AxiosPromise<IntegrationsAwsResources> {
-            return localVarFp.listResourcesInEnvironment(environmentName, rds, eks, s3Bucket, elasticache, options).then((request) => request(axios, basePath));
+        listResourcesInEnvironment(environmentName: string, rds?: boolean, eks?: boolean, s3Bucket?: boolean, elasticache?: boolean, elastisearch?: boolean, options?: any): AxiosPromise<IntegrationsAwsResources> {
+            return localVarFp.listResourcesInEnvironment(environmentName, rds, eks, s3Bucket, elasticache, elastisearch, options).then((request) => request(axios, basePath));
         },
         /**
          * Removes the resource folder from the github repo used to manage the hcl configs. This will trigger a workflow (which will fail since the required params won\'t be found in the commit message). NOTE: **This must be called after successful destruction of the resource, as resource existance is not checked here**
@@ -584,6 +591,13 @@ export interface V1EnvironmentApiListResourcesInEnvironmentRequest {
      * @memberof V1EnvironmentApiListResourcesInEnvironment
      */
     readonly elasticache?: boolean
+
+    /**
+     * includes elasticsearch in response body if true
+     * @type {boolean}
+     * @memberof V1EnvironmentApiListResourcesInEnvironment
+     */
+    readonly elastisearch?: boolean
 }
 
 /**
@@ -705,7 +719,7 @@ export class V1EnvironmentApi extends BaseAPI {
      * @memberof V1EnvironmentApi
      */
     public listResourcesInEnvironment(requestParameters: V1EnvironmentApiListResourcesInEnvironmentRequest, options?: any) {
-        return V1EnvironmentApiFp(this.configuration).listResourcesInEnvironment(requestParameters.environmentName, requestParameters.rds, requestParameters.eks, requestParameters.s3Bucket, requestParameters.elasticache, options).then((request) => request(this.axios, this.basePath));
+        return V1EnvironmentApiFp(this.configuration).listResourcesInEnvironment(requestParameters.environmentName, requestParameters.rds, requestParameters.eks, requestParameters.s3Bucket, requestParameters.elasticache, requestParameters.elastisearch, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

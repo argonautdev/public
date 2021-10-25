@@ -12,6 +12,9 @@ export const $eks_Cluster = {
         ClientRequestToken: {
             type: 'string',
         },
+        ConnectorConfig: {
+            type: 'eks_ConnectorConfigResponse',
+        },
         CreatedAt: {
             type: 'string',
         },

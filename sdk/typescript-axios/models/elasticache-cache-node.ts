@@ -28,7 +28,7 @@ export interface ElasticacheCacheNode {
      */
     CacheNodeCreateTime?: string;
     /**
-     * The cache node identifier. A node ID is a numeric identifier (0001, 0002, etc.). The combination of cluster ID and node ID uniquely identifies every cache node used in a customer\'s AWS account.
+     * The cache node identifier. A node ID is a numeric identifier (0001, 0002, etc.). The combination of cluster ID and node ID uniquely identifies every cache node used in a customer\'s Amazon account.
      * @type {string}
      * @memberof ElasticacheCacheNode
      */

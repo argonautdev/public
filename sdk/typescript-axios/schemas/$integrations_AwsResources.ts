@@ -15,6 +15,12 @@ export const $integrations_AwsResources = {
                 type: 'integrations_DescribeElasticacheCluster',
             },
         },
+        elasticsearch: {
+            type: 'array',
+            contains: {
+                type: 'integrations_Elasticsearch',
+            },
+        },
         rds: {
             type: 'array',
             contains: {

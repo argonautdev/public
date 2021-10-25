@@ -17,6 +17,7 @@ import { IntegrationsBucketsInRegion } from './integrations-buckets-in-region';
 import { IntegrationsDescribeClusterOutput } from './integrations-describe-cluster-output';
 import { IntegrationsDescribeDBInstancesOutput } from './integrations-describe-dbinstances-output';
 import { IntegrationsDescribeElasticacheCluster } from './integrations-describe-elasticache-cluster';
+import { IntegrationsElasticsearch } from './integrations-elasticsearch';
 
 /**
  * 
@@ -36,6 +37,12 @@ export interface IntegrationsAwsResources {
      * @memberof IntegrationsAwsResources
      */
     elasticache?: Array<IntegrationsDescribeElasticacheCluster>;
+    /**
+     * 
+     * @type {Array<IntegrationsElasticsearch>}
+     * @memberof IntegrationsAwsResources
+     */
+    elasticsearch?: Array<IntegrationsElasticsearch>;
     /**
      * 
      * @type {Array<IntegrationsDescribeDBInstancesOutput>}

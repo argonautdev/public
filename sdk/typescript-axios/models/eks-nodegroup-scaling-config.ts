@@ -33,7 +33,7 @@ export interface EksNodegroupScalingConfig {
      */
     MaxSize?: number;
     /**
-     * The minimum number of nodes that the managed node group can scale in to. This number must be greater than zero.
+     * The minimum number of nodes that the managed node group can scale in to.
      * @type {number}
      * @memberof EksNodegroupScalingConfig
      */

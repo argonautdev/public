@@ -1,7 +1,8 @@
 #!/bin/bash
 
 if [[ -z $1 ]]; then
-	echo "Please provide the npm version number as an argument. Something like this: ./script 0.2.4"
+	echo "Please provide the npm version number as an argument. Something like this: ./script 0.2.4."
+	echo "If you want to release for go also. Run ./script 0.2.4 --release-go"
 	exit 1
 fi
 
@@ -39,21 +40,23 @@ openapi-generator-cli generate -i ~/argonaut/midgard/docs/swagger.json \
 	-g markdown \
 	-o sdk/docs/
 
-echo "Generating go sdk"
-openapi-generator-cli generate -i ~/argonaut/midgard/docs/swagger.json \
-	-g go \
-	-o ../go-midgard-sdk \
-	--additional-properties=disallowAdditionalPropertiesIfNotPresent=false \
-	--additional-properties=generateInterfaces=true \
-	--additional-properties=packageName=go_midgard_sdk \
-	--additional-properties=packageVersion=$1
-
 git add .
 git commit -m "$1"
 git push
 
-cd ../go-midgard-sdk
-git add .
-git commit -m "$1"
-git push
-gh release create "v$1" --title "v$1"
+if [[ $# -ge 2 && $2 == "--release-go"]]; then
+	echo "Generating go sdk"
+	openapi-generator-cli generate -i ~/argonaut/midgard/docs/swagger.json \
+		-g go \
+		-o ../go-midgard-sdk \
+		--additional-properties=disallowAdditionalPropertiesIfNotPresent=false \
+		--additional-properties=generateInterfaces=true \
+		--additional-properties=packageName=go_midgard_sdk \
+		--additional-properties=packageVersion=$1
+
+	cd ../go-midgard-sdk
+	git add .
+	git commit -m "$1"
+	git push
+	gh release create "v$1" --title "v$1"
+fi

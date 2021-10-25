@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **clusters** | [**List**](integrations.DescribeClusterOutput.md) |  | [optional] [default to null]
 **elasticache** | [**List**](integrations.DescribeElasticacheCluster.md) |  | [optional] [default to null]
+**elasticsearch** | [**List**](integrations.Elasticsearch.md) |  | [optional] [default to null]
 **rds** | [**List**](integrations.DescribeDBInstancesOutput.md) |  | [optional] [default to null]
 **s3\_buckets** | [**List**](integrations.BucketsInRegion.md) |  | [optional] [default to null]
 
