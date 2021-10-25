@@ -41,7 +41,7 @@ Name | Type | Description  | Notes
 
 <a name="listResourcesInEnvironment"></a>
 # **listResourcesInEnvironment**
-> integrations.AwsResources listResourcesInEnvironment(environment\_name, rds, eks, s3Bucket, elasticache, elastisearch)
+> integrations.AwsResources listResourcesInEnvironment(environment\_name, rds, eks, s3Bucket, elasticache, elasticsearch)
 
 List all the resources in an environment
 
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
  **eks** | **Boolean**| includes eks in response body if true | [optional] [default to null]
  **s3Bucket** | **Boolean**| includes s3 buckets in response body if true | [optional] [default to null]
  **elasticache** | **Boolean**| includes elasticache in response body if true | [optional] [default to null]
- **elastisearch** | **Boolean**| includes elasticsearch in response body if true | [optional] [default to null]
+ **elasticsearch** | **Boolean**| includes elasticsearch in response body if true | [optional] [default to null]
 
 ### Return type
 
