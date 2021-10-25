@@ -44,7 +44,7 @@ git add .
 git commit -m "$1"
 git push
 
-if [[ $# -ge 2 && $2 == "--release-go"]]; then
+if [[ ($# -ge 2) && ("$2" == "--release-go") ]]; then
 	echo "Generating go sdk"
 	openapi-generator-cli generate -i ~/argonaut/midgard/docs/swagger.json \
 		-g go \
