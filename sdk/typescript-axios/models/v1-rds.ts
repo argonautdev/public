@@ -55,6 +55,12 @@ export interface V1RDS {
      * @type {string}
      * @memberof V1RDS
      */
+    major_engine_version?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof V1RDS
+     */
     name?: string;
     /**
      * 

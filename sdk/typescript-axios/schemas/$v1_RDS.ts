@@ -18,6 +18,9 @@ export const $v1_RDS = {
         instance_class: {
             type: 'string',
         },
+        major_engine_version: {
+            type: 'string',
+        },
         name: {
             type: 'string',
         },

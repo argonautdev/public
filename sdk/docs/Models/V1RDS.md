@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **family** | [**String**](string.md) |  | [optional] [default to null]
 **identifier** | [**String**](string.md) |  | [optional] [default to null]
 **instance\_class** | [**String**](string.md) |  | [optional] [default to null]
+**major\_engine\_version** | [**String**](string.md) |  | [optional] [default to null]
 **name** | [**String**](string.md) |  | [optional] [default to null]
 **password** | [**String**](string.md) |  | [optional] [default to null]
 **snapshot\_identifier** | [**String**](string.md) |  | [optional] [default to null]
