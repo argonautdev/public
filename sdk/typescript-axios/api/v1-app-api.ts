@@ -618,6 +618,43 @@ export const V1AppApiAxiosParamCreator = function (configuration?: Configuration
         },
         /**
          * 
+         * @summary Download config in plain text format
+         * @param {string} tool Tool name to download values yaml for
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        toolConfig: async (tool: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'tool' is not null or undefined
+            assertParamExists('toolConfig', 'tool', tool)
+            const localVarPath = `/tool/{tool}/config`
+                .replace(`{${"tool"}}`, encodeURIComponent(String(tool)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication JWTKeyAuth required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Delete tools from supported library
          * @param {TypesToolDeleteRequest} body Tools Delete Request Body
          * @param {*} [options] Override http request option.
@@ -861,6 +898,17 @@ export const V1AppApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Download config in plain text format
+         * @param {string} tool Tool name to download values yaml for
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async toolConfig(tool: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.toolConfig(tool, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
          * @summary Delete tools from supported library
          * @param {TypesToolDeleteRequest} body Tools Delete Request Body
          * @param {*} [options] Override http request option.
@@ -1033,6 +1081,16 @@ export const V1AppApiFactory = function (configuration?: Configuration, basePath
          */
         logPod(clusterName: string, clusterRegion: string, podName: string, namespace?: string, sinceSeconds?: number, tailLines?: number, options?: any): AxiosPromise<string> {
             return localVarFp.logPod(clusterName, clusterRegion, podName, namespace, sinceSeconds, tailLines, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Download config in plain text format
+         * @param {string} tool Tool name to download values yaml for
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        toolConfig(tool: string, options?: any): AxiosPromise<string> {
+            return localVarFp.toolConfig(tool, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1387,6 +1445,20 @@ export interface V1AppApiLogPodRequest {
 }
 
 /**
+ * Request parameters for toolConfig operation in V1AppApi.
+ * @export
+ * @interface V1AppApiToolConfigRequest
+ */
+export interface V1AppApiToolConfigRequest {
+    /**
+     * Tool name to download values yaml for
+     * @type {string}
+     * @memberof V1AppApiToolConfig
+     */
+    readonly tool: string
+}
+
+/**
  * Request parameters for toolDeleteFromLibrary operation in V1AppApi.
  * @export
  * @interface V1AppApiToolDeleteFromLibraryRequest
@@ -1563,6 +1635,18 @@ export class V1AppApi extends BaseAPI {
      */
     public logPod(requestParameters: V1AppApiLogPodRequest, options?: any) {
         return V1AppApiFp(this.configuration).logPod(requestParameters.clusterName, requestParameters.clusterRegion, requestParameters.podName, requestParameters.namespace, requestParameters.sinceSeconds, requestParameters.tailLines, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Download config in plain text format
+     * @param {V1AppApiToolConfigRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof V1AppApi
+     */
+    public toolConfig(requestParameters: V1AppApiToolConfigRequest, options?: any) {
+        return V1AppApiFp(this.configuration).toolConfig(requestParameters.tool, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

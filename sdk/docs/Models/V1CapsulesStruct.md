@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cert-manager** | [**capsules.InputCertManager**](capsules.InputCertManager.md) |  | [optional] [default to null]
+**clickhouse** | [**String**](string.md) | Clickhouse expects the values.yaml file to be passed as a parameter refer to the charts repo for the values.yaml file | [optional] [default to null]
 **clusterAutoScaler** | [**capsules.InputClusterAutoScaler**](capsules.InputClusterAutoScaler.md) |  | [optional] [default to null]
 **clusterIssuer** | [**capsules.InputClusterIssuer**](capsules.InputClusterIssuer.md) |  | [optional] [default to null]
 **eventExporter** | [**capsules.InputEventExporter**](capsules.InputEventExporter.md) |  | [optional] [default to null]

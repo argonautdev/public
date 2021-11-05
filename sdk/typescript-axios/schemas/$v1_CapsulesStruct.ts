@@ -6,6 +6,9 @@ export const $v1_CapsulesStruct = {
         'cert-manager': {
             type: 'capsules_InputCertManager',
         },
+        clickhouse: {
+            type: 'string',
+        },
         clusterAutoScaler: {
             type: 'capsules_InputClusterAutoScaler',
         },

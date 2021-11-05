@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**getPodsForDeployment**](V1AppApi.md#getPodsForDeployment) | **GET** /pods/list/{cluster_name}/{cluster_region}/{resource_type}/{resource_name} | Get all the pods for the given deployment
 [**listResourceInYaml**](V1AppApi.md#listResourceInYaml) | **GET** /list-resources/{cluster_name}/{cluster_region} | Get all the resource description in yaml format
 [**logPod**](V1AppApi.md#logPod) | **GET** /pods/logs/{cluster_name}/{cluster_region}/{pod_name} | Shows the logs of the given pod in the (namespace, cluster, region)
+[**toolConfig**](V1AppApi.md#toolConfig) | **GET** /tool/{tool}/config | Download config in plain text format
 [**toolDeleteFromLibrary**](V1AppApi.md#toolDeleteFromLibrary) | **POST** /tools/delete | Delete tools from supported library
 [**toolInstallFromLibrary**](V1AppApi.md#toolInstallFromLibrary) | **POST** /toolInstall | Install tools from the supported library
 
@@ -344,6 +345,31 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
+<a name="toolConfig"></a>
+# **toolConfig**
+> String toolConfig(tool)
+
+Download config in plain text format
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tool** | **String**| Tool name to download values yaml for | [default to null]
+
+### Return type
+
+[**String**](../Models/string.md)
+
+### Authorization
+
+[JWTKeyAuth](../README.md#JWTKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: text/plain
 
 <a name="toolDeleteFromLibrary"></a>
 # **toolDeleteFromLibrary**

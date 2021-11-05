@@ -19,6 +19,7 @@ Class | Method | HTTP request | Description
 *V1AppApi* | [**getPodsForDeployment**](Apis/V1AppApi.md#getpodsfordeployment) | **GET** /pods/list/{cluster_name}/{cluster_region}/{resource_type}/{resource_name} | Get all the pods for the given deployment
 *V1AppApi* | [**listResourceInYaml**](Apis/V1AppApi.md#listresourceinyaml) | **GET** /list-resources/{cluster_name}/{cluster_region} | Get all the resource description in yaml format
 *V1AppApi* | [**logPod**](Apis/V1AppApi.md#logpod) | **GET** /pods/logs/{cluster_name}/{cluster_region}/{pod_name} | Shows the logs of the given pod in the (namespace, cluster, region)
+*V1AppApi* | [**toolConfig**](Apis/V1AppApi.md#toolconfig) | **GET** /tool/{tool}/config | Download config in plain text format
 *V1AppApi* | [**toolDeleteFromLibrary**](Apis/V1AppApi.md#tooldeletefromlibrary) | **POST** /tools/delete | Delete tools from supported library
 *V1AppApi* | [**toolInstallFromLibrary**](Apis/V1AppApi.md#toolinstallfromlibrary) | **POST** /toolInstall | Install tools from the supported library
 *V1EnvironmentApi* | [**getCurrentEnvironmentSpec**](Apis/V1EnvironmentApi.md#getcurrentenvironmentspec) | **GET** /environment/spec/{environment_name}/{environment_region} | Gets the last applied spec for the environment if it exists
