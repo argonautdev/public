@@ -34,11 +34,11 @@ export interface V1CapsulesStruct {
      */
     cert_manager?: CapsulesInputCertManager;
     /**
-     * Clickhouse expects the values.yaml file to be passed as a parameter refer to the charts repo for the values.yaml file
-     * @type {string}
+     * Clickhouse expects the values.yaml file to be passed as a parameter the parameter must be a json converted converted file  refer to the charts repo for the values.yaml file
+     * @type {object}
      * @memberof V1CapsulesStruct
      */
-    clickhouse?: string;
+    clickhouse?: object;
     /**
      * 
      * @type {CapsulesInputClusterAutoScaler}

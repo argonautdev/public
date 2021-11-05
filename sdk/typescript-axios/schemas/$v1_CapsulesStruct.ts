@@ -7,7 +7,8 @@ export const $v1_CapsulesStruct = {
             type: 'capsules_InputCertManager',
         },
         clickhouse: {
-            type: 'string',
+            properties: {
+            },
         },
         clusterAutoScaler: {
             type: 'capsules_InputClusterAutoScaler',
