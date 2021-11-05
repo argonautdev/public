@@ -24,6 +24,9 @@ export const $v1_RDS = {
         password: {
             type: 'string',
         },
+        snapshot_identifier: {
+            type: 'string',
+        },
         storage: {
             type: 'number',
         },

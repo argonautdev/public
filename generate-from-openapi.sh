@@ -6,46 +6,55 @@ if [[ -z $1 ]]; then
 	exit 1
 fi
 
-echo "Generating sdk"
+if [[ ($# -le 1) ]]; then
+	echo "put --release-js or --release-go as second parameter to release"
+fi
 
-echo "Generating sdk using typescript-axios and schemas"
-openapi-generator-cli generate -i ~/argonaut/midgard/docs/swagger.json \
-	-g typescript-axios \
-	-o sdk/typescript-axios/ \
-	--additional-properties=supportsES6=true \
-	--additional-properties=typescriptThreePlus=true \
-	--additional-properties=useSingleRequestParameter=true \
-	--additional-properties=withSeparateModelsAndApi=true,modelPackage=models,apiPackage=api,npmName=@argonautdev/midgard-js-sdk,npmVersion=$1,legacyDiscriminatorBehavior=false,disallowAdditionalPropertiesIfNotPresent=false \
-	--enable-post-process-file
+if [[ ($# -ge 2) && ("$2" == "--release-js") ]]; then
+	echo "Generating sdk"
 
-rm -rf sdk/typescript-axios/schemas
+	echo "Generating sdk using typescript-axios and schemas"
+	openapi-generator-cli generate -i ~/argonaut/midgard/docs/swagger.json \
+		-g typescript-axios \
+		-o sdk/typescript-axios/ \
+		--additional-properties=supportsES6=true \
+		--additional-properties=typescriptThreePlus=true \
+		--additional-properties=useSingleRequestParameter=true \
+		--additional-properties=withSeparateModelsAndApi=true,modelPackage=models,apiPackage=api,npmName=@argonautdev/midgard-js-sdk,npmVersion=$1,legacyDiscriminatorBehavior=false,disallowAdditionalPropertiesIfNotPresent=false \
+		--enable-post-process-file
 
-openapi -i ~/argonaut/midgard/docs/swagger.json \
-	-o sdk/typescript-fetch \
-	--exportCore false \
-	--exportServices false \
-	--exportModels false \
-	--exportSchemas true
+	rm -rf sdk/typescript-axios/schemas
 
-mv sdk/typescript-fetch/schemas sdk/typescript-axios/schemas
-mv sdk/typescript-fetch/index.ts sdk/typescript-axios/schema.ts
-echo 'import * as Schema from "./schema";' >> sdk/typescript-axios/index.ts
-echo -e "\nexport {Schema};" >> sdk/typescript-axios/index.ts
-rmdir sdk/typescript-fetch
+	openapi -i ~/argonaut/midgard/docs/swagger.json \
+		-o sdk/typescript-fetch \
+		--exportCore false \
+		--exportServices false \
+		--exportModels false \
+		--exportSchemas true
 
-echo "Generating docs"
+	mv sdk/typescript-fetch/schemas sdk/typescript-axios/schemas
+	mv sdk/typescript-fetch/index.ts sdk/typescript-axios/schema.ts
+	echo 'import * as Schema from "./schema";' >> sdk/typescript-axios/index.ts
+	echo -e "\nexport {Schema};" >> sdk/typescript-axios/index.ts
+	rmdir sdk/typescript-fetch
 
-echo "Generating docs using markdown"
-openapi-generator-cli generate -i ~/argonaut/midgard/docs/swagger.json \
-	-g markdown \
-	-o sdk/docs/
+	echo "Generating docs"
 
-git add .
-git commit -m "$1"
-git push
+	echo "Generating docs using markdown"
+	openapi-generator-cli generate -i ~/argonaut/midgard/docs/swagger.json \
+		-g markdown \
+		-o sdk/docs/
+
+	git add .
+	git commit -m "$1"
+	git push
+fi 
 
 if [[ ($# -ge 2) && ("$2" == "--release-go") ]]; then
 	echo "Generating go sdk"
+	rm -r ../go-midgard-sdk/api*
+	rm -r ../go-midgard-sdk/model*
+	rm -rf ../go-midgard-sdk/docs
 	openapi-generator-cli generate -i ~/argonaut/midgard/docs/swagger.json \
 		-g go \
 		-o ../go-midgard-sdk \

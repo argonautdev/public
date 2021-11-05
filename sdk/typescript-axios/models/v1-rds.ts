@@ -64,6 +64,12 @@ export interface V1RDS {
     password?: string;
     /**
      * 
+     * @type {string}
+     * @memberof V1RDS
+     */
+    snapshot_identifier?: string;
+    /**
+     * 
      * @type {number}
      * @memberof V1RDS
      */

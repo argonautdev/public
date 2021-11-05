@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **instance\_class** | [**String**](string.md) |  | [optional] [default to null]
 **name** | [**String**](string.md) |  | [optional] [default to null]
 **password** | [**String**](string.md) |  | [optional] [default to null]
+**snapshot\_identifier** | [**String**](string.md) |  | [optional] [default to null]
 **storage** | [**Integer**](integer.md) |  | [optional] [default to null]
 **username** | [**String**](string.md) |  | [optional] [default to null]
 **visibility** | [**String**](string.md) |  | [optional] [default to null]
