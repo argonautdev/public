@@ -318,7 +318,7 @@ Name | Type | Description  | Notes
 
 <a name="logPod"></a>
 # **logPod**
-> String logPod(cluster\_name, cluster\_region, pod\_name, namespace, sinceSeconds, tailLines)
+> String logPod(cluster\_name, cluster\_region, pod\_name, namespace, sinceSeconds, tailLines, container)
 
 Shows the logs of the given pod in the (namespace, cluster, region)
 
@@ -332,6 +332,7 @@ Name | Type | Description  | Notes
  **namespace** | **String**| searches for in the namespace | [optional] [default to tools]
  **sinceSeconds** | **Integer**| limits the logs to given seconds | [optional] [default to 86400]
  **tailLines** | **Integer**| limits the logs to given number of lines, counting from the lastest log line | [optional] [default to 1000]
+ **container** | **String**| Name of the container to show the logs for | [optional] [default to null]
 
 ### Return type
 
