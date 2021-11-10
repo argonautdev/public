@@ -8,10 +8,12 @@ Models/BasicJSONMessage.md
 Models/CapsulesConfigCertManager.md
 Models/CapsulesConfigClusterAutoScaler.md
 Models/CapsulesConfigClusterIssuer.md
+Models/CapsulesConfigElk.md
 Models/CapsulesConfigGrafana.md
 Models/CapsulesInputCertManager.md
 Models/CapsulesInputClusterAutoScaler.md
 Models/CapsulesInputClusterIssuer.md
+Models/CapsulesInputElk.md
 Models/CapsulesInputEventExporter.md
 Models/CapsulesInputFluentBit.md
 Models/CapsulesInputGrafana.md

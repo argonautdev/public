@@ -16,6 +16,7 @@
 import { CapsulesInputCertManager } from './capsules-input-cert-manager';
 import { CapsulesInputClusterAutoScaler } from './capsules-input-cluster-auto-scaler';
 import { CapsulesInputClusterIssuer } from './capsules-input-cluster-issuer';
+import { CapsulesInputElk } from './capsules-input-elk';
 import { CapsulesInputEventExporter } from './capsules-input-event-exporter';
 import { CapsulesInputFluentBit } from './capsules-input-fluent-bit';
 import { CapsulesInputGrafana } from './capsules-input-grafana';
@@ -51,6 +52,12 @@ export interface V1CapsulesStruct {
      * @memberof V1CapsulesStruct
      */
     clusterIssuer?: CapsulesInputClusterIssuer;
+    /**
+     * 
+     * @type {CapsulesInputElk}
+     * @memberof V1CapsulesStruct
+     */
+    elk?: CapsulesInputElk;
     /**
      * 
      * @type {CapsulesInputEventExporter}

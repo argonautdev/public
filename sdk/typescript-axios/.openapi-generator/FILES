@@ -17,10 +17,12 @@ models/basic-jsonmessage.ts
 models/capsules-config-cert-manager.ts
 models/capsules-config-cluster-auto-scaler.ts
 models/capsules-config-cluster-issuer.ts
+models/capsules-config-elk.ts
 models/capsules-config-grafana.ts
 models/capsules-input-cert-manager.ts
 models/capsules-input-cluster-auto-scaler.ts
 models/capsules-input-cluster-issuer.ts
+models/capsules-input-elk.ts
 models/capsules-input-event-exporter.ts
 models/capsules-input-fluent-bit.ts
 models/capsules-input-grafana.ts

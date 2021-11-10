@@ -16,6 +16,9 @@ export const $v1_CapsulesStruct = {
         clusterIssuer: {
             type: 'capsules_InputClusterIssuer',
         },
+        elk: {
+            type: 'capsules_InputElk',
+        },
         eventExporter: {
             type: 'capsules_InputEventExporter',
         },

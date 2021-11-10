@@ -6,6 +6,7 @@ export { $basic_JSONMessage } from './schemas/$basic_JSONMessage';
 export { $capsules_ConfigCertManager } from './schemas/$capsules_ConfigCertManager';
 export { $capsules_ConfigClusterAutoScaler } from './schemas/$capsules_ConfigClusterAutoScaler';
 export { $capsules_ConfigClusterIssuer } from './schemas/$capsules_ConfigClusterIssuer';
+export { $capsules_ConfigElk } from './schemas/$capsules_ConfigElk';
 export { $capsules_ConfigEventExporter } from './schemas/$capsules_ConfigEventExporter';
 export { $capsules_ConfigFluentBit } from './schemas/$capsules_ConfigFluentBit';
 export { $capsules_ConfigGrafana } from './schemas/$capsules_ConfigGrafana';
@@ -13,6 +14,7 @@ export { $capsules_ConfigPrometheus } from './schemas/$capsules_ConfigPrometheus
 export { $capsules_InputCertManager } from './schemas/$capsules_InputCertManager';
 export { $capsules_InputClusterAutoScaler } from './schemas/$capsules_InputClusterAutoScaler';
 export { $capsules_InputClusterIssuer } from './schemas/$capsules_InputClusterIssuer';
+export { $capsules_InputElk } from './schemas/$capsules_InputElk';
 export { $capsules_InputEventExporter } from './schemas/$capsules_InputEventExporter';
 export { $capsules_InputFluentBit } from './schemas/$capsules_InputFluentBit';
 export { $capsules_InputGrafana } from './schemas/$capsules_InputGrafana';
