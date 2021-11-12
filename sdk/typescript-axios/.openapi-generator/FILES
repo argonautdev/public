@@ -22,6 +22,7 @@ models/capsules-config-grafana.ts
 models/capsules-input-cert-manager.ts
 models/capsules-input-cluster-auto-scaler.ts
 models/capsules-input-cluster-issuer.ts
+models/capsules-input-custom-app.ts
 models/capsules-input-elk.ts
 models/capsules-input-event-exporter.ts
 models/capsules-input-fluent-bit.ts

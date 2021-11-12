@@ -14,7 +14,7 @@ Method | HTTP request | Description
 [**getApplicationDetails**](V1AppApi.md#getApplicationDetails) | **POST** /getApplicationDetails | Get all the details for a given application in a cluster
 [**getPod**](V1AppApi.md#getPod) | **GET** /pods/get/{cluster_name}/{cluster_region}/{pod_name} | Shows the pod information
 [**getPodsForDeployment**](V1AppApi.md#getPodsForDeployment) | **GET** /pods/list/{cluster_name}/{cluster_region}/{resource_type}/{resource_name} | Get all the pods for the given deployment
-[**helmShowValues**](V1AppApi.md#helmShowValues) | **POST** /env/{environment_name}/{region}/cluster/{cluster_name}/helm/show-values/ | Get the values file for an app
+[**helmShowValues**](V1AppApi.md#helmShowValues) | **POST** /env/{environment_name}/{region}/cluster/{cluster_name}/helm/show-values | Get the values file for an app
 [**listResourceInYaml**](V1AppApi.md#listResourceInYaml) | **GET** /list-resources/{cluster_name}/{cluster_region} | Get all the resource description in yaml format
 [**logPod**](V1AppApi.md#logPod) | **GET** /pods/logs/{cluster_name}/{cluster_region}/{pod_name} | Shows the logs of the given pod in the (namespace, cluster, region)
 [**toolConfig**](V1AppApi.md#toolConfig) | **GET** /tool/{tool}/config | Download config in plain text format

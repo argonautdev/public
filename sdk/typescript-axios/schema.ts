@@ -14,6 +14,7 @@ export { $capsules_ConfigPrometheus } from './schemas/$capsules_ConfigPrometheus
 export { $capsules_InputCertManager } from './schemas/$capsules_InputCertManager';
 export { $capsules_InputClusterAutoScaler } from './schemas/$capsules_InputClusterAutoScaler';
 export { $capsules_InputClusterIssuer } from './schemas/$capsules_InputClusterIssuer';
+export { $capsules_InputCustomApp } from './schemas/$capsules_InputCustomApp';
 export { $capsules_InputElk } from './schemas/$capsules_InputElk';
 export { $capsules_InputEventExporter } from './schemas/$capsules_InputEventExporter';
 export { $capsules_InputFluentBit } from './schemas/$capsules_InputFluentBit';

@@ -17,7 +17,7 @@ Class | Method | HTTP request | Description
 *V1AppApi* | [**getApplicationDetails**](Apis/V1AppApi.md#getapplicationdetails) | **POST** /getApplicationDetails | Get all the details for a given application in a cluster
 *V1AppApi* | [**getPod**](Apis/V1AppApi.md#getpod) | **GET** /pods/get/{cluster_name}/{cluster_region}/{pod_name} | Shows the pod information
 *V1AppApi* | [**getPodsForDeployment**](Apis/V1AppApi.md#getpodsfordeployment) | **GET** /pods/list/{cluster_name}/{cluster_region}/{resource_type}/{resource_name} | Get all the pods for the given deployment
-*V1AppApi* | [**helmShowValues**](Apis/V1AppApi.md#helmshowvalues) | **POST** /env/{environment_name}/{region}/cluster/{cluster_name}/helm/show-values/ | Get the values file for an app
+*V1AppApi* | [**helmShowValues**](Apis/V1AppApi.md#helmshowvalues) | **POST** /env/{environment_name}/{region}/cluster/{cluster_name}/helm/show-values | Get the values file for an app
 *V1AppApi* | [**listResourceInYaml**](Apis/V1AppApi.md#listresourceinyaml) | **GET** /list-resources/{cluster_name}/{cluster_region} | Get all the resource description in yaml format
 *V1AppApi* | [**logPod**](Apis/V1AppApi.md#logpod) | **GET** /pods/logs/{cluster_name}/{cluster_region}/{pod_name} | Shows the logs of the given pod in the (namespace, cluster, region)
 *V1AppApi* | [**toolConfig**](Apis/V1AppApi.md#toolconfig) | **GET** /tool/{tool}/config | Download config in plain text format
@@ -48,6 +48,7 @@ Class | Method | HTTP request | Description
  - [CapsulesInputCertManager](./Models/CapsulesInputCertManager.md)
  - [CapsulesInputClusterAutoScaler](./Models/CapsulesInputClusterAutoScaler.md)
  - [CapsulesInputClusterIssuer](./Models/CapsulesInputClusterIssuer.md)
+ - [CapsulesInputCustomApp](./Models/CapsulesInputCustomApp.md)
  - [CapsulesInputElk](./Models/CapsulesInputElk.md)
  - [CapsulesInputEventExporter](./Models/CapsulesInputEventExporter.md)
  - [CapsulesInputFluentBit](./Models/CapsulesInputFluentBit.md)

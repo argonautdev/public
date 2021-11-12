@@ -8,6 +8,7 @@ export * from './capsules-config-grafana';
 export * from './capsules-input-cert-manager';
 export * from './capsules-input-cluster-auto-scaler';
 export * from './capsules-input-cluster-issuer';
+export * from './capsules-input-custom-app';
 export * from './capsules-input-elk';
 export * from './capsules-input-event-exporter';
 export * from './capsules-input-fluent-bit';

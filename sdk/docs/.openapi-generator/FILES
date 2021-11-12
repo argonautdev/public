@@ -13,6 +13,7 @@ Models/CapsulesConfigGrafana.md
 Models/CapsulesInputCertManager.md
 Models/CapsulesInputClusterAutoScaler.md
 Models/CapsulesInputClusterIssuer.md
+Models/CapsulesInputCustomApp.md
 Models/CapsulesInputElk.md
 Models/CapsulesInputEventExporter.md
 Models/CapsulesInputFluentBit.md

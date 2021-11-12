@@ -16,6 +16,9 @@ export const $v1_CapsulesStruct = {
         clusterIssuer: {
             type: 'capsules_InputClusterIssuer',
         },
+        custom: {
+            type: 'capsules_InputCustomApp',
+        },
         elk: {
             type: 'capsules_InputElk',
         },

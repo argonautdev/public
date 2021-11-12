@@ -518,7 +518,7 @@ export const V1AppApiAxiosParamCreator = function (configuration?: Configuration
             assertParamExists('helmShowValues', 'region', region)
             // verify required parameter 'clusterName' is not null or undefined
             assertParamExists('helmShowValues', 'clusterName', clusterName)
-            const localVarPath = `/env/{environment_name}/{region}/cluster/{cluster_name}/helm/show-values/`
+            const localVarPath = `/env/{environment_name}/{region}/cluster/{cluster_name}/helm/show-values`
                 .replace(`{${"environment_name"}}`, encodeURIComponent(String(environmentName)))
                 .replace(`{${"region"}}`, encodeURIComponent(String(region)))
                 .replace(`{${"cluster_name"}}`, encodeURIComponent(String(clusterName)));
