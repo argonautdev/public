@@ -220,6 +220,7 @@ models/v1-get-application-details-response.ts
 models/v1-git-repo-volume-source.ts
 models/v1-glusterfs-volume-source.ts
 models/v1-handler.ts
+models/v1-helm-show-values-request.ts
 models/v1-host-alias.ts
 models/v1-host-path-volume-source.ts
 models/v1-httpget-action.ts

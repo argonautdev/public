@@ -45,6 +45,8 @@ import { V1GetApplicationDetailsHasuraRequest } from '../models';
 // @ts-ignore
 import { V1GetApplicationDetailsResponse } from '../models';
 // @ts-ignore
+import { V1HelmShowValuesRequest } from '../models';
+// @ts-ignore
 import { V1InstallCapsulesBody } from '../models';
 // @ts-ignore
 import { V1Pod } from '../models';
@@ -501,6 +503,55 @@ export const V1AppApiAxiosParamCreator = function (configuration?: Configuration
         },
         /**
          * 
+         * @summary Get the values file for an app
+         * @param {string} environmentName Environment Name
+         * @param {string} region The region of the cluster/environment
+         * @param {string} clusterName Cluster name
+         * @param {V1HelmShowValuesRequest} [body] request body
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        helmShowValues: async (environmentName: string, region: string, clusterName: string, body?: V1HelmShowValuesRequest, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'environmentName' is not null or undefined
+            assertParamExists('helmShowValues', 'environmentName', environmentName)
+            // verify required parameter 'region' is not null or undefined
+            assertParamExists('helmShowValues', 'region', region)
+            // verify required parameter 'clusterName' is not null or undefined
+            assertParamExists('helmShowValues', 'clusterName', clusterName)
+            const localVarPath = `/env/{environment_name}/{region}/cluster/{cluster_name}/helm/show-values/`
+                .replace(`{${"environment_name"}}`, encodeURIComponent(String(environmentName)))
+                .replace(`{${"region"}}`, encodeURIComponent(String(region)))
+                .replace(`{${"cluster_name"}}`, encodeURIComponent(String(clusterName)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication JWTKeyAuth required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Get all the resource description in yaml format
          * @param {string} clusterName Cluster name
          * @param {string} clusterRegion The region of the cluster
@@ -872,6 +923,20 @@ export const V1AppApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Get the values file for an app
+         * @param {string} environmentName Environment Name
+         * @param {string} region The region of the cluster/environment
+         * @param {string} clusterName Cluster name
+         * @param {V1HelmShowValuesRequest} [body] request body
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async helmShowValues(environmentName: string, region: string, clusterName: string, body?: V1HelmShowValuesRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.helmShowValues(environmentName, region, clusterName, body, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
          * @summary Get all the resource description in yaml format
          * @param {string} clusterName Cluster name
          * @param {string} clusterRegion The region of the cluster
@@ -1058,6 +1123,19 @@ export const V1AppApiFactory = function (configuration?: Configuration, basePath
          */
         getPodsForDeployment(clusterName: string, clusterRegion: string, resourceType: 'daemon-set' | 'deployment' | 'stateful-set' | 'replica-set', resourceName: string, namespace?: string, options?: any): AxiosPromise<V1PodList> {
             return localVarFp.getPodsForDeployment(clusterName, clusterRegion, resourceType, resourceName, namespace, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Get the values file for an app
+         * @param {string} environmentName Environment Name
+         * @param {string} region The region of the cluster/environment
+         * @param {string} clusterName Cluster name
+         * @param {V1HelmShowValuesRequest} [body] request body
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        helmShowValues(environmentName: string, region: string, clusterName: string, body?: V1HelmShowValuesRequest, options?: any): AxiosPromise<string> {
+            return localVarFp.helmShowValues(environmentName, region, clusterName, body, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1361,6 +1439,41 @@ export interface V1AppApiGetPodsForDeploymentRequest {
 }
 
 /**
+ * Request parameters for helmShowValues operation in V1AppApi.
+ * @export
+ * @interface V1AppApiHelmShowValuesRequest
+ */
+export interface V1AppApiHelmShowValuesRequest {
+    /**
+     * Environment Name
+     * @type {string}
+     * @memberof V1AppApiHelmShowValues
+     */
+    readonly environmentName: string
+
+    /**
+     * The region of the cluster/environment
+     * @type {string}
+     * @memberof V1AppApiHelmShowValues
+     */
+    readonly region: string
+
+    /**
+     * Cluster name
+     * @type {string}
+     * @memberof V1AppApiHelmShowValues
+     */
+    readonly clusterName: string
+
+    /**
+     * request body
+     * @type {V1HelmShowValuesRequest}
+     * @memberof V1AppApiHelmShowValues
+     */
+    readonly body?: V1HelmShowValuesRequest
+}
+
+/**
  * Request parameters for listResourceInYaml operation in V1AppApi.
  * @export
  * @interface V1AppApiListResourceInYamlRequest
@@ -1625,6 +1738,18 @@ export class V1AppApi extends BaseAPI {
      */
     public getPodsForDeployment(requestParameters: V1AppApiGetPodsForDeploymentRequest, options?: any) {
         return V1AppApiFp(this.configuration).getPodsForDeployment(requestParameters.clusterName, requestParameters.clusterRegion, requestParameters.resourceType, requestParameters.resourceName, requestParameters.namespace, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Get the values file for an app
+     * @param {V1AppApiHelmShowValuesRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof V1AppApi
+     */
+    public helmShowValues(requestParameters: V1AppApiHelmShowValuesRequest, options?: any) {
+        return V1AppApiFp(this.configuration).helmShowValues(requestParameters.environmentName, requestParameters.region, requestParameters.clusterName, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

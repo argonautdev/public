@@ -209,6 +209,7 @@ export { $v1_GetApplicationDetailsResponse } from './schemas/$v1_GetApplicationD
 export { $v1_GitRepoVolumeSource } from './schemas/$v1_GitRepoVolumeSource';
 export { $v1_GlusterfsVolumeSource } from './schemas/$v1_GlusterfsVolumeSource';
 export { $v1_Handler } from './schemas/$v1_Handler';
+export { $v1_HelmShowValuesRequest } from './schemas/$v1_HelmShowValuesRequest';
 export { $v1_HostAlias } from './schemas/$v1_HostAlias';
 export { $v1_HostPathVolumeSource } from './schemas/$v1_HostPathVolumeSource';
 export { $v1_HTTPGetAction } from './schemas/$v1_HTTPGetAction';

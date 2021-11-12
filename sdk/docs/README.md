@@ -17,6 +17,7 @@ Class | Method | HTTP request | Description
 *V1AppApi* | [**getApplicationDetails**](Apis/V1AppApi.md#getapplicationdetails) | **POST** /getApplicationDetails | Get all the details for a given application in a cluster
 *V1AppApi* | [**getPod**](Apis/V1AppApi.md#getpod) | **GET** /pods/get/{cluster_name}/{cluster_region}/{pod_name} | Shows the pod information
 *V1AppApi* | [**getPodsForDeployment**](Apis/V1AppApi.md#getpodsfordeployment) | **GET** /pods/list/{cluster_name}/{cluster_region}/{resource_type}/{resource_name} | Get all the pods for the given deployment
+*V1AppApi* | [**helmShowValues**](Apis/V1AppApi.md#helmshowvalues) | **POST** /env/{environment_name}/{region}/cluster/{cluster_name}/helm/show-values/ | Get the values file for an app
 *V1AppApi* | [**listResourceInYaml**](Apis/V1AppApi.md#listresourceinyaml) | **GET** /list-resources/{cluster_name}/{cluster_region} | Get all the resource description in yaml format
 *V1AppApi* | [**logPod**](Apis/V1AppApi.md#logpod) | **GET** /pods/logs/{cluster_name}/{cluster_region}/{pod_name} | Shows the logs of the given pod in the (namespace, cluster, region)
 *V1AppApi* | [**toolConfig**](Apis/V1AppApi.md#toolconfig) | **GET** /tool/{tool}/config | Download config in plain text format
@@ -246,6 +247,7 @@ Class | Method | HTTP request | Description
  - [V1HTTPGetAction](./Models/V1HTTPGetAction.md)
  - [V1HTTPHeader](./Models/V1HTTPHeader.md)
  - [V1Handler](./Models/V1Handler.md)
+ - [V1HelmShowValuesRequest](./Models/V1HelmShowValuesRequest.md)
  - [V1HostAlias](./Models/V1HostAlias.md)
  - [V1HostPathVolumeSource](./Models/V1HostPathVolumeSource.md)
  - [V1ISCSIVolumeSource](./Models/V1ISCSIVolumeSource.md)

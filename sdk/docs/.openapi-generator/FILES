@@ -212,6 +212,7 @@ Models/V1GlusterfsVolumeSource.md
 Models/V1HTTPGetAction.md
 Models/V1HTTPHeader.md
 Models/V1Handler.md
+Models/V1HelmShowValuesRequest.md
 Models/V1HostAlias.md
 Models/V1HostPathVolumeSource.md
 Models/V1ISCSIVolumeSource.md

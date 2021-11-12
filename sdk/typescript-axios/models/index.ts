@@ -207,6 +207,7 @@ export * from './v1-glusterfs-volume-source';
 export * from './v1-httpget-action';
 export * from './v1-httpheader';
 export * from './v1-handler';
+export * from './v1-helm-show-values-request';
 export * from './v1-host-alias';
 export * from './v1-host-path-volume-source';
 export * from './v1-iscsivolume-source';
