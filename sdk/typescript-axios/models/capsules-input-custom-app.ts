@@ -44,6 +44,12 @@ export interface CapsulesInputCustomApp {
      * @memberof CapsulesInputCustomApp
      */
     values?: object;
+    /**
+     * 
+     * @type {string}
+     * @memberof CapsulesInputCustomApp
+     */
+    version?: string;
 }
 
 

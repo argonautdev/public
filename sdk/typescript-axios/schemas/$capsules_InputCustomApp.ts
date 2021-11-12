@@ -16,5 +16,8 @@ export const $capsules_InputCustomApp = {
             properties: {
             },
         },
+        version: {
+            type: 'string',
+        },
     },
 };
