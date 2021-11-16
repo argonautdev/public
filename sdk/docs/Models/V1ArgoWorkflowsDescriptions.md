@@ -1,9 +1,9 @@
-# ElasticacheTagListMessage
+# V1ArgoWorkflowsDescriptions
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TagList** | [**List**](elasticache.Tag.md) | A list of cost allocation tags as key-value pairs. | [optional] [default to null]
+**workflows** | [**List**](v1.ArgoWorkflowsDescriptionStruct.md) |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

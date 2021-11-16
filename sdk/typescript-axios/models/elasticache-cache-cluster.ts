@@ -17,7 +17,6 @@ import { ElasticacheCacheNode } from './elasticache-cache-node';
 import { ElasticacheCacheParameterGroupStatus } from './elasticache-cache-parameter-group-status';
 import { ElasticacheCacheSecurityGroupMembership } from './elasticache-cache-security-group-membership';
 import { ElasticacheEndpoint } from './elasticache-endpoint';
-import { ElasticacheLogDeliveryConfiguration } from './elasticache-log-delivery-configuration';
 import { ElasticacheNotificationConfiguration } from './elasticache-notification-configuration';
 import { ElasticachePendingModifiedValues } from './elasticache-pending-modified-values';
 import { ElasticacheSecurityGroupMembership } from './elasticache-security-group-membership';
@@ -131,19 +130,13 @@ export interface ElasticacheCacheCluster {
      */
     EngineVersion?: string;
     /**
-     * Returns the destination, format and type of the logs.
-     * @type {Array<ElasticacheLogDeliveryConfiguration>}
-     * @memberof ElasticacheCacheCluster
-     */
-    LogDeliveryConfigurations?: Array<ElasticacheLogDeliveryConfiguration>;
-    /**
      * 
      * @type {ElasticacheNotificationConfiguration}
      * @memberof ElasticacheCacheCluster
      */
     NotificationConfiguration?: ElasticacheNotificationConfiguration;
     /**
-     * The number of cache nodes in the cluster.  For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.
+     * The number of cache nodes in the cluster.  For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 20.
      * @type {number}
      * @memberof ElasticacheCacheCluster
      */
@@ -178,12 +171,6 @@ export interface ElasticacheCacheCluster {
      * @memberof ElasticacheCacheCluster
      */
     ReplicationGroupId?: string;
-    /**
-     * A boolean value indicating whether log delivery is enabled for the replication group.
-     * @type {boolean}
-     * @memberof ElasticacheCacheCluster
-     */
-    ReplicationGroupLogDeliveryEnabled?: boolean;
     /**
      * A list of VPC Security Groups associated with the cluster.
      * @type {Array<ElasticacheSecurityGroupMembership>}

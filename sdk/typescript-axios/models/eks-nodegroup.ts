@@ -17,9 +17,7 @@ import { EksLaunchTemplateSpecification } from './eks-launch-template-specificat
 import { EksNodegroupHealth } from './eks-nodegroup-health';
 import { EksNodegroupResources } from './eks-nodegroup-resources';
 import { EksNodegroupScalingConfig } from './eks-nodegroup-scaling-config';
-import { EksNodegroupUpdateConfig } from './eks-nodegroup-update-config';
 import { EksRemoteAccessConfig } from './eks-remote-access-config';
-import { EksTaint } from './eks-taint';
 
 /**
  * 
@@ -88,7 +86,7 @@ export interface EksNodegroup {
      */
     ModifiedAt?: string;
     /**
-     * The IAM role associated with your node group. The Amazon EKS node kubelet daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile and associated policies.
+     * The IAM role associated with your node group. The Amazon EKS worker node kubelet daemon makes calls to AWS APIs on your behalf. Worker nodes receive permissions for these API calls through an IAM instance profile and associated policies.
      * @type {string}
      * @memberof EksNodegroup
      */
@@ -147,18 +145,6 @@ export interface EksNodegroup {
      * @memberof EksNodegroup
      */
     Tags?: { [key: string]: string; };
-    /**
-     * The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of No_Schedule, Prefer_No_Schedule, or No_Execute. Kubernetes taints can be used together with tolerations to control how workloads are scheduled to your nodes.
-     * @type {Array<EksTaint>}
-     * @memberof EksNodegroup
-     */
-    Taints?: Array<EksTaint>;
-    /**
-     * 
-     * @type {EksNodegroupUpdateConfig}
-     * @memberof EksNodegroup
-     */
-    UpdateConfig?: EksNodegroupUpdateConfig;
     /**
      * The Kubernetes version of the managed node group.
      * @type {string}

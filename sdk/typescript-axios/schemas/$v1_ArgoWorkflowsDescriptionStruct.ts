@@ -1,18 +1,18 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-export const $elasticache_PendingLogDeliveryConfiguration = {
+export const $v1_ArgoWorkflowsDescriptionStruct = {
     properties: {
-        DestinationDetails: {
-            type: 'elasticache_DestinationDetails',
-        },
-        DestinationType: {
+        example: {
             type: 'string',
         },
-        LogFormat: {
+        long: {
             type: 'string',
         },
-        LogType: {
+        name: {
+            type: 'string',
+        },
+        short: {
             type: 'string',
         },
     },

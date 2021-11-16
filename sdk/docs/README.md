@@ -23,6 +23,8 @@ Class | Method | HTTP request | Description
 *V1AppApi* | [**toolConfig**](Apis/V1AppApi.md#toolconfig) | **GET** /tool/{tool}/config | Download config in plain text format
 *V1AppApi* | [**toolDeleteFromLibrary**](Apis/V1AppApi.md#tooldeletefromlibrary) | **POST** /tools/delete | Delete tools from supported library
 *V1AppApi* | [**toolInstallFromLibrary**](Apis/V1AppApi.md#toolinstallfromlibrary) | **POST** /toolInstall | Install tools from the supported library
+*V1ArgoWorkflowApi* | [**argoWorkflowList**](Apis/V1ArgoWorkflowApi.md#argoworkflowlist) | **GET** /argo-workflows/list | Lists all the workflows allowed with description
+*V1ArgoWorkflowApi* | [**argoWorkflowTrigger**](Apis/V1ArgoWorkflowApi.md#argoworkflowtrigger) | **POST** /argo-workflows/trigger/{workflow} | Triggers an argo workflow
 *V1EnvironmentApi* | [**getCurrentEnvironmentSpec**](Apis/V1EnvironmentApi.md#getcurrentenvironmentspec) | **GET** /environment/spec/{environment_name}/{environment_region} | Gets the last applied spec for the environment if it exists
 *V1EnvironmentApi* | [**listResourcesInEnvironment**](Apis/V1EnvironmentApi.md#listresourcesinenvironment) | **GET** /environment/list-resources/{environment_name} | List all the resources in an environment
 *V1EnvironmentApi* | [**removeResourceInEnvironment**](Apis/V1EnvironmentApi.md#removeresourceinenvironment) | **DELETE** /environment/github/delete/{environment_name}/{environment_region}/{resource} | Removes the resource folder from argonaut_terraform_configs
@@ -63,7 +65,6 @@ Class | Method | HTTP request | Description
  - [EksAutoScalingGroup](./Models/EksAutoScalingGroup.md)
  - [EksCertificate](./Models/EksCertificate.md)
  - [EksCluster](./Models/EksCluster.md)
- - [EksConnectorConfigResponse](./Models/EksConnectorConfigResponse.md)
  - [EksEncryptionConfig](./Models/EksEncryptionConfig.md)
  - [EksIdentity](./Models/EksIdentity.md)
  - [EksIssue](./Models/EksIssue.md)
@@ -75,23 +76,16 @@ Class | Method | HTTP request | Description
  - [EksNodegroupHealth](./Models/EksNodegroupHealth.md)
  - [EksNodegroupResources](./Models/EksNodegroupResources.md)
  - [EksNodegroupScalingConfig](./Models/EksNodegroupScalingConfig.md)
- - [EksNodegroupUpdateConfig](./Models/EksNodegroupUpdateConfig.md)
  - [EksOIDC](./Models/EksOIDC.md)
  - [EksProvider](./Models/EksProvider.md)
  - [EksRemoteAccessConfig](./Models/EksRemoteAccessConfig.md)
- - [EksTaint](./Models/EksTaint.md)
  - [EksVpcConfigResponse](./Models/EksVpcConfigResponse.md)
  - [ElasticacheCacheCluster](./Models/ElasticacheCacheCluster.md)
  - [ElasticacheCacheNode](./Models/ElasticacheCacheNode.md)
  - [ElasticacheCacheParameterGroupStatus](./Models/ElasticacheCacheParameterGroupStatus.md)
  - [ElasticacheCacheSecurityGroupMembership](./Models/ElasticacheCacheSecurityGroupMembership.md)
- - [ElasticacheCloudWatchLogsDestinationDetails](./Models/ElasticacheCloudWatchLogsDestinationDetails.md)
- - [ElasticacheDestinationDetails](./Models/ElasticacheDestinationDetails.md)
  - [ElasticacheEndpoint](./Models/ElasticacheEndpoint.md)
- - [ElasticacheKinesisFirehoseDestinationDetails](./Models/ElasticacheKinesisFirehoseDestinationDetails.md)
- - [ElasticacheLogDeliveryConfiguration](./Models/ElasticacheLogDeliveryConfiguration.md)
  - [ElasticacheNotificationConfiguration](./Models/ElasticacheNotificationConfiguration.md)
- - [ElasticachePendingLogDeliveryConfiguration](./Models/ElasticachePendingLogDeliveryConfiguration.md)
  - [ElasticachePendingModifiedValues](./Models/ElasticachePendingModifiedValues.md)
  - [ElasticacheSecurityGroupMembership](./Models/ElasticacheSecurityGroupMembership.md)
  - [ElasticacheTag](./Models/ElasticacheTag.md)
@@ -100,18 +94,11 @@ Class | Method | HTTP request | Description
  - [ElasticsearchserviceAdvancedOptionsStatus](./Models/ElasticsearchserviceAdvancedOptionsStatus.md)
  - [ElasticsearchserviceAdvancedSecurityOptions](./Models/ElasticsearchserviceAdvancedSecurityOptions.md)
  - [ElasticsearchserviceAdvancedSecurityOptionsStatus](./Models/ElasticsearchserviceAdvancedSecurityOptionsStatus.md)
- - [ElasticsearchserviceAutoTuneMaintenanceSchedule](./Models/ElasticsearchserviceAutoTuneMaintenanceSchedule.md)
- - [ElasticsearchserviceAutoTuneOptions](./Models/ElasticsearchserviceAutoTuneOptions.md)
- - [ElasticsearchserviceAutoTuneOptionsOutput](./Models/ElasticsearchserviceAutoTuneOptionsOutput.md)
- - [ElasticsearchserviceAutoTuneOptionsStatus](./Models/ElasticsearchserviceAutoTuneOptionsStatus.md)
- - [ElasticsearchserviceAutoTuneStatus](./Models/ElasticsearchserviceAutoTuneStatus.md)
  - [ElasticsearchserviceCognitoOptions](./Models/ElasticsearchserviceCognitoOptions.md)
  - [ElasticsearchserviceCognitoOptionsStatus](./Models/ElasticsearchserviceCognitoOptionsStatus.md)
- - [ElasticsearchserviceColdStorageOptions](./Models/ElasticsearchserviceColdStorageOptions.md)
  - [ElasticsearchserviceDescribeElasticsearchDomainConfigOutput](./Models/ElasticsearchserviceDescribeElasticsearchDomainConfigOutput.md)
  - [ElasticsearchserviceDomainEndpointOptions](./Models/ElasticsearchserviceDomainEndpointOptions.md)
  - [ElasticsearchserviceDomainEndpointOptionsStatus](./Models/ElasticsearchserviceDomainEndpointOptionsStatus.md)
- - [ElasticsearchserviceDuration](./Models/ElasticsearchserviceDuration.md)
  - [ElasticsearchserviceEBSOptions](./Models/ElasticsearchserviceEBSOptions.md)
  - [ElasticsearchserviceEBSOptionsStatus](./Models/ElasticsearchserviceEBSOptionsStatus.md)
  - [ElasticsearchserviceElasticsearchClusterConfig](./Models/ElasticsearchserviceElasticsearchClusterConfig.md)
@@ -198,6 +185,8 @@ Class | Method | HTTP request | Description
  - [V1AWSElasticBlockStoreVolumeSource](./Models/V1AWSElasticBlockStoreVolumeSource.md)
  - [V1Affinity](./Models/V1Affinity.md)
  - [V1AppSecretRequest](./Models/V1AppSecretRequest.md)
+ - [V1ArgoWorkflowsDescriptionStruct](./Models/V1ArgoWorkflowsDescriptionStruct.md)
+ - [V1ArgoWorkflowsDescriptions](./Models/V1ArgoWorkflowsDescriptions.md)
  - [V1AwsS3Bucket](./Models/V1AwsS3Bucket.md)
  - [V1AwsS3StaticSite](./Models/V1AwsS3StaticSite.md)
  - [V1AzureDiskVolumeSource](./Models/V1AzureDiskVolumeSource.md)

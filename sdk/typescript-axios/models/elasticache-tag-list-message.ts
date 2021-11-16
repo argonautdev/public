@@ -22,7 +22,7 @@ import { ElasticacheTag } from './elasticache-tag';
  */
 export interface ElasticacheTagListMessage {
     /**
-     * A list of tags as key-value pairs.
+     * A list of cost allocation tags as key-value pairs.
      * @type {Array<ElasticacheTag>}
      * @memberof ElasticacheTagListMessage
      */

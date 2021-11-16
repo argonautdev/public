@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 **AccessPolicies** | [**elasticsearchservice.AccessPoliciesStatus**](elasticsearchservice.AccessPoliciesStatus.md) |  | [optional] [default to null]
 **AdvancedOptions** | [**elasticsearchservice.AdvancedOptionsStatus**](elasticsearchservice.AdvancedOptionsStatus.md) |  | [optional] [default to null]
 **AdvancedSecurityOptions** | [**elasticsearchservice.AdvancedSecurityOptionsStatus**](elasticsearchservice.AdvancedSecurityOptionsStatus.md) |  | [optional] [default to null]
-**AutoTuneOptions** | [**elasticsearchservice.AutoTuneOptionsStatus**](elasticsearchservice.AutoTuneOptionsStatus.md) |  | [optional] [default to null]
 **CognitoOptions** | [**elasticsearchservice.CognitoOptionsStatus**](elasticsearchservice.CognitoOptionsStatus.md) |  | [optional] [default to null]
 **DomainEndpointOptions** | [**elasticsearchservice.DomainEndpointOptionsStatus**](elasticsearchservice.DomainEndpointOptionsStatus.md) |  | [optional] [default to null]
 **EBSOptions** | [**elasticsearchservice.EBSOptionsStatus**](elasticsearchservice.EBSOptionsStatus.md) |  | [optional] [default to null]

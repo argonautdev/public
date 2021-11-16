@@ -17,45 +17,33 @@
 /**
  * 
  * @export
- * @interface CapsulesInputCustomApp
+ * @interface V1ArgoWorkflowsDescriptionStruct
  */
-export interface CapsulesInputCustomApp {
+export interface V1ArgoWorkflowsDescriptionStruct {
     /**
      * 
      * @type {string}
-     * @memberof CapsulesInputCustomApp
+     * @memberof V1ArgoWorkflowsDescriptionStruct
      */
-    appName?: string;
+    example?: string;
     /**
      * 
      * @type {string}
-     * @memberof CapsulesInputCustomApp
+     * @memberof V1ArgoWorkflowsDescriptionStruct
      */
-    chartName?: string;
+    _long?: string;
     /**
      * 
      * @type {string}
-     * @memberof CapsulesInputCustomApp
+     * @memberof V1ArgoWorkflowsDescriptionStruct
      */
-    namespace?: string;
+    name?: string;
     /**
      * 
      * @type {string}
-     * @memberof CapsulesInputCustomApp
+     * @memberof V1ArgoWorkflowsDescriptionStruct
      */
-    repoUrl?: string;
-    /**
-     * 
-     * @type {object}
-     * @memberof CapsulesInputCustomApp
-     */
-    values?: object;
-    /**
-     * 
-     * @type {string}
-     * @memberof CapsulesInputCustomApp
-     */
-    version?: string;
+    _short?: string;
 }
 
 

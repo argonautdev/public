@@ -23,7 +23,7 @@ import { RdsProcessorFeature } from './rds-processor-feature';
  */
 export interface RdsPendingModifiedValues {
     /**
-     * The allocated storage size for the DB instance specified in gibibytes (GiB).
+     * The allocated storage size for the DB instance specified in gibibytes .
      * @type {number}
      * @memberof RdsPendingModifiedValues
      */
@@ -65,7 +65,7 @@ export interface RdsPendingModifiedValues {
      */
     EngineVersion?: string;
     /**
-     * Whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.
+     * Whether mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled.
      * @type {boolean}
      * @memberof RdsPendingModifiedValues
      */

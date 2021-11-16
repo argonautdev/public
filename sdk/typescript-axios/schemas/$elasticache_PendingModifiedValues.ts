@@ -18,12 +18,6 @@ export const $elasticache_PendingModifiedValues = {
         EngineVersion: {
             type: 'string',
         },
-        LogDeliveryConfigurations: {
-            type: 'array',
-            contains: {
-                type: 'elasticache_PendingLogDeliveryConfiguration',
-            },
-        },
         NumCacheNodes: {
             type: 'number',
         },

@@ -16,7 +16,6 @@
 import { ElasticsearchserviceAccessPoliciesStatus } from './elasticsearchservice-access-policies-status';
 import { ElasticsearchserviceAdvancedOptionsStatus } from './elasticsearchservice-advanced-options-status';
 import { ElasticsearchserviceAdvancedSecurityOptionsStatus } from './elasticsearchservice-advanced-security-options-status';
-import { ElasticsearchserviceAutoTuneOptionsStatus } from './elasticsearchservice-auto-tune-options-status';
 import { ElasticsearchserviceCognitoOptionsStatus } from './elasticsearchservice-cognito-options-status';
 import { ElasticsearchserviceDomainEndpointOptionsStatus } from './elasticsearchservice-domain-endpoint-options-status';
 import { ElasticsearchserviceEBSOptionsStatus } from './elasticsearchservice-ebsoptions-status';
@@ -52,12 +51,6 @@ export interface ElasticsearchserviceElasticsearchDomainConfig {
      * @memberof ElasticsearchserviceElasticsearchDomainConfig
      */
     AdvancedSecurityOptions?: ElasticsearchserviceAdvancedSecurityOptionsStatus;
-    /**
-     * 
-     * @type {ElasticsearchserviceAutoTuneOptionsStatus}
-     * @memberof ElasticsearchserviceElasticsearchDomainConfig
-     */
-    AutoTuneOptions?: ElasticsearchserviceAutoTuneOptionsStatus;
     /**
      * 
      * @type {ElasticsearchserviceCognitoOptionsStatus}

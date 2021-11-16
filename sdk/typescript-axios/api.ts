@@ -15,6 +15,7 @@
 
 
 export * from './api/v1-app-api';
+export * from './api/v1-argo-workflow-api';
 export * from './api/v1-environment-api';
 export * from './api/v1-github-api';
 export * from './api/v1-media-api';

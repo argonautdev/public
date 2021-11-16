@@ -13,19 +13,20 @@
  */
 
 
+import { V1ArgoWorkflowsDescriptionStruct } from './v1-argo-workflows-description-struct';
 
 /**
  * 
  * @export
- * @interface EksOIDC
+ * @interface V1ArgoWorkflowsDescriptions
  */
-export interface EksOIDC {
+export interface V1ArgoWorkflowsDescriptions {
     /**
-     * The issuer URL for the OpenID Connect identity provider.
-     * @type {string}
-     * @memberof EksOIDC
+     * 
+     * @type {Array<V1ArgoWorkflowsDescriptionStruct>}
+     * @memberof V1ArgoWorkflowsDescriptions
      */
-    Issuer?: string;
+    workflows?: Array<V1ArgoWorkflowsDescriptionStruct>;
 }
 
 

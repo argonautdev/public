@@ -4,8 +4,31 @@ All URIs are relative to *https://midgard.argonaut.dev/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**argoWorkflowList**](V1ArgoWorkflowApi.md#argoWorkflowList) | **GET** /argo-workflows/list | Lists all the workflows allowed with description
 [**argoWorkflowTrigger**](V1ArgoWorkflowApi.md#argoWorkflowTrigger) | **POST** /argo-workflows/trigger/{workflow} | Triggers an argo workflow
 
+
+<a name="argoWorkflowList"></a>
+# **argoWorkflowList**
+> v1.ArgoWorkflowsDescriptions argoWorkflowList()
+
+Lists all the workflows allowed with description
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**v1.ArgoWorkflowsDescriptions**](../Models/v1.ArgoWorkflowsDescriptions.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 <a name="argoWorkflowTrigger"></a>
 # **argoWorkflowTrigger**

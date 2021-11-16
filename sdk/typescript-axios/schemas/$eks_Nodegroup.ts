@@ -75,15 +75,6 @@ export const $eks_Nodegroup = {
                 type: 'string',
             },
         },
-        Taints: {
-            type: 'array',
-            contains: {
-                type: 'eks_Taint',
-            },
-        },
-        UpdateConfig: {
-            type: 'eks_NodegroupUpdateConfig',
-        },
         Version: {
             type: 'string',
         },

@@ -6,6 +6,9 @@ export const $capsules_InputCustomApp = {
         appName: {
             type: 'string',
         },
+        chartName: {
+            type: 'string',
+        },
         namespace: {
             type: 'string',
         },

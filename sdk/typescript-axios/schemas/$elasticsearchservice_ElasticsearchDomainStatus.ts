@@ -18,9 +18,6 @@ export const $elasticsearchservice_ElasticsearchDomainStatus = {
         AdvancedSecurityOptions: {
             type: 'elasticsearchservice_AdvancedSecurityOptions',
         },
-        AutoTuneOptions: {
-            type: 'elasticsearchservice_AutoTuneOptionsOutput',
-        },
         CognitoOptions: {
             type: 'elasticsearchservice_CognitoOptions',
         },

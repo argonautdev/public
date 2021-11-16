@@ -60,12 +60,6 @@ export const $elasticache_CacheCluster = {
         EngineVersion: {
             type: 'string',
         },
-        LogDeliveryConfigurations: {
-            type: 'array',
-            contains: {
-                type: 'elasticache_LogDeliveryConfiguration',
-            },
-        },
         NotificationConfiguration: {
             type: 'elasticache_NotificationConfiguration',
         },
@@ -86,9 +80,6 @@ export const $elasticache_CacheCluster = {
         },
         ReplicationGroupId: {
             type: 'string',
-        },
-        ReplicationGroupLogDeliveryEnabled: {
-            type: 'boolean',
         },
         SecurityGroups: {
             type: 'array',

@@ -19,6 +19,10 @@ export const $v1_CapsulesStruct = {
         custom: {
             type: 'capsules_InputCustomApp',
         },
+        datadog: {
+            properties: {
+            },
+        },
         elk: {
             type: 'capsules_InputElk',
         },

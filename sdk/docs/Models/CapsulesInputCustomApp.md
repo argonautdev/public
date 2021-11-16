@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **appName** | [**String**](string.md) |  | [optional] [default to null]
+**chartName** | [**String**](string.md) |  | [optional] [default to null]
 **namespace** | [**String**](string.md) |  | [optional] [default to null]
 **repoUrl** | [**String**](string.md) |  | [optional] [default to null]
 **values** | [**Object**](.md) |  | [optional] [default to null]

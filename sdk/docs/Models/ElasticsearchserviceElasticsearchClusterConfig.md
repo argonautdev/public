@@ -3,7 +3,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ColdStorageOptions** | [**elasticsearchservice.ColdStorageOptions**](elasticsearchservice.ColdStorageOptions.md) |  | [optional] [default to null]
 **DedicatedMasterCount** | [**Integer**](integer.md) | Total number of dedicated master nodes, active and on standby, for the cluster. | [optional] [default to null]
 **DedicatedMasterEnabled** | [**Boolean**](boolean.md) | A boolean value to indicate whether a dedicated master node is enabled. See About Dedicated Master Nodes (http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-dedicatedmasternodes) for more information. | [optional] [default to null]
 **DedicatedMasterType** | [**String**](string.md) | The instance type for a dedicated master node. | [optional] [default to null]

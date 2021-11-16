@@ -4,10 +4,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cert-manager** | [**capsules.InputCertManager**](capsules.InputCertManager.md) |  | [optional] [default to null]
-**clickhouse** | [**Object**](.md) | Clickhouse expects the values.yaml file to be passed as a parameter the parameter must be a json converted converted file  refer to the charts repo for the values.yaml file | [optional] [default to null]
+**clickhouse** | [**Object**](.md) |  | [optional] [default to null]
 **clusterAutoScaler** | [**capsules.InputClusterAutoScaler**](capsules.InputClusterAutoScaler.md) |  | [optional] [default to null]
 **clusterIssuer** | [**capsules.InputClusterIssuer**](capsules.InputClusterIssuer.md) |  | [optional] [default to null]
 **custom** | [**capsules.InputCustomApp**](capsules.InputCustomApp.md) |  | [optional] [default to null]
+**datadog** | [**Object**](.md) | Datadog expects the values.yaml file to be passed as a parameter the parameter must be a json converted converted file  refer to the charts repo for the values.yaml file | [optional] [default to null]
 **elk** | [**capsules.InputElk**](capsules.InputElk.md) |  | [optional] [default to null]
 **eventExporter** | [**capsules.InputEventExporter**](capsules.InputEventExporter.md) |  | [optional] [default to null]
 **fluentBit** | [**capsules.InputFluentBit**](capsules.InputFluentBit.md) |  | [optional] [default to null]

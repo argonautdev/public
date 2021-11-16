@@ -13,7 +13,6 @@
  */
 
 
-import { ElasticsearchserviceColdStorageOptions } from './elasticsearchservice-cold-storage-options';
 import { ElasticsearchserviceZoneAwarenessConfig } from './elasticsearchservice-zone-awareness-config';
 
 /**
@@ -22,12 +21,6 @@ import { ElasticsearchserviceZoneAwarenessConfig } from './elasticsearchservice-
  * @interface ElasticsearchserviceElasticsearchClusterConfig
  */
 export interface ElasticsearchserviceElasticsearchClusterConfig {
-    /**
-     * 
-     * @type {ElasticsearchserviceColdStorageOptions}
-     * @memberof ElasticsearchserviceElasticsearchClusterConfig
-     */
-    ColdStorageOptions?: ElasticsearchserviceColdStorageOptions;
     /**
      * Total number of dedicated master nodes, active and on standby, for the cluster.
      * @type {number}

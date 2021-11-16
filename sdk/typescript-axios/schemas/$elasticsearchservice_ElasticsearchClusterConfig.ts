@@ -3,9 +3,6 @@
 /* eslint-disable */
 export const $elasticsearchservice_ElasticsearchClusterConfig = {
     properties: {
-        ColdStorageOptions: {
-            type: 'elasticsearchservice_ColdStorageOptions',
-        },
         DedicatedMasterCount: {
             type: 'number',
         },

@@ -3,21 +3,6 @@
 /* eslint-disable */
 export const $rds_DBInstance = {
     properties: {
-        ActivityStreamEngineNativeAuditFieldsIncluded: {
-            type: 'boolean',
-        },
-        ActivityStreamKinesisStreamName: {
-            type: 'string',
-        },
-        ActivityStreamKmsKeyId: {
-            type: 'string',
-        },
-        ActivityStreamMode: {
-            type: 'string',
-        },
-        ActivityStreamStatus: {
-            type: 'string',
-        },
         AllocatedStorage: {
             type: 'number',
         },
@@ -30,13 +15,7 @@ export const $rds_DBInstance = {
         AutoMinorVersionUpgrade: {
             type: 'boolean',
         },
-        AutomaticRestartTime: {
-            type: 'string',
-        },
         AvailabilityZone: {
-            type: 'string',
-        },
-        AwsBackupRecoveryPointArn: {
             type: 'string',
         },
         BackupRetentionPeriod: {

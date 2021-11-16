@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **AccessPolicies** | [**String**](string.md) | IAM access policy as a JSON-formatted string. | [optional] [default to null]
 **AdvancedOptions** | [**Map**](string.md) | Specifies the status of the AdvancedOptions | [optional] [default to null]
 **AdvancedSecurityOptions** | [**elasticsearchservice.AdvancedSecurityOptions**](elasticsearchservice.AdvancedSecurityOptions.md) |  | [optional] [default to null]
-**AutoTuneOptions** | [**elasticsearchservice.AutoTuneOptionsOutput**](elasticsearchservice.AutoTuneOptionsOutput.md) |  | [optional] [default to null]
 **CognitoOptions** | [**elasticsearchservice.CognitoOptions**](elasticsearchservice.CognitoOptions.md) |  | [optional] [default to null]
 **Created** | [**Boolean**](boolean.md) | The domain creation status. True if the creation of an Elasticsearch domain is complete. False if domain creation is still in progress. | [optional] [default to null]
 **Deleted** | [**Boolean**](boolean.md) | The domain deletion status. True if a delete request has been received for the domain but resource cleanup is still in progress. False if the domain has not been deleted. Once domain deletion is complete, the status of the domain is no longer returned. | [optional] [default to null]
