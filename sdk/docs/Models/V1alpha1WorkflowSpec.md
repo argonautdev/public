@@ -1,0 +1,47 @@
+# V1alpha1WorkflowSpec
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**activeDeadlineSeconds** | [**Integer**](integer.md) | Optional duration in seconds relative to the workflow start time which the workflow is allowed to run before the controller terminates the workflow. A value of zero is used to terminate a Running workflow | [optional] [default to null]
+**affinity** | [**v1.Affinity**](v1.Affinity.md) |  | [optional] [default to null]
+**archiveLogs** | [**Boolean**](boolean.md) | ArchiveLogs indicates if the container logs should be archived | [optional] [default to null]
+**arguments** | [**v1alpha1.Arguments**](v1alpha1.Arguments.md) |  | [optional] [default to null]
+**artifactRepositoryRef** | [**v1alpha1.ArtifactRepositoryRef**](v1alpha1.ArtifactRepositoryRef.md) |  | [optional] [default to null]
+**automountServiceAccountToken** | [**Boolean**](boolean.md) | AutomountServiceAccountToken indicates whether a service account token should be automatically mounted in pods. ServiceAccountName of ExecutorConfig must be specified if this value is false. | [optional] [default to null]
+**dnsConfig** | [**v1.PodDNSConfig**](v1.PodDNSConfig.md) |  | [optional] [default to null]
+**dnsPolicy** | [**String**](string.md) | Set DNS policy for the pod. Defaults to \&quot;ClusterFirst\&quot;. Valid values are &#39;ClusterFirstWithHostNet&#39;, &#39;ClusterFirst&#39;, &#39;Default&#39; or &#39;None&#39;. DNS parameters given in DNSConfig will be merged with the policy selected with DNSPolicy. To have DNS options set along with hostNetwork, you have to specify DNS policy explicitly to &#39;ClusterFirstWithHostNet&#39;. | [optional] [default to null]
+**entrypoint** | [**String**](string.md) | Entrypoint is a template reference to the starting point of the workflow. | [optional] [default to null]
+**executor** | [**v1alpha1.ExecutorConfig**](v1alpha1.ExecutorConfig.md) |  | [optional] [default to null]
+**hostAliases** | [**List**](v1.HostAlias.md) | +patchStrategy&#x3D;merge +patchMergeKey&#x3D;ip | [optional] [default to null]
+**hostNetwork** | [**Boolean**](boolean.md) | Host networking requested for this workflow pod. Default to false. | [optional] [default to null]
+**imagePullSecrets** | [**List**](v1.LocalObjectReference.md) | ImagePullSecrets is a list of references to secrets in the same namespace to use for pulling any images in pods that reference this ServiceAccount. ImagePullSecrets are distinct from Secrets because Secrets can be mounted in the pod, but ImagePullSecrets are only accessed by the kubelet. More info: https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod +patchStrategy&#x3D;merge +patchMergeKey&#x3D;name | [optional] [default to null]
+**metrics** | [**v1alpha1.Metrics**](v1alpha1.Metrics.md) |  | [optional] [default to null]
+**nodeSelector** | [**Map**](string.md) | NodeSelector is a selector which will result in all pods of the workflow to be scheduled on the selected node(s). This is able to be overridden by a nodeSelector specified in the template. | [optional] [default to null]
+**onExit** | [**String**](string.md) | OnExit is a template reference which is invoked at the end of the workflow, irrespective of the success, failure, or error of the primary workflow. | [optional] [default to null]
+**parallelism** | [**Integer**](integer.md) | Parallelism limits the max total parallel pods that can execute at the same time in a workflow | [optional] [default to null]
+**podDisruptionBudget** | [**v1beta1.PodDisruptionBudgetSpec**](v1beta1.PodDisruptionBudgetSpec.md) |  | [optional] [default to null]
+**podGC** | [**v1alpha1.PodGC**](v1alpha1.PodGC.md) |  | [optional] [default to null]
+**podMetadata** | [**v1alpha1.Metadata**](v1alpha1.Metadata.md) |  | [optional] [default to null]
+**podPriority** | [**Integer**](integer.md) | Priority to apply to workflow pods. | [optional] [default to null]
+**podPriorityClassName** | [**String**](string.md) | PriorityClassName to apply to workflow pods. | [optional] [default to null]
+**podSpecPatch** | [**String**](string.md) | PodSpecPatch holds strategic merge patch to apply against the pod spec. Allows parameterization of container fields which are not strings (e.g. resource limits). | [optional] [default to null]
+**priority** | [**Integer**](integer.md) | Priority is used if controller is configured to process limited number of workflows in parallel. Workflows with higher priority are processed first. | [optional] [default to null]
+**retryStrategy** | [**v1alpha1.RetryStrategy**](v1alpha1.RetryStrategy.md) |  | [optional] [default to null]
+**schedulerName** | [**String**](string.md) | Set scheduler name for all pods. Will be overridden if container/script template&#39;s scheduler name is set. Default scheduler will be used if neither specified. +optional | [optional] [default to null]
+**securityContext** | [**v1.PodSecurityContext**](v1.PodSecurityContext.md) |  | [optional] [default to null]
+**serviceAccountName** | [**String**](string.md) | ServiceAccountName is the name of the ServiceAccount to run all pods of the workflow as. | [optional] [default to null]
+**shutdown** | [**String**](string.md) | Shutdown will shutdown the workflow according to its ShutdownStrategy | [optional] [default to null]
+**suspend** | [**Boolean**](boolean.md) | Suspend will suspend the workflow and prevent execution of any future steps in the workflow | [optional] [default to null]
+**synchronization** | [**v1alpha1.Synchronization**](v1alpha1.Synchronization.md) |  | [optional] [default to null]
+**templateDefaults** | [**v1alpha1.Template**](v1alpha1.Template.md) |  | [optional] [default to null]
+**templates** | [**List**](v1alpha1.Template.md) | Templates is a list of workflow templates used in a workflow +patchStrategy&#x3D;merge +patchMergeKey&#x3D;name | [optional] [default to null]
+**tolerations** | [**List**](v1.Toleration.md) | Tolerations to apply to workflow pods. +patchStrategy&#x3D;merge +patchMergeKey&#x3D;key | [optional] [default to null]
+**ttlStrategy** | [**v1alpha1.TTLStrategy**](v1alpha1.TTLStrategy.md) |  | [optional] [default to null]
+**volumeClaimGC** | [**v1alpha1.VolumeClaimGC**](v1alpha1.VolumeClaimGC.md) |  | [optional] [default to null]
+**volumeClaimTemplates** | [**List**](v1.PersistentVolumeClaim.md) | VolumeClaimTemplates is a list of claims that containers are allowed to reference. The Workflow controller will create the claims at the beginning of the workflow and delete the claims upon completion of the workflow +patchStrategy&#x3D;merge +patchMergeKey&#x3D;name | [optional] [default to null]
+**volumes** | [**List**](v1.Volume.md) | Volumes is a list of volumes that can be mounted by containers in a workflow. +patchStrategy&#x3D;merge +patchMergeKey&#x3D;name | [optional] [default to null]
+**workflowTemplateRef** | [**v1alpha1.WorkflowTemplateRef**](v1alpha1.WorkflowTemplateRef.md) |  | [optional] [default to null]
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

@@ -21,6 +21,8 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
 // @ts-ignore
+import { V1ArgoWorkflowListTriggeredOutput } from '../models';
+// @ts-ignore
 import { V1ArgoWorkflowsDescriptions } from '../models';
 /**
  * V1ArgoWorkflowApi - axios parameter creator
@@ -46,6 +48,39 @@ export const V1ArgoWorkflowApiAxiosParamCreator = function (configuration?: Conf
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Lists all the triggered workflows
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        argoWorkflowListTriggered: async (options: any = {}): Promise<RequestArgs> => {
+            const localVarPath = `/argo-workflows/list-triggered`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication JWTKeyAuth required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
 
     
@@ -122,6 +157,16 @@ export const V1ArgoWorkflowApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
+         * 
+         * @summary Lists all the triggered workflows
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async argoWorkflowListTriggered(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<V1ArgoWorkflowListTriggeredOutput>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.argoWorkflowListTriggered(options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
          * Creates an argo workflow in the argo workflow cluster, the inputs are passed in body as a key value pair The workflow defined in the path is invoked. Template is parsed in workflow itself and will fail if there are missing variables
          * @summary Triggers an argo workflow
          * @param {string} workflow The name of the workflow to be triggered
@@ -151,6 +196,15 @@ export const V1ArgoWorkflowApiFactory = function (configuration?: Configuration,
          */
         argoWorkflowList(options?: any): AxiosPromise<V1ArgoWorkflowsDescriptions> {
             return localVarFp.argoWorkflowList(options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Lists all the triggered workflows
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        argoWorkflowListTriggered(options?: any): AxiosPromise<V1ArgoWorkflowListTriggeredOutput> {
+            return localVarFp.argoWorkflowListTriggered(options).then((request) => request(axios, basePath));
         },
         /**
          * Creates an argo workflow in the argo workflow cluster, the inputs are passed in body as a key value pair The workflow defined in the path is invoked. Template is parsed in workflow itself and will fail if there are missing variables
@@ -203,6 +257,17 @@ export class V1ArgoWorkflowApi extends BaseAPI {
      */
     public argoWorkflowList(options?: any) {
         return V1ArgoWorkflowApiFp(this.configuration).argoWorkflowList(options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Lists all the triggered workflows
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof V1ArgoWorkflowApi
+     */
+    public argoWorkflowListTriggered(options?: any) {
+        return V1ArgoWorkflowApiFp(this.configuration).argoWorkflowListTriggered(options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

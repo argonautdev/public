@@ -1,0 +1,46 @@
+# V1alpha1Template
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**activeDeadlineSeconds** | [**intstr.IntOrString**](intstr.IntOrString.md) |  | [optional] [default to null]
+**affinity** | [**v1.Affinity**](v1.Affinity.md) |  | [optional] [default to null]
+**archiveLocation** | [**v1alpha1.ArtifactLocation**](v1alpha1.ArtifactLocation.md) |  | [optional] [default to null]
+**automountServiceAccountToken** | [**Boolean**](boolean.md) | AutomountServiceAccountToken indicates whether a service account token should be automatically mounted in pods. ServiceAccountName of ExecutorConfig must be specified if this value is false. | [optional] [default to null]
+**container** | [**v1.Container**](v1.Container.md) |  | [optional] [default to null]
+**containerSet** | [**v1alpha1.ContainerSetTemplate**](v1alpha1.ContainerSetTemplate.md) |  | [optional] [default to null]
+**daemon** | [**Boolean**](boolean.md) | Deamon will allow a workflow to proceed to the next step so long as the container reaches readiness | [optional] [default to null]
+**dag** | [**v1alpha1.DAGTemplate**](v1alpha1.DAGTemplate.md) |  | [optional] [default to null]
+**data** | [**v1alpha1.Data**](v1alpha1.Data.md) |  | [optional] [default to null]
+**executor** | [**v1alpha1.ExecutorConfig**](v1alpha1.ExecutorConfig.md) |  | [optional] [default to null]
+**failFast** | [**Boolean**](boolean.md) | FailFast, if specified, will fail this template if any of its child pods has failed. This is useful for when this template is expanded with &#x60;withItems&#x60;, etc. | [optional] [default to null]
+**hostAliases** | [**List**](v1.HostAlias.md) | HostAliases is an optional list of hosts and IPs that will be injected into the pod spec +patchStrategy&#x3D;merge +patchMergeKey&#x3D;ip | [optional] [default to null]
+**http** | [**v1alpha1.HTTP**](v1alpha1.HTTP.md) |  | [optional] [default to null]
+**initContainers** | [**List**](v1alpha1.UserContainer.md) | InitContainers is a list of containers which run before the main container. +patchStrategy&#x3D;merge +patchMergeKey&#x3D;name | [optional] [default to null]
+**inputs** | [**v1alpha1.Inputs**](v1alpha1.Inputs.md) |  | [optional] [default to null]
+**memoize** | [**v1alpha1.Memoize**](v1alpha1.Memoize.md) |  | [optional] [default to null]
+**metadata** | [**v1alpha1.Metadata**](v1alpha1.Metadata.md) |  | [optional] [default to null]
+**metrics** | [**v1alpha1.Metrics**](v1alpha1.Metrics.md) |  | [optional] [default to null]
+**name** | [**String**](string.md) | Name is the name of the template | [optional] [default to null]
+**nodeSelector** | [**Map**](string.md) | NodeSelector is a selector to schedule this step of the workflow to be run on the selected node(s). Overrides the selector set at the workflow level. | [optional] [default to null]
+**outputs** | [**v1alpha1.Outputs**](v1alpha1.Outputs.md) |  | [optional] [default to null]
+**parallelism** | [**Integer**](integer.md) | Parallelism limits the max total parallel pods that can execute at the same time within the boundaries of this template invocation. If additional steps/dag templates are invoked, the pods created by those templates will not be counted towards this total. | [optional] [default to null]
+**podSpecPatch** | [**String**](string.md) | PodSpecPatch holds strategic merge patch to apply against the pod spec. Allows parameterization of container fields which are not strings (e.g. resource limits). | [optional] [default to null]
+**priority** | [**Integer**](integer.md) | Priority to apply to workflow pods. | [optional] [default to null]
+**priorityClassName** | [**String**](string.md) | PriorityClassName to apply to workflow pods. | [optional] [default to null]
+**resource** | [**v1alpha1.ResourceTemplate**](v1alpha1.ResourceTemplate.md) |  | [optional] [default to null]
+**retryStrategy** | [**v1alpha1.RetryStrategy**](v1alpha1.RetryStrategy.md) |  | [optional] [default to null]
+**schedulerName** | [**String**](string.md) | If specified, the pod will be dispatched by specified scheduler. Or it will be dispatched by workflow scope scheduler if specified. If neither specified, the pod will be dispatched by default scheduler. +optional | [optional] [default to null]
+**script** | [**v1alpha1.ScriptTemplate**](v1alpha1.ScriptTemplate.md) |  | [optional] [default to null]
+**securityContext** | [**v1.PodSecurityContext**](v1.PodSecurityContext.md) |  | [optional] [default to null]
+**serviceAccountName** | [**String**](string.md) | ServiceAccountName to apply to workflow pods | [optional] [default to null]
+**sidecars** | [**List**](v1alpha1.UserContainer.md) | Sidecars is a list of containers which run alongside the main container Sidecars are automatically killed when the main container completes +patchStrategy&#x3D;merge +patchMergeKey&#x3D;name | [optional] [default to null]
+**steps** | [**List**](object.md) | Steps define a series of sequential/parallel workflow steps | [optional] [default to null]
+**suspend** | [**v1alpha1.SuspendTemplate**](v1alpha1.SuspendTemplate.md) |  | [optional] [default to null]
+**synchronization** | [**v1alpha1.Synchronization**](v1alpha1.Synchronization.md) |  | [optional] [default to null]
+**timeout** | [**String**](string.md) | Timout allows to set the total node execution timeout duration counting from the node&#39;s start time. This duration also includes time in which the node spends in Pending state. This duration may not be applied to Step or DAG templates. | [optional] [default to null]
+**tolerations** | [**List**](v1.Toleration.md) | Tolerations to apply to workflow pods. +patchStrategy&#x3D;merge +patchMergeKey&#x3D;key | [optional] [default to null]
+**volumes** | [**List**](v1.Volume.md) | Volumes is a list of volumes that can be mounted by containers in a template. +patchStrategy&#x3D;merge +patchMergeKey&#x3D;name | [optional] [default to null]
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
