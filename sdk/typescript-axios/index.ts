@@ -22,3 +22,6 @@ export {Schema};
 import * as Schema from "./schema";
 
 export {Schema};
+import * as Schema from "./schema";
+
+export {Schema};
