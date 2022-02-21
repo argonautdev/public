@@ -1,0 +1,35 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: >
+  Deploy this cloud formation template to connect your AWS account to Argonaut.
+Parameters:
+  ArgonautID:
+    Type: String
+    Description: Argonaut ID is used to provide secure access to your AWS account, do not edit!
+Outputs:
+  ArgonautRoleArn:
+    Description: "Argonaut IAM Access Role ARN"
+    Value: !GetAtt ArgonautRole.Arn
+Resources:
+  ArgonautRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Join ["-", ["argonaut", !Ref ArgonautID]]
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Principal:
+              AWS: 054565121117
+            Action: sts:AssumeRole
+            Condition:
+              StringEquals:
+                sts:ExternalId: !Ref ArgonautID
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AdministratorAccess
+  ArgonautEventHandler:
+    Type: Custom::ArgonautEventHandler
+    Properties:
+      ServiceToken: "arn:aws:lambda:us-west-2:349056421333:function:argonaut-event-handler"
+      ArgonautRoleArn: !GetAtt ArgonautRole.Arn
+      ExternalId: !Ref ArgonautID
+      AccountId: !Ref AWS::AccountId
